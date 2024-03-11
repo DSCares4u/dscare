@@ -6,21 +6,29 @@
 
 <div id="default-carousel" class=" w-[100%] " data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="  overflow-hidden rounded-lg md:h-96 mt-10">
+    <div class="  overflow-hidden rounded-lg md:h-96 mt-20">
         <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/images/banner.png"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="/images/1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="...">
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/images/banner2.jpg"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="/images/2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="...">
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/images/banner-3.png"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="/images/3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="...">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/images/4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="...">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/images/5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="...">
         </div>
     </div>
 </div>
@@ -207,7 +215,49 @@
         medical supervision with compassionate care over an extended period. </p>
 </div>
 
+<div class="pre-footer w-full flex h-40 mt-10">
+    <div class="w-4/12 text-white bg-[#3e7199] flex">
+        <a href="#" class='justify-center items-center flex w-3/12'>
+            <img class="rounded-t-lg h-20 " src="/images/icons/doc.png" alt="" />
+        </a>
+        <div class=" w-9/12">
+            <a href="#" class='justify-start flex mt-6'>
+                <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Book Doctor Consultations</h5>
+            </a>
+            <p class="mb-2  font-normal text-sm  dark:text-gray-400">Get doctor consultations at your doorstep on
+                Sundays and evenings by experienced doctors for the convenience of your elderly loved ones.</p>
+            <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
+        </div>
+    </div>
+    <div class="w-4/12 text-white bg-[#3b89c5] flex">
+        <a href="#" class='justify-center items-center flex w-3/12'>
+            <img class="rounded-t-lg h-20 " src="/images/icons/lab.png" alt="" />
+        </a>
+        <div class=" w-9/12">
+            <a href="#" class='justify-start flex mt-6'>
+                <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Book Lab Tests- CBC</h5>
+            </a>
+            <p class="mb-2  font-normal text-sm  dark:text-gray-400">Takes a complete blood count, to detect anemia,
+                infections and can detect diseases like bone marrow disorders, dehydration, etc.</p>
+            <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
+        </div>
+    </div>
+    <div class="w-4/12 text-white bg-[#3e7199] flex">
+        <a href="#" class='justify-center items-center flex w-3/12'>
+            <img class="rounded-t-lg h-20 " src="/images/icons/rent.png" alt="" />
+        </a>
+        <div class=" w-9/12">
+            <a href="#" class='justify-start flex mt-6'>
+                <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Buy or Rent Equipment</h5>
+            </a>
+            <p class="mb-2  font-normal text-sm  dark:text-gray-400">Avail Ventilator/ BIPAP for rental or purchase at
+                cost-effective prices for your elderly. Choose from a wide range of products and brands.</p>
+            <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
+        </div>
+    </div>
+</div>
 
+<!-- 
 <div class="stat flex mt-20 justify-evenly items-center px-10">
     <div class="employees">
         <h2 class='text-blue-600 text-7xl text-center'>800+</h2>
@@ -222,9 +272,9 @@
         <p class='text-center text-gray-500 leading-7'>Cities</p>
     </div>
 
-</div>
+</div> -->
 
-<div class="flex pre-footer mt-10 bg-[#1B9CFC]">
+<!-- <div class="flex pre-footer mt-10 bg-[#1B9CFC]">
     <div class="w-1/2">
         <h2 class="text-5xl text-white font-extrabold p-12 leading-tight">
             Our Specialized <br>
@@ -268,21 +318,23 @@
         </form>
 
     </div>
-</div>
+</div> -->
 
-<footer class="bg-[#FC427B] dark:bg-gray-900 ">
+
+
+<!-- <footer class=" dark:bg-gray-900 ">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="https://flowbite.com/" class="flex items-center">
                     <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-white">DS
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap  dark:text-white">DS
                         Cares 4 U</span>
                 </a>
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Resources</h2>
+                    <h2 class="mb-6 text-sm font-semibold  uppercase dark:text-white">Resources</h2>
                     <ul class="text-white dark:text-gray-400 font-medium">
                         <li class="mb-4">
                             <a href="https://flowbite.com/" class="hover:underline">DSCares4U</a>
@@ -369,7 +421,92 @@
             </div>
         </div>
     </div>
+</footer> -->
+
+<footer class="flex justify-evenly w-full h-36 px-20 gap-10 mt-12">
+    <div class="w-3/12">
+        <a href="">
+            <img src="/images/footer_logo.jpg" alt="">
+        </a>
+        <p class="text-start text-gray-400 text-sm mt-5">
+            No. 40, North Phase,
+            5th Cross Street, Kalaimagal Nagar, Ekkatuthangal, Chennai
+            TAMIL NADU- 600032.
+        </p>
+        <p class="text-start text-gray-400 mt-4 text-sm">
+            098849 45900
+
+            response@athulyahomecare.com
+        </p>
+    </div>
+    <div class="flex w-3/12">
+        <ul>
+            <li class="text-xl font-bold mb-4">
+                About Us
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Services</a>
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Leadership</a>
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Video Testimonials</a>
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Career</a>
+            </li>
+        </ul>
+    </div>
+    <div class="flex w-3/12">
+        <ul>
+            <li class="text-xl font-bold mb-4">
+                Our Services
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Doctor Visits to Home</a>
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Geriatric counseling</a>
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Critical Care at Home</a>
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Skilled Nursing Care at Home</a>
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Nursing Assistance at Home</a>
+            </li>
+            <li class="flex gap-1 text-gray-400 text-sm items-center mb-2">
+                <img src="/images/icons/arrow.png" alt="" class="h-3  items-center">
+                <a href="">Nursing Procedures</a>
+            </li>
+        </ul>
+    </div>
+    <div class=" w-3/12 justify-start">
+        <p class="text-xl font-bold mb-4">Subscribe to our Newsletter</p>
+        <div class="mb-3">
+        <input type="email" placeholder="Email Address..." >
+        </div>
+        <div class="mb-3">
+            <button type="Submit" class="text-white bg-blue-500 p-1.5 rounded-sm text-sm">Sign Up</button>
+        </div>
+    </div>
+
 </footer>
+
+
+
 
 
 @endsection
