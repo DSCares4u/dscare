@@ -31,41 +31,53 @@
                 alt="...">
         </div>
     </div>
-</div> 
+</div>
 
 <div class="services flex gap-3 mx-8">
-    <div class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div
+        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white hover: border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
         <a href="" class="mx-6">Medicine</a>
     </div>
-    <div class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div
+        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
         <a href="" class="mx-6">Medicine</a>
     </div>
-    <div class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div
+        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
         <a href="" class="mx-6">Medicine</a>
     </div>
-    <div class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div
+        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
         <a href="" class="mx-6">Medicine</a>
     </div>
-    <div class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div
+        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
         <a href="" class="mx-6">Medicine</a>
     </div>
-    <div class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div
+        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
         <a href="" class="mx-6">Medicine</a>
     </div>
-    <div class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div
+        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
         <a href="" class="mx-6">Medicine</a>
     </div>
-    <div class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div
+        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
         <a href="" class="mx-6">Medicine</a>
     </div>
+</div>
+
+<div class="flex justify-center mt-3">
+    <button class="bg-[#0a3d62] p-3 rounded-lg font-serif text-white hover:bg-[#356d96]">Book Your Service</button>
 </div>
 
 <div class="w-full flex justify-evenly px-16 mt-10 ">
@@ -99,7 +111,7 @@
 </div>
 
 
-<div class="services flex justify-center  gap-8 mt-16">
+<!-- <div class="services flex justify-center  gap-8 mt-16">
     <div class="services-name ">
         <div class="service-img bg-[#48dbfb] rounded-full h-40 w-40 border shadow-2xl ">
             <img src="/images/icons/nurse1.png" class="mx-auto pt-5" alt="">
@@ -150,6 +162,42 @@
             <img src="/images/icons/nurse1.png" class="mx-auto pt-5" alt="">
         </div>
         <h3 class="text-center text-lg tracking-tight font-semibold text-gray-500">Medicine Delivery</h3>
+    </div>
+</div> -->
+
+<div class="packages flex justify-evenly gap-2 mt-10 w-full mx-8 p-2">
+    <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b]  ">
+        <div class="flex justify-between gap-5 bg-[#356d96] p-1 text-white mb-2">
+            <h5 class=" text-lg font-thin    dark:text-white">WellWise Tax
+                Saver Profile
+                - Female</h5>
+            <img src="/images/icons/offer.png" class="h-8 mt-5" alt="">
+        </div>
+        <p class="mb-3 font-semibold text-black dark:text-gray-400">Parameter:75</p>
+        <ul class="mb-4">
+            <li class="flex justify-start w-10/12 mb-2">
+                <img src="images/icons/dot.png" alt="" class="h-3 text-center mt-1 mr-1">
+                <p class="text-base leading-tight tracking-tight">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex justify-start w-10/12 mb-2">
+                <img src="images/icons/dot.png" alt="" class="h-3 text-center mt-1 mr-1">
+                <p class="text-base leading-tight tracking-tight">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex justify-start w-10/12 mb-2">
+                <img src="images/icons/dot.png" alt="" class="h-3 text-center mt-1 mr-1">
+                <p class="text-base leading-tight tracking-tight">Iron And Total Iron Binding Capacity</p>
+            </li>
+        </ul>
+        <a href="#" class="inline-flex font-medium items-center text-blue-600 hover:underline">
+            See Details
+            <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
+            </svg>
+        </a>
+        <a href="" class="float-end  font-medium items-center text-blue-600 hover:underline mr-3">Book</a>
+
     </div>
 </div>
 
@@ -599,7 +647,9 @@
     </div>
 </footer> -->
 
-<footer class="flex justify-evenly w-full h-36 px-20 gap-10 mt-12">
+
+
+<footer class="flex justify-evenly mb-4 w-full h-56 px-20 gap-10 mt-12">
     <div class="w-3/12">
         <a href="">
             <img src="/images/footer_logo.jpg" alt="">
@@ -680,6 +730,12 @@
     </div>
 
 </footer>
+
+<div class="call flex justify-center gap-2 bg-[#273c75] p-3 fixed bottom-0 w-full ">
+    <button class="bg-[#487eb0] p-2 rounded-lg font-serif text-white hover:bg-[#40739e]" >Request a call</button>
+    <button class="bg-[#27ae60] p-2 rounded-lg font-serif text-white hover:bg-[#2ecc71]">Connect on Whatsapp</button>
+</div>
+
 
 
 
