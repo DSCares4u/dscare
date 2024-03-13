@@ -36,11 +36,8 @@
         </ul>
     </div>
 
-    <div class="header ">
-     
-    </div>
-
- <div class="header "> 
+ <div class="header ">
+   
     <!-- <nav class="p-10 float-right justify-end top-25">
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">                           
           <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-2xl text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login/Sign Up</button>
@@ -51,7 +48,7 @@
             </svg>
         </button>
       </div>
-    </nav> -->
+    </nav> -->    
 
   <nav class="bg-white dark:bg-gray-900  w-full mt-10 top-0 start-0 border-b border-gray-200 dark:border-gray-600 shadow-xl">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -63,16 +60,53 @@
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky pr-10">
       <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a href="#" class="block pointer py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+          <a href="#" class=" flex pointer py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 transition duration-150 ease-in-out"id="about-button" aria-current="page">About Us
+            <svg class="-mr-1 ml-0.5 mt-1 h-5 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 12.586l-6.293-6.293a1 1 0 011.414-1.414L10 10.586l5.293-5.293a1 1 0 011.414 1.414L10 12.586z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <div id="about-menu" class="absolute z-10 hover:z-50 mt-2  bg-white rounded-md ">
+            <div class="py-1">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Our Values</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Leadership</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Care Team</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Care Process</a>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Care Services</a>
+          <a href="#" class=" flex pointer py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 transition duration-150 ease-in-out"id="service-button" aria-current="page">Care Services
+            <svg class="-mr-1 ml-0.5 mt-1 h-5 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 12.586l-6.293-6.293a1 1 0 011.414-1.414L10 10.586l5.293-5.293a1 1 0 011.414 1.414L10 12.586z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <div id="service-menu" class="absolute z-10 mt-2  bg-white rounded-md ">
+            <div class="py-1">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Health Care</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Daily Care</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Leisure Care</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Payment Care</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Emergency Care</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Other Care</a>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Care Plans</a>
+          <a href="#" class=" flex pointer py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 transition duration-150 ease-in-out"id="care-button" aria-current="page">Care Plan
+            <svg class="-mr-1 ml-0.5 mt-1 h-5 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 12.586l-6.293-6.293a1 1 0 011.414-1.414L10 10.586l5.293-5.293a1 1 0 011.414 1.414L10 12.586z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <div id="care-menu" class="absolute z-10 mt-2  bg-white rounded-md ">
+            <div class="py-1">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Care Plan</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Diet Plan</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Dementia Plan</a>
+            </div>
+          </div>
         </li>
         <li>
           <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Franchise Enquiry</a>
@@ -85,7 +119,42 @@
     </div>
   </nav>
 
-</div> 
+</div>
+
+
+<script>
+// hover menu work
+
+document.getElementById('about-button').addEventListener('mouseenter', function() {
+  document.getElementById('about-menu').classList.add('block');
+  document.getElementById('about-menu').classList.remove('hidden');
+});
+
+document.getElementById('about-button').addEventListener('mouseleave', function() {
+  document.getElementById('about-menu').classList.remove('block');
+  document.getElementById('about-menu').classList.add('hidden');
+});
+document.getElementById('service-button').addEventListener('mouseenter', function() {
+  document.getElementById('service-menu').classList.add('block');
+  document.getElementById('service-menu').classList.remove('hidden');
+});
+
+document.getElementById('service-button').addEventListener('mouseleave', function() {
+  document.getElementById('service-menu').classList.remove('block');
+  document.getElementById('service-menu').classList.add('hidden');
+});
+document.getElementById('care-button').addEventListener('mouseenter', function() {
+  document.getElementById('care-menu').classList.add('block');
+  document.getElementById('care-menu').classList.remove('hidden');
+});
+
+document.getElementById('care-button').addEventListener('mouseleave', function() {
+  document.getElementById('care-menu').classList.remove('block');
+  document.getElementById('care-menu').classList.add('hidden');
+});
+
+</script>
+
 
     @section('content')
     @show
