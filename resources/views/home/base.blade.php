@@ -37,7 +37,7 @@
     </div>
 
 
-  <nav class="bg-white dark:bg-gray-900  w-full  start-0  border-gray-200 dark:border-gray-600 shadow-2xl">
+  <nav class="bg-white dark:bg-gray-900  w-full   border-gray-200 dark:border-gray-600 shadow-2xl fixed top-10">
     <div class="max-w-screen-xl flex  flex-wrap items-center justify-between mx-auto">
       <a href="#" class="flex items-center space-x-3 ml-8 mt-4 rtl:space-x-reverse">
           <img src="/images/logo.png" class="h-16" alt="Flowbite Logo">
@@ -54,7 +54,7 @@
               
     </div>
 
-      <div class="items-center justify-end mr-5 pb-5 hidden w-full md:flex md:w-auto md:order-1 " >
+      <div class="items-center justify-end mr-5 pb-5 hidden w-full md:flex md:w-auto md:order-1 fixed bottom-0" >
         <ul class="flex flex-col p-4 md:p-0 mt-2 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
             <a href="#" class="block pointer py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
@@ -79,6 +79,7 @@
  
   </nav>
 
+  
 
     @section('content')
     @show
