@@ -170,30 +170,33 @@
     </div>
 </div> -->
 
-<div class="packages flex justify-around gap-2 mt-10 w-full mx-8 p-2">
-    <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b]  ">
-        <div class="flex justify-between gap-5 bg-[#356d96] p-1 text-white mb-2">
-            <h5 class=" text-lg font-thin    dark:text-white">WellWise Tax
-                Saver Profile
-                - Female</h5>
-            <img src="/images/icons/offer.png" class="h-8 mt-5" alt="">
+<div class="packages flex justify-around gap-2 mt-10 w-full mx-8 p-2 ">
+    <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
+        <div class="flex justify-center gap-5 bg-[#006266] p-2 text-white mb-2">
+            <h5 class=" text-lg font-bold text-center   dark:text-white">Base Plan</h5>
         </div>
-        <p class="mb-3 font-semibold text-black dark:text-gray-400">Parameter:75</p>
-        <ul class="mb-4">
-            <li class="flex justify-start w-10/12 mb-2">
-                <img src="images/icons/dot.png" alt="" class="h-3 text-center mt-1 mr-1">
-                <p class="text-base leading-tight tracking-tight">Iron And Total Iron Binding Capacity</p>
+        <div class="validity ml-2">
+            <h4 class="font-semibold text-[#006266]">Validity : 1 Year</h4>
+            <hr>
+        </div>
+        <ul class="mb-2 pl-4 mt-1">
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
             </li>
-            <li class="flex justify-start w-10/12 mb-2">
-                <img src="images/icons/dot.png" alt="" class="h-3 text-center mt-1 mr-1">
-                <p class="text-base leading-tight tracking-tight">Iron And Total Iron Binding Capacity</p>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
             </li>
-            <li class="flex justify-start w-10/12 mb-2">
-                <img src="images/icons/dot.png" alt="" class="h-3 text-center mt-1 mr-1">
-                <p class="text-base leading-tight tracking-tight">Iron And Total Iron Binding Capacity</p>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
             </li>
+          
+            
         </ul>
-        <a href="#" class="inline-flex font-medium items-center text-blue-600 hover:underline">
+        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del> <p class="text-red-500 mr-4 font-bold">Rs. 5000</p></div>
+        <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
             See Details
             <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="none" viewBox="0 0 18 18">
@@ -201,7 +204,115 @@
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
             </svg>
         </a>
-        <a href="" class="float-end  font-medium items-center text-blue-600 hover:underline mr-3">Book</a>
+        <button class="float-end font-light p-1 rounded-sm mb-2 text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book Now</button>
+
+    </div>
+    <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
+        <div class="flex justify-center gap-5 bg-[#006266] p-2 text-white mb-2">
+            <h5 class=" text-lg font-bold text-center   dark:text-white">Base Plan</h5>
+        </div>
+        <div class="validity ml-2">
+            <h4 class="font-semibold text-[#006266]">Validity : 1 Year</h4>
+            <hr>
+        </div>
+        <ul class="mb-2 pl-4 mt-1">
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+          
+            
+        </ul>
+        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del> <p class="text-red-500 mr-4 font-bold">Rs. 5000</p></div>
+        <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
+            See Details
+            <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
+            </svg>
+        </a>
+        <button class="float-end font-light p-1 rounded-sm mb-2 text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book Now</button>
+
+    </div>
+    <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
+        <div class="flex justify-center gap-5 bg-[#006266] p-2 text-white mb-2">
+            <h5 class=" text-lg font-bold text-center   dark:text-white">Base Plan</h5>
+        </div>
+        <div class="validity ml-2">
+            <h4 class="font-semibold text-[#006266]">Validity : 1 Year</h4>
+            <hr>
+        </div>
+        <ul class="mb-2 pl-4 mt-1">
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+          
+            
+        </ul>
+        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del> <p class="text-red-500 mr-4 font-bold">Rs. 5000</p></div>
+        <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
+            See Details
+            <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
+            </svg>
+        </a>
+        <button class="float-end font-light p-1 rounded-sm mb-2 text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book Now</button>
+
+    </div>
+    <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
+        <div class="flex justify-center gap-5 bg-[#006266] p-2 text-white mb-2">
+            <h5 class=" text-lg font-bold text-center   dark:text-white">Base Plan</h5>
+        </div>
+        <div class="validity ml-2">
+            <h4 class="font-semibold text-[#006266]">Validity : 1 Year</h4>
+            <hr>
+        </div>
+        <ul class="mb-2 pl-4 mt-1">
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+          
+            
+        </ul>
+        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del> <p class="text-red-500 mr-4 font-bold">Rs. 5000</p></div>
+        <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
+            See Details
+            <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
+            </svg>
+        </a>
+        <button class="float-end font-light p-1 rounded-sm mb-2 text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book Now</button>
 
     </div>
 </div>
