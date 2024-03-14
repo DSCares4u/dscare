@@ -1,39 +1,52 @@
 @extends('home.base')
 @section('content')
 
-
-
-
-<div id="default-carousel" class=" w-[100%] mb-0" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="  overflow-hidden rounded-lg md:h-96 mt-20">
-        <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/images/1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="...">
+<div class="banner">
+    <div id="default-carousel" class="relative mt-3 w-full " data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative overflow-hidden rounded-lg h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700  ease-in-out" data-carousel-item>
+                <img src="/images/1.jpg"
+                    class="absolute block w-full  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/2.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/3.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/4.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/5.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
         </div>
-        <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/images/2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="...">
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-4 left-1/2 space-x-3 rtl:space-x-reverse">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                data-carousel-slide-to="3"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                data-carousel-slide-to="4"></button>
         </div>
-        <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/images/3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="...">
-        </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/images/4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="...">
-        </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/images/5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="...">
-        </div>
+       
     </div>
 </div>
 
-<div class="services flex gap-3 mx-8">
+<div class="services flex gap-3 mx-8 mt-20">
     <div
         class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white hover: border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
@@ -165,7 +178,7 @@
     </div>
 </div> -->
 
-<div class="packages flex justify-evenly gap-2 mt-10 w-full mx-8 p-2">
+<div class="packages flex justify-around gap-2 mt-10 w-full mx-8 p-2">
     <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b]  ">
         <div class="flex justify-between gap-5 bg-[#356d96] p-1 text-white mb-2">
             <h5 class=" text-lg font-thin    dark:text-white">WellWise Tax
@@ -202,7 +215,7 @@
 </div>
 
 <div class="advertisment">
-    <div id="default-carousel" class="relative mx-44 h-36 w-6/12 " data-carousel="slide">
+    <div id="default-carousel" class="relative mx-auto z-10 h-96 w-6/12 " data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-36 overflow-hidden rounded-lg md:h-96">
             <!-- Item 1 -->
@@ -649,7 +662,7 @@
 
 
 
-<footer class="flex justify-evenly mb-4 w-full h-56 px-20 gap-10 mt-12">
+<footer class="flex justify-evenly mb-4 w-full h-56 px-20 gap-10  mt-12">
     <div class="w-3/12">
         <a href="">
             <img src="/images/footer_logo.jpg" alt="">
@@ -731,7 +744,7 @@
 
 </footer>
 
-<div class="call flex justify-center gap-2 bg-[#273c75] p-3 fixed bottom-0 w-full ">
+<div class="call flex justify-center gap-2 bg-[#273c75] p-3 z-50 sticky bottom-0 w-full ">
     <button class="bg-[#487eb0] p-2 rounded-lg font-serif text-white hover:bg-[#40739e]" >Request a call</button>
     <button class="bg-[#27ae60] p-2 rounded-lg font-serif text-white hover:bg-[#2ecc71]">Connect on Whatsapp</button>
 </div>
