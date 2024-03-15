@@ -33,11 +33,6 @@
                     class="block py-2 px-3 text-white rounded md:bg-transparent  md:p-0 md:dark:text-blue-500"
                     aria-current="page">Gallery</a>
             </li>
-            <li>
-                <a href="#"
-                    class="block py-2 px-3 text-white rounded md:bg-transparent  md:p-0 md:dark:text-blue-500"
-                    aria-current="page"></a>
-            </li>
         </ul>
     </div>
 
@@ -103,7 +98,7 @@
                         aria-current="page">Franchise Enquiry</a>
                 </li>
                 <li>
-                    <a href="#" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
+                    <a href="/appointment" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
                         aria-current="page">Connect</a>
                 </li>
             </ul>
