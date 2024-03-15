@@ -23,3 +23,7 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('home.about');
 });
+
+Route::get('/appointment', function () {
+    return view('home.bookAppointment');
+});
