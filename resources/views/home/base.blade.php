@@ -90,7 +90,7 @@
                         aria-current="page">Care Services</a>
                 </li>
                 <li>
-                    <a href="#" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
+                    <a href="/plans" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
                         aria-current="page">Care Plans</a>
                 </li>
                 <li>
@@ -115,49 +115,6 @@
     {{-- footer work --}}
 
 
-    <div class="pre-footer w-full flex h-40 mt-5">
-        <div class="w-4/12 text-white bg-[#3e7199] flex">
-            <a href="#" class='justify-center items-center flex w-3/12'>
-                <img class="rounded-t-lg h-20 " src="/images/icons/doc.png" alt="" />
-            </a>
-            <div class=" w-9/12">
-                <a href="#" class='justify-start flex mt-6'>
-                    <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Book Doctor Consultations</h5>
-                </a>
-                <p class="mb-2  font-normal text-sm  dark:text-gray-400">Get doctor consultations at your doorstep on
-                    Sundays and evenings by experienced doctors for the convenience of your elderly loved ones.</p>
-                <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
-            </div>
-        </div>
-        <div class="w-4/12 text-white bg-[#3b89c5] flex">
-            <a href="#" class='justify-center items-center flex w-3/12'>
-                <img class="rounded-t-lg h-20 " src="/images/icons/lab.png" alt="" />
-            </a>
-            <div class=" w-9/12">
-                <a href="#" class='justify-start flex mt-6'>
-                    <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Book Lab Tests- CBC</h5>
-                </a>
-                <p class="mb-2  font-normal text-sm  dark:text-gray-400">Takes a complete blood count, to detect
-                    anemia,
-                    infections and can detect diseases like bone marrow disorders, dehydration, etc.</p>
-                <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
-            </div>
-        </div>
-        <div class="w-4/12 text-white bg-[#3e7199] flex">
-            <a href="#" class='justify-center items-center flex w-3/12'>
-                <img class="rounded-t-lg h-20 " src="/images/icons/rent.png" alt="" />
-            </a>
-            <div class=" w-9/12">
-                <a href="#" class='justify-start flex mt-6'>
-                    <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Buy or Rent Equipment</h5>
-                </a>
-                <p class="mb-2  font-normal text-sm  dark:text-gray-400">Avail Ventilator/ BIPAP for rental or purchase
-                    at
-                    cost-effective prices for your elderly. Choose from a wide range of products and brands.</p>
-                <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
-            </div>
-        </div>
-    </div>
 
 
     <footer class="flex justify-evenly mb-4 w-full h-56 px-20 gap-10  mt-12">

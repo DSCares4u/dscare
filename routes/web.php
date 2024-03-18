@@ -27,3 +27,7 @@ Route::get('/about', function () {
 Route::get('/appointment', function () {
     return view('home.bookAppointment');
 });
+
+Route::get('/plans', function () {
+    return view('home.plans');
+});
