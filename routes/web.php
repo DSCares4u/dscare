@@ -31,3 +31,11 @@ Route::get('/appointment', function () {
 Route::get('/plans', function () {
     return view('home.plans');
 });
+
+Route::get('/services', function () {
+    return view('home.services');
+});
+
+Route::get('/career', function () {
+    return view('home.career');
+});
