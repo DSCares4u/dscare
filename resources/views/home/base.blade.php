@@ -86,7 +86,7 @@
                         aria-current="page">About Us</a>
                 </li>
                 <li>
-                    <a href="#" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
+                    <a href="/services" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
                         aria-current="page">Care Services</a>
                 </li>
                 <li>
@@ -94,12 +94,12 @@
                         aria-current="page">Care Plans</a>
                 </li>
                 <li>
-                    <a href="#" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
-                        aria-current="page">Franchise Enquiry</a>
+                    <a href="/appointment" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
+                        aria-current="page">Appointment</a>
                 </li>
                 <li>
-                    <a href="/appointment" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
-                        aria-current="page">Connect</a>
+                    <a href="/career" class="block  py-2  text-white rounded bg-[#40739e]  md:p-0 "
+                        aria-current="page">Career</a>
                 </li>
             </ul>
         </div>
