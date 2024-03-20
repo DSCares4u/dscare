@@ -27,7 +27,7 @@
             <p class="text-start text-gray-400 text-sm mt-5">
                 No. 40, North Phase,
                 5th Cross Street, Kalaimagal Nagar, Ekkatuthangal, Chennai
-                TAMIL NADU- 600032.
+                Purnea
             </p>
             <p class="text-start text-gray-400 mt-4 text-sm">
                 098849 45900
