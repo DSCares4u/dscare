@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="banner">
-    <div id="default-carousel" class="relative mt-3 w-full" data-carousel="slide">
+    <div id="default-carousel" class="relative mt-0 w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative overflow-hidden rounded-lg h-96">
             <!-- Item 1 -->
