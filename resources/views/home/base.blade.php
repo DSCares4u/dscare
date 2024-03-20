@@ -199,7 +199,7 @@
 
     </footer>
 
-    <div class="call flex justify-center gap-2 bg-[#273c75] p-3 z-50 sticky bottom-0 w-full ">
+    <div class="call flex justify-center gap-2 bg-[#273c75] p-3 z-30 sticky bottom-0 w-full ">
         <button class="bg-[#487eb0] p-2 rounded-lg font-serif text-white hover:bg-[#40739e]">Request a call</button>
         <button class="bg-[#27ae60] p-2 rounded-lg font-serif text-white hover:bg-[#2ecc71]">Connect on
             Whatsapp</button>
