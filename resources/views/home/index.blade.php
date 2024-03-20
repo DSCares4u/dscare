@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="banner">
-    <div id="default-carousel" class="relative mt-3 w-full" data-carousel="slide">
+    <div id="default-carousel" class="relative mt- w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative overflow-hidden rounded-lg h-96">
             <!-- Item 1 -->
@@ -38,17 +38,14 @@
     </div>
 </div>
 
-<div class="services flex gap-3 mx-8 mt-20">
-    <div
-        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white hover: border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <img src="/images/icons/jar.png" class="mx-auto" alt="">
-        <a href="" class="mx-6">Medicine</a>
-    </div>
-    <div
-        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <img src="/images/icons/jar.png" class="mx-auto" alt="">
-        <a href="" class="mx-6">Medicine</a>
-    </div>
+<div class="services flex gap-3 mx-8 mt-16">
+    <a href="">
+        <div class="mx-auto flex justify-center items-center my-auto max-w-sm bg-white hover:border border-gray-600  shadow dark:bg-gray-800 dark:border-gray-700">
+            <img src="/images/services/Medicine.jpg" class="h-20" alt="">
+            <!-- <a href="" class="mx-6">Medicine</a> -->
+        </div>
+    </a>
+   
     <div
         class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
