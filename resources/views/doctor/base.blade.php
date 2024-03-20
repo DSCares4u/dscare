@@ -19,10 +19,6 @@
 
 
     {{-- footer work --}}
-
-
-
-
     <footer class="flex justify-evenly mb-4 w-full h-56 px-20 gap-10  mt-12">
         <div class="w-3/12">
             <a href="">
