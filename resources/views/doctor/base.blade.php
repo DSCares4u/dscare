@@ -10,10 +10,6 @@
 </head>
 
 <body class='p-0 m-0 font-sans bg-white'>
-
-
-
-
     @section('content')
     @show
 

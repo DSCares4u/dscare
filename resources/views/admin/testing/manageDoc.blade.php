@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="flex-1 flex mt-12 items-center justify-between ">
-        <h1 class="text-lg font-semibold  py-2">Manage Students (<span id="counting">0</span>)</h1>
+        <h1 class="text-lg font-semibold  py-2">Manage Doctor (<span id="counting">0</span>)</h1>
         <a href="{{ route('insertStudent') }}" class="bg-indigo-500 text-white px-3 py-2 rounded"> 
-            <i class="fas fa-plus"></i> Add New Student</a>
+            <i class="fas fa-plus"></i> Add New Doctor</a>
 
     </div>
     <div class="overflow-x-auto">

@@ -39,3 +39,11 @@ Route::get('/services', function () {
 Route::get('/career', function () {
     return view('home.career');
 });
+
+Route::get('/admin', function () {
+    return view('admin.index');
+});
+
+Route::get('/admin/manage-doctor', function () {
+    return view('admin.manageDoctor');
+});
