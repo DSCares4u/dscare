@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="banner">
-    <div id="default-carousel" class="relative mt-3 w-full" data-carousel="slide">
+    <div id="default-carousel" class="relative mt- w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative overflow-hidden rounded-lg h-96">
             <!-- Item 1 -->
@@ -18,6 +18,14 @@
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="/images/3.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/banner/7.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/banner/5.jpg"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
         </div>
@@ -38,17 +46,14 @@
     </div>
 </div>
 
-<div class="services flex gap-3 mx-8 mt-20">
-    <div
-        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white hover: border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <img src="/images/icons/jar.png" class="mx-auto" alt="">
-        <a href="" class="mx-6">Medicine</a>
-    </div>
-    <div
-        class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <img src="/images/icons/jar.png" class="mx-auto" alt="">
-        <a href="" class="mx-6">Medicine</a>
-    </div>
+<div class="services flex gap-3 mx-8 mt-16">
+    <a href="">
+        <div class="mx-auto flex justify-center items-center my-auto max-w-sm bg-white hover:border border-gray-600  shadow dark:bg-gray-800 dark:border-gray-700">
+            <img src="/images/services/Medicine.jpg" class="h-20" alt="">
+            <!-- <a href="" class="mx-6">Medicine</a> -->
+        </div>
+    </a>
+   
     <div
         class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
@@ -82,8 +87,57 @@
 </div>
 
 <div class="flex justify-center mt-3">
-    <button class="bg-[#0a3d62] p-3 rounded-lg font-serif text-white hover:bg-[#356d96]">Book Your Service</button>
+    <button class="bg-[#0a3d62] p-3 rounded-lg font-serif text-white hover:bg-[#356d96]" id="openFormButton">Book Your Service</button>
 </div>
+
+<!-- Book Appointment Work -->
+<div id="applicationForm" class="hidden fixed inset-0 items-center justify-center z-50 ">
+    <div class="modal-content  bg-white w-11/12 md:max-w-lg mx-auto mt-2  rounded shadow-lg z-50 overflow-y-auto h-[80%]">
+       
+        <div class="flex py-2 px-2">
+            <img src="/images/book.png" class="w-5/12" alt="">
+            <div class=" w-7/12">
+
+                <h2 class="text-xl font-bold mb-2 text-center">Booking A Service</h2>
+                <form class="p-4">
+                    <div class="mb-2">
+                        <input type="text" id="name" name="name" class="form-input w-full"
+                            placeholder="Name">
+                    </div>
+                    <div class="flex gap-3 mb-2">
+                        <div class="w-1/2">
+                            <input type="tel" id="mobile_no" name="mobile_no" class="form-input w-full"
+                                placeholder="Phone">
+                        </div>
+                        <div class=" w-1/2">
+                            <input type="email" id="email" name="email" class="form-input w-full"
+                                placeholder="Email">
+                        </div>
+                    </div>                    
+                    <div class="mb-2">
+                        <input type="text" id="address" name="address" class="form-input w-full"
+                            placeholder="Address">
+                    </div>
+                    <div class="mb-2">
+                        <textarea id="description" name="description" rows="2" class="form-textarea w-full"
+                            placeholder="Message"></textarea>
+                    </div>
+                    <button id="closeFormButton"
+                        class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Close</button>
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+
+
 
 <div class="w-full flex justify-evenly px-16 mt-10 ">
     <div class="about w-4/12">
@@ -354,7 +408,7 @@
    
 </div>
 
-<div class="advertisment flex gap-5 mx-5">
+<div class="advertisment flex gap-5 mx-5" >
     <div id="default-carousel" class="relative mx-auto z-10 h-96 w-6/12 " data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-36 overflow-hidden rounded-lg md:h-96">
@@ -373,19 +427,10 @@
                 <img src="/images/ad-banner-4.jpg"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
-        </div>
-        <!-- Slider indicators -->
-        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                data-carousel-slide-to="0"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                data-carousel-slide-to="1"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                data-carousel-slide-to="2"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                data-carousel-slide-to="3"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                data-carousel-slide-to="4"></button>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/banner/1.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
         </div>
         <!-- Slider controls -->
         <button type="button"
@@ -420,19 +465,10 @@
                 <img src="/images/ad-banner-1.jpg"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
-        </div>
-        <!-- Slider indicators -->
-        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                data-carousel-slide-to="0"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                data-carousel-slide-to="1"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                data-carousel-slide-to="2"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                data-carousel-slide-to="3"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                data-carousel-slide-to="4"></button>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/images/1.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
         </div>
         <button type="button"
             class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
@@ -690,6 +726,23 @@
         </div>
     </div>
 
+
+    <script>
+        // JavaScript to handle opening and closing of the book appointment
+        document.addEventListener('DOMContentLoaded', function() {
+            let openFormButton = document.getElementById('openFormButton');
+            let closeFormButton = document.getElementById('closeFormButton');
+            let applicationForm = document.getElementById('applicationForm');
+
+            openFormButton.addEventListener('click', function() {
+                applicationForm.classList.remove('hidden');
+            });
+
+            closeFormButton.addEventListener('click', function() {
+                applicationForm.classList.add('hidden');
+            });
+        });
+    </script>
 
 
 
