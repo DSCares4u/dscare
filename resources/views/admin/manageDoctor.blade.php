@@ -4,7 +4,7 @@
 
 <div class="flex-1 flex mt-12 items-center justify-between ">
     <h1 class="text-lg font-semibold  py-2">Manage Doctors (<span id="counting">0</span>)</h1>
-    <a href="#" class="bg-indigo-500 hover:bg-indigo-800 text-white px-3 py-2 rounded">
+    <a href="/admin/manage-doctor/insert" class="bg-indigo-500 hover:bg-indigo-800 text-white px-3 py-2 rounded">
         <i class="fas fa-plus"></i> Add New Doctor</a>
 
 </div>

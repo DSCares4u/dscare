@@ -47,3 +47,7 @@ Route::get('/admin', function () {
 Route::get('/admin/manage-doctor', function () {
     return view('admin.manageDoctor');
 });
+
+Route::get('/admin/manage-doctor/insert', function () {
+    return view('admin.insertDoctor');
+});
