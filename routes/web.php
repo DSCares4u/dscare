@@ -51,3 +51,35 @@ Route::get('/admin/manage-doctor', function () {
 Route::get('/admin/manage-doctor/insert', function () {
     return view('admin.insertDoctor');
 });
+
+Route::get('/admin/manage-user', function () {
+    return view('admin.manageUser');
+});
+
+Route::get('/admin/manage-user/insert', function () {
+    return view('admin.insertUser');
+});
+
+Route::get('/admin/manage-category', function () {
+    return view('admin.manageCategory');
+});
+
+Route::get('/admin/manage-category/insert', function () {
+    return view('admin.insertCategory');
+});
+
+Route::get('/admin/manage-plan', function () {
+    return view('admin.managePlan');
+});
+
+Route::get('/admin/manage-plan/insert', function () {
+    return view('admin.insertPlan');
+});
+
+Route::get('/admin/manage-service', function () {
+    return view('admin.manageService');
+});
+
+Route::get('/admin/manage-service/insert', function () {
+    return view('admin.insertService');
+});
