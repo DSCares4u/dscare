@@ -10,12 +10,94 @@
 </head>
 
 <body class='p-0 m-0 font-sans bg-white'>
+
+
+    <div class="flex justify-between items-center bg-white shadow-md p-4">
+        <!-- Logo -->
+        <div class="text-xl font-bold text-blue-600"><a href="/doctor">Doctor Panel</a></div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="/doctor/appointment" class="text-gray-600 hover:text-blue-600">Appointments</a></li>
+                <li><a href="/doctor/patient" class="text-gray-600 hover:text-blue-600">Patients</a></li>
+                <li><a href="#" class="text-gray-600 hover:text-blue-600">Messages</a></li>
+                <li><a href="/doctor/profile" class="text-gray-600 hover:text-blue-600">Profile</a></li>
+            </ul>
+        </nav>
+        <button type="button"
+            class="text-white bg-green-700 hover:bg-green-800  font-medium rounded-2xl text-sm px-4 py-2 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            id="bookAppointmentButton">Book Appointment</button>
+
+        <!-- User Info -->
+        <div class="flex items-center space-x-4">
+            <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-8 h-8 rounded-full">
+            <span class="text-gray-600">Dr. John Doe</span>
+        </div>
+    </div>
+
+
+    
+    <div id="bookAppointmentForm" class="hidden fixed inset-0 items-center justify-center z-50">
+        <div class="modal-content  bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+            <div class="flex justify-end pt-1 pr-4">
+                <button id="closeFormButton" class="text-3xl leading-none hover:text-gray-300">&times;</button>
+            </div>
+            <div class="py-2 px-10 pb-2">
+                <h2 class="text-xl font-bold mb-2">Booking Form</h2>
+                <form>
+                    <div class="mb-2">
+                        <label for="name" class="block text-gray-700 font-bold mb-1">Name:</label>
+                        <input type="text" id="name" name="name" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            placeholder="Enter your Name">
+                    </div>
+                    <div class="mb-2">
+                        <label for="mobile_no" class="block text-gray-700 font-bold mb-1">Mobile No:</label>
+                        <input type="tel" id="mobile_no" name="mobile_no" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            placeholder="Enter your Mobile No">
+                    </div>
+                    <div class="mb-2">
+                        <label for="address" class="block text-gray-700 font-bold mb-1">Address:</label>
+                        <input type="text" id="address" name="address" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            placeholder="Enter your Address">
+                    </div>
+                    <div class="mb-1">
+                        <label for="description" class="block text-gray-700 font-bold mb-1">Description:</label>
+                        <textarea id="description" name="description" rows="2" class="form-textarea  w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            placeholder="Enter your message"></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                    <button type="submit"
+                        class=" w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Book Now</button>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle opening and closing of the form
+        document.addEventListener('DOMContentLoaded', function() {
+            let openFormButton = document.getElementById('bookAppointmentButton');
+            let closeFormButton = document.getElementById('closeFormButton');
+            let applicationForm = document.getElementById('bookAppointmentForm');
+
+            openFormButton.addEventListener('click', function() {
+                applicationForm.classList.remove('hidden');
+            });
+
+            closeFormButton.addEventListener('click', function() {
+                applicationForm.classList.add('hidden');
+            });
+        });
+    </script>
+
+
     @section('content')
     @show
-
-
     {{-- footer work --}}
-    <footer class="flex justify-evenly mb-4 w-full h-56 px-20 gap-10  mt-12">
+    <!-- <footer class="flex justify-evenly mb-4 w-full h-56 px-20 gap-10  mt-12">
         <div class="w-3/12">
             <a href="">
                 <img src="/images/footer_logo.jpg" alt="">
@@ -101,7 +183,7 @@
         <button class="bg-[#487eb0] p-2 rounded-lg font-serif text-white hover:bg-[#40739e]">Request a call</button>
         <button class="bg-[#27ae60] p-2 rounded-lg font-serif text-white hover:bg-[#2ecc71]">Connect on
             Whatsapp</button>
-    </div>
+    </div> -->
 
 
 

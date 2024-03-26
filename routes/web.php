@@ -83,3 +83,19 @@ Route::get('/admin/manage-service', function () {
 Route::get('/admin/manage-service/insert', function () {
     return view('admin.insertService');
 });
+
+Route::get('/doctor', function () {
+    return view('doctor.index');
+});
+
+Route::get('/doctor/appointment', function () {
+    return view('doctor.myAppointment');
+});
+
+Route::get('/doctor/patient', function () {
+    return view('doctor.patient');
+});
+
+Route::get('/doctor/profile', function () {
+    return view('doctor.myProfile');
+});

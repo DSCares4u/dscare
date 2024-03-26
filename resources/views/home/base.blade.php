@@ -58,7 +58,7 @@
             <p>For Mumbai Enquiries: +91 7288818181</p>
             <div class="float-end md:order-2 space-x-3 pr-5 md:space-x-0 rtl:space-x-reverse">
                 <button type="button"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-2xl text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login/Sign
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-2xl text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="loginForm">Login/Sign
                     Up</button>
                 <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -103,8 +103,58 @@
                 </li>
             </ul>
         </div>
-
     </nav>
+
+    <!-- Login work -->
+
+    <div id="login" class="hidden fixed inset-0 items-center justify-center z-50 mt-20">
+        <div class="modal-content  bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto p-4">
+            <div class="flex justify-end pr-4">
+                <button id="closeFormButton" class="text-3xl leading-none hover:text-gray-300">&times;</button>
+            </div>
+            <div class="py-2 px-10">
+                <h2 class="text-xl font-bold mb-2">Login Form</h2>
+                <form>
+                    <div class="mb-1">
+                        <label for="mobile_no" class="block text-gray-700 font-bold mb-1">Mobile No:</label>
+                        <input type="tel" id="mobile_no" name="mobile_no" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            placeholder="Enter your Mobile No">
+                    </div>
+                    <div class="mb-2">
+                        <a href="" class="text-green-500 text-sm hover:underline ">Verify Now</a>
+                    </div>
+                    <div class="mb-2">
+                        <label for="otp" class="block text-gray-700 font-bold mb-1">Enter Your OTP:</label>
+                        <input type="number" id="otp" name="otp" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            placeholder="Enter your OTP">
+                    </div>
+                    <div class="flex justify-center">
+                    <button type="submit "class="mt-2 w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">Login Now</button>
+
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // JavaScript to handle opening and closing of the form
+        document.addEventListener('DOMContentLoaded', function() {
+            let openFormButton = document.getElementById('loginForm');
+            let closeFormButton = document.getElementById('closeFormButton');
+            let loginForm = document.getElementById('login');
+
+            openFormButton.addEventListener('click', function() {
+                loginForm.classList.remove('hidden');
+            });
+
+            closeFormButton.addEventListener('click', function() {
+                loginForm.classList.add('hidden');
+            });
+        });
+    </script>
 
 
 

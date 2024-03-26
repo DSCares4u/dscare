@@ -94,32 +94,40 @@
 <div id="applicationForm" class="hidden fixed inset-0 items-center justify-center z-50 ">
     <div class="modal-content  bg-white w-11/12 md:max-w-lg mx-auto mt-2  rounded shadow-lg z-50 overflow-y-auto h-[80%]">
        
-        <div class="flex py-2 px-2">
+        <div class="flex py-2 px-1">
             <img src="/images/book.png" class="w-5/12" alt="">
-            <div class=" w-7/12">
+            <div class=" w-7/12 mt-12">
 
                 <h2 class="text-xl font-bold mb-2 text-center">Booking A Service</h2>
                 <form class="p-4">
                     <div class="mb-2">
-                        <input type="text" id="name" name="name" class="form-input w-full"
+                        <input type="text" id="name" name="name" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Name">
                     </div>
                     <div class="flex gap-3 mb-2">
                         <div class="w-1/2">
-                            <input type="tel" id="mobile_no" name="mobile_no" class="form-input w-full"
+                            <input type="tel" id="mobile_no" name="mobile_no" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Phone">
                         </div>
                         <div class=" w-1/2">
-                            <input type="email" id="email" name="email" class="form-input w-full"
+                            <input type="email" id="email" name="email" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Email">
                         </div>
                     </div>                    
                     <div class="mb-2">
-                        <input type="text" id="address" name="address" class="form-input w-full"
+                        <input type="text" id="address" name="address" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Address">
                     </div>
                     <div class="mb-2">
-                        <textarea id="description" name="description" rows="2" class="form-textarea w-full"
+                        <select name="service" id="service_id" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-500">
+                            <option value="">Select Service</option>
+                            <option value="">Book Ambulance</option>
+                            <option value="">Buy Medicine</option>
+                            <option value="">Lab Tests</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <textarea id="description" name="description" rows="2" class="form-textarea form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Message"></textarea>
                     </div>
                     <button id="closeFormButton"
