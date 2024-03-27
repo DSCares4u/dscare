@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>DSCare4U</title>
 </head>
 
@@ -115,21 +119,25 @@
             <div class="py-2 px-10">
                 <h2 class="text-xl font-bold mb-2">Login Form</h2>
                 <form>
+                    @csrf
                     <div class="mb-1">
-                        <label for="mobile_no" class="block text-gray-700 font-bold mb-1">Mobile No:</label>
-                        <input type="tel" id="mobile_no" name="mobile_no" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        <label for="mobile" class="block text-gray-700 font-bold mb-1">Mobile No:</label>
+                        <input type="tel" id="mobile" name="mobile" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Enter your Mobile No">
                     </div>
                     <div class="mb-2">
-                        <a href="" class="text-green-500 text-sm hover:underline ">Verify Now</a>
+                        <button type="button" id="sendOTP" class="text-green-500 text-sm hover:underline ">Send Otp</button>
                     </div>
-                    <div class="mb-2">
+                    <div class="mb-2" id="otpSection" style="display:none;">
                         <label for="otp" class="block text-gray-700 font-bold mb-1">Enter Your OTP:</label>
-                        <input type="number" id="otp" name="otp" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        <input type="text" id="otp" name="otp" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Enter your OTP">
+                        <button type="button" id="verifyOTP">Verify OTP</button>
                     </div>
                     <div class="flex justify-center">
-                    <button type="submit "class="mt-2 w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">Login Now</button>
+                    <!-- <button type="submit "class="mt-2 w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">Login Now</button> -->
+
+                    <div id="message"></div>
 
                     </div>
                     
@@ -141,20 +149,117 @@
 
     <script>
         // JavaScript to handle opening and closing of the form
-        document.addEventListener('DOMContentLoaded', function() {
-            let openFormButton = document.getElementById('loginForm');
-            let closeFormButton = document.getElementById('closeFormButton');
-            let loginForm = document.getElementById('login');
+       
 
-            openFormButton.addEventListener('click', function() {
-                loginForm.classList.remove('hidden');
-            });
+    //     $(document).ready(function(){
+    //         $('#sendOTP').on('click',function(){
+    //             let mobile = $('input[name="mobile"]').val();
 
-            closeFormButton.addEventListener('click', function() {
-                loginForm.classList.add('hidden');
-            });
+    //             $.ajax([
+    //                 type:"POST",
+    //                 url:'api/login',
+    //                 data:{
+    //                     mobile: mobile 
+    //                 },
+    //                 success: function(response){
+    //                     $('#otpSection').show();
+    //                     $('#message').html(response.message);
+    //                 },
+    //                 error: function(xhr,status,error){
+    //                     $('#message').html(xhr.responseJSON.message);
+    //                 }
+    //             ]);
+    //         });
+
+    //         $('#verifyOTP').on('click',function(){
+    //             let otp = $('input[name="otp"]').val();
+
+    //             $.ajax({
+    //                 type: POST,
+    //                 url:'api/verify-otp',
+    //                 data:{
+    //                     otp: otp
+    //                 },
+    //                 success: function(response){
+    //                     window.open('/home/index','_self');
+    //                 },
+    //                 error: function(xhr,status,error){
+    //                     $('#message').html(xhr.responseJSON.message);
+    //                 }
+    //             });
+    //         })
+    //     });
+
+    //     document.addEventListener('DOMContentLoaded', function() {
+    //         let openFormButton = document.getElementById('loginForm');
+    //         let closeFormButton = document.getElementById('closeFormButton');
+    //         let loginForm = document.getElementById('login');
+
+    //         openFormButton.addEventListener('click', function() {
+    //             loginForm.classList.remove('hidden');
+    //         });
+
+    //         closeFormButton.addEventListener('click', function() {
+    //             loginForm.classList.add('hidden');
+    //         });
+    //     });
+
+</script>
+<script>
+    $(document).ready(function(){
+    $('#sendOTP').on('click',function(){
+        let mobile = $('input[name="mobile"]').val();
+
+        $.ajax({
+            type: "POST",
+            url: 'api/login',
+            data: {
+                mobile: mobile 
+            },
+            success: function(response){
+                console.log(response.data);
+                $('#otpSection').show();
+                $('#message').html(response.message);
+            },
+            error: function(xhr,status,error){
+                $('#message').html(xhr.responseJSON.message);
+            }
         });
-    </script>
+    });
+
+    $('#verifyOTP').on('click',function(){
+        let otp = $('input[name="otp"]').val();
+
+        $.ajax({
+            type: "POST",
+            url: 'api/verify-otp',
+            data: {
+                otp: otp
+            },
+            success: function(response){
+                window.open('/home/index','_self');
+            },
+            error: function(xhr,status,error){
+                $('#message').html(xhr.responseJSON.message);
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    let openFormButton = document.getElementById('loginForm');
+    let closeFormButton = document.getElementById('closeFormButton');
+    let loginForm = document.getElementById('login');
+
+    openFormButton.addEventListener('click', function() {
+        loginForm.classList.remove('hidden');
+    });
+
+    closeFormButton.addEventListener('click', function() {
+        loginForm.classList.add('hidden');
+    });
+});
+</script>
 
 
 
