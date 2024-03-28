@@ -8,7 +8,7 @@
                 <h3 class="text-xl font-semibold">Add New Plan</h3>
             </div>
             <div class="p-3">
-                <form id="addDoctor">
+                <form id="insertPlan">
                     <div class="mb-4">
                         <label for="name" class="block text-sm font-medium text-gray-700">Plan Name</label>
                         <input type="text" id="name" name="name"
@@ -23,7 +23,7 @@
                     </div>
                     <div class="mb-4">
                         <label for="features" class="block text-sm font-medium text-gray-700">Features</label>
-                        <input type="text" id="features" name="features"
+                        <input type="text" id="feature" name="feature"
                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             required>
                     </div>
@@ -56,5 +56,31 @@
         </div>
     </div>
 </div>
+
+<script>
+        $(document).ready(function() {
+            //insert new Plan
+            $("#insertPlan").submit(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('plan.store') }}",
+                    data: new FormData(this),
+                    dataType: "JSON",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(response) {
+                        swal("Success", response.message, "success");
+                        $("#insertPlan").trigger("reset");
+
+                        window.open("/admin/manage-plan", "_self")
+
+                    }
+                })
+            })
+        })
+    </script>
+
 
 @endsection

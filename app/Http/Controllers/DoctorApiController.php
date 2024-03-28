@@ -15,7 +15,19 @@ class DoctorApiController extends Controller
      */
     public function index()
     {
-        //
+        $doctor = Doctor::all();
+        if($doctor->count() > 0){
+
+            return response()->json([
+                'status'=>200,
+                'doctors'=>$doctor
+            ],200);
+        }else{
+            return response()->json([
+                'status'=>404,
+                'doctors'=>"No Record found"
+            ],404); 
+        }
     }
 
     /**
@@ -34,9 +46,60 @@ class DoctorApiController extends Controller
      * @param  \App\Http\Requests\StoreDoctorRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDoctorRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|min:3',
+            'email' => 'required|email',
+            'age' => 'required|digit',
+            'mobile' => 'required|digit|min:10',
+            'gender' => 'required|in:male,female,ohers',
+            'specialization' => 'required|string',
+            'experience' => 'required|string',
+            'qualification' => 'required|string',
+            'visiting_charge' => 'required|digit',
+            'online_charge' => 'required|digit',
+            'landmark' => 'required|string',
+            'city' => 'required|string',
+            'state' => 'required|string',
+          
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 422,
+                'error' => $validator->messages()
+            ], 422);
+        } else {
+            $doctor = Doctor::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'age' => $request->age,
+                'mobile' => $request->mobile,
+                'gender' => $request->gender,
+                'specialization' => $request->specialization,
+                'experience' => $request->experience,
+                'qualification' => $request->qualification,
+                'visiting_charge' => $request->visiting_charge,
+                'online_charge' => $request->online_charge,
+                'landmark' => $request->landmark,
+                'city' => $request->city,
+                'state' => $request->state,
+               
+            ]);
+    
+            if ($doctor) {
+                return response()->json([
+                    'status' => 200,
+                    'message' => "Doctor Added Successfully"
+                ], 200);
+            } else {
+                return response()->json([
+                    'status' => 500,
+                    'message' => "Unable to add Doctor"
+                ], 500);
+            }
+        }
     }
 
     /**
