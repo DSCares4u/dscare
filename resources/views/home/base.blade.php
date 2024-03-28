@@ -132,7 +132,7 @@
                         <label for="otp" class="block text-gray-700 font-bold mb-1">Enter Your OTP:</label>
                         <input type="text" id="otp" name="otp" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Enter your OTP">
-                        <button type="button" id="verifyOTP">Verify OTP</button>
+                        <button type="button" id="verifyOTP"class="mt-2 w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded " >Verify OTP</button>
                     </div>
                     <div class="flex justify-center">
                     <!-- <button type="submit "class="mt-2 w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">Login Now</button> -->

@@ -49,11 +49,11 @@ class AuthController extends Controller
         $mobile = $request->input('mobile');
         $otp = mt_rand(10000,99999);
 
-        $request->session()->put('mobile',$mobile);
-        $request->session()->put('otp',$otp);
+        // $request->session()->put('mobile',$mobile);
+        // $request->session()->put('otp',$otp);
 
-        // session(['mobile'=>$mobile,'otp'=>$otp]);
-        // session(['otp'=>$otp,'otp'=>$otp]);
+        session(['mobile'=>$mobile,'otp'=>$otp]);
+        session(['otp'=>$otp,'otp'=>$otp]);
 
         return response()->json(['success'=>true,'message'=>'Otp Sent Successssfully']);
 
