@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PlanApiController;
 use App\Http\Controllers\DoctorApiController;
+use App\Http\Controllers\ServiceApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,10 @@ Route::get('doctor/{id}',[DoctorApiController::class,'show']);
 Route::get('doctor/{id}/edit',[DoctorApiController::class,'edit']);
 Route::put('doctor/{id}/edit',[DoctorApiController::class,'update']);
 Route::delete('doctor/{id}/delete',[DoctorApiController::class,'destroy']);
+
+Route::post('doctor',[ServiceApiController::class,'store'])->name('service.store');
+Route::get('doctor',[ServiceApiController::class,'index'])->name('service.index');
+Route::get('doctor/{id}',[ServiceApiController::class,'show']);
+Route::get('doctor/{id}/edit',[ServiceApiController::class,'edit']);
+Route::put('doctor/{id}/edit',[ServiceApiController::class,'update']);
+Route::delete('doctor/{id}/delete',[ServiceApiController::class,'destroy']);

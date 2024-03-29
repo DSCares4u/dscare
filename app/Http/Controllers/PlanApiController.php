@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Plan;
 use Illuminate\Http\Request;
-use App\Http\Requests\UpdatePlanRequest;
 use Validator;
 
 class PlanApiController extends Controller
@@ -21,12 +20,12 @@ class PlanApiController extends Controller
 
             return response()->json([
                 'status'=>200,
-                'plans'=>$plan
+                'data'=>$plan
             ],200);
         }else{
             return response()->json([
                 'status'=>404,
-                'plans'=>"No Record found"
+                'data'=>"No Record found"
             ],404); 
         }
     }

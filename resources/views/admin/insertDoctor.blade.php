@@ -31,8 +31,8 @@
                                 required placeholder="e.g. abckumar@gmail.com">
                         </div>
                         <div class=" w-1/2">
-                            <label for="mobile_no" class="block text-sm font-medium text-gray-700">Contact No.</label>
-                            <input type="tel" id="mobile_no" name="mobile_no"
+                            <label for="mobile" class="block text-sm font-medium text-gray-700">Contact No.</label>
+                            <input type="tel" id="mobile" name="mobile"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 required placeholder="e.g. 1234567890">
                         </div>
@@ -49,9 +49,9 @@
                             <select name="gender" id="gender" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 required>
                                 <option value="">Select Gender</option>
-                                <option value="m">Male</option>
-                                <option value="f">Female</option>
-                                <option value="o">Others</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
                             </select>
                         </div>
                     </div>
@@ -77,23 +77,18 @@
                     </div>
                     <div class="flex mb-4 gap-2">
                         <div class=" w-1/2">
-                            <label for="visiting_fees" class="block text-sm font-medium text-gray-700">Visiting Charge</label>
-                            <input type="number" id="visiting_fees" name="visiting_fees"
+                            <label for="visiting_charge" class="block text-sm font-medium text-gray-700">Visiting Charge</label>
+                            <input type="number" id="visiting_charge" name="visiting_charge"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 required placeholder="e.g. Rs. 500">
                         </div>
                         <div class="w-1/2">
-                            <label for="online_fees" class="block text-sm font-medium text-gray-700">Online Checkup Charge</label>
-                            <input type="number" id="online_fees" name="online_fees"
+                            <label for="online_charge" class="block text-sm font-medium text-gray-700">Online Checkup Charge</label>
+                            <input type="number" id="online_charge" name="online_charge"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 required placeholder="e.g. Rs.400">
                         </div>
                     </div>
-                    <!-- <div class="mb-4">
-                        <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
-                        <textarea name="address" id="address" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                required placeholder="e.g. 123, abc road, near xyz Chowk, Purnea, Bihar "></textarea>
-                    </div> -->
                     <div class="mb-4 flex gap-2">
                         <div class=" w-1/3">
                                 <label for="landmark" class="block text-sm font-medium text-gray-700">Landmark</label>
@@ -124,5 +119,31 @@
         </div>
     </div>
 </div>
+
+
+<script>
+        $(document).ready(function() {
+            //insert new Plan
+            $("#addDoctor").submit(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('doctor.store') }}",
+                    data: new FormData(this),
+                    dataType: "JSON",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(response) {
+                        swal("Success", response.message, "success");
+                        $("#addDoctor").trigger("reset");
+
+                        window.open("/admin/manage-doctor", "_self");
+
+                    }
+                })
+            })
+        })
+</script>
 
 @endsection

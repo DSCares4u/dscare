@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
-use App\Http\Requests\StoreDoctorRequest;
-use App\Http\Requests\UpdateDoctorRequest;
+use Illuminate\Http\Request;
+use Validator;
 
 class DoctorApiController extends Controller
 {
@@ -20,12 +20,12 @@ class DoctorApiController extends Controller
 
             return response()->json([
                 'status'=>200,
-                'doctors'=>$doctor
+                'data'=>$doctor
             ],200);
         }else{
             return response()->json([
                 'status'=>404,
-                'doctors'=>"No Record found"
+                'data'=>"No Record found"
             ],404); 
         }
     }
@@ -51,14 +51,14 @@ class DoctorApiController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|min:3',
             'email' => 'required|email',
-            'age' => 'required|digit',
-            'mobile' => 'required|digit|min:10',
+            'age' => 'required|numeric|min:2',
+            'mobile' => 'required|digits:10',
             'gender' => 'required|in:male,female,ohers',
             'specialization' => 'required|string',
             'experience' => 'required|string',
             'qualification' => 'required|string',
-            'visiting_charge' => 'required|digit',
-            'online_charge' => 'required|digit',
+            'visiting_charge' => 'required|numeric',
+            'online_charge' => 'required|numeric',
             'landmark' => 'required|string',
             'city' => 'required|string',
             'state' => 'required|string',
@@ -85,7 +85,6 @@ class DoctorApiController extends Controller
                 'landmark' => $request->landmark,
                 'city' => $request->city,
                 'state' => $request->state,
-               
             ]);
     
             if ($doctor) {
