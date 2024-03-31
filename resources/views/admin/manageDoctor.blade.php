@@ -85,8 +85,6 @@
                 success: function(response) {
                     let table = $("#callingDoctor");
                     table.empty();
-                    console.log(response.data);
-
                     let data = response.data;
 
                     // Update doctor count
@@ -97,7 +95,7 @@
                         table.append(`
                             <tr class="hover:bg-gray-100 mt-5 px-3 py-3 capitalize">
                                 <td class="border-b border-gray-200 text-center text-sm">${data.id}</td> 
-                                <td class="border-b border-gray-200 text-center text-sm"></td> 
+                                <td class="border-b border-gray-200 text-center text-sm"><img src="/image/doctor/${data.image}" width="80px" height="50px" alt=""></td> 
                                 <td class="border-b border-gray-200 text-center text-sm">${data.name}</td> 
                                 <td class="border-b border-gray-200 text-center text-sm">${data.specialization}</td> 
                                 <td class="border-b border-gray-200 text-center text-sm">${data.landmark},${data.city},${data.city}</td> 

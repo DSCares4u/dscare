@@ -33,12 +33,12 @@ Route::get('plan/{id}/edit',[PlanApiController::class,'edit']);
 Route::put('plan/{id}/edit',[PlanApiController::class,'update']);
 Route::delete('plan/{id}/delete',[PlanApiController::class,'destroy']);
 
-Route::post('doctor',[DoctorApiController::class,'store'])->name('doctor.store');
-Route::get('doctor',[DoctorApiController::class,'index'])->name('doctor.index');
+Route::post('admin/doctor',[DoctorApiController::class,'store'])->name('doctor.store');
+Route::get('admin/doctor',[DoctorApiController::class,'index'])->name('doctor.index');
 Route::get('doctor/{id}',[DoctorApiController::class,'show']);
-Route::get('doctor/{id}/edit',[DoctorApiController::class,'edit']);
-Route::put('doctor/{id}/edit',[DoctorApiController::class,'update']);
-Route::delete('doctor/{id}/delete',[DoctorApiController::class,'destroy']);
+Route::get('admin/doctor/{id}/edit',[DoctorApiController::class,'edit']);
+Route::put('admin/doctor/{id}/edit',[DoctorApiController::class,'update']);
+Route::delete('admin/doctor/{id}/delete',[DoctorApiController::class,'destroy']);
 
 Route::post('doctor',[ServiceApiController::class,'store'])->name('service.store');
 Route::get('doctor',[ServiceApiController::class,'index'])->name('service.index');

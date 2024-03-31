@@ -52,8 +52,9 @@ class DoctorApiController extends Controller
             'name' => 'required|string|min:3',
             'email' => 'required|email',
             'age' => 'required|numeric|min:2',
-            'mobile' => 'required|digits:10',
-            'gender' => 'required|in:male,female,ohers',
+            'mobile' => 'required',
+            'image' => 'required',
+            'gender' => 'required|in:male,female,others',
             'specialization' => 'required|string',
             'experience' => 'required|string',
             'qualification' => 'required|string',
@@ -64,13 +65,19 @@ class DoctorApiController extends Controller
             'state' => 'required|string',
           
         ]);
-    
+
         if ($validator->fails()) {
             return response()->json([
                 'status' => 422,
                 'error' => $validator->messages()
             ], 422);
         } else {
+
+            // image work
+
+            $filename = time() . "." . $request->image->extension();        //upload on public/doctor/image/filename
+            $request->image->move(public_path("image/doctor"), $filename);
+
             $doctor = Doctor::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -85,6 +92,7 @@ class DoctorApiController extends Controller
                 'landmark' => $request->landmark,
                 'city' => $request->city,
                 'state' => $request->state,
+                'image' => $filename
             ]);
     
             if ($doctor) {
