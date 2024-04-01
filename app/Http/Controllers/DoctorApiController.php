@@ -92,7 +92,7 @@ class DoctorApiController extends Controller
                 'landmark' => $request->landmark,
                 'city' => $request->city,
                 'state' => $request->state,
-                'image' => $filename
+                'image' => $filename,
             ]);
     
             if ($doctor) {

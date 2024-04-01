@@ -297,6 +297,7 @@
     </script>
 @endsection
 
+
 let featuresArray = JSON.parse(response.data.features);
 // Clear any existing features
 $('#courseFeatures').empty();

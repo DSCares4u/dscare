@@ -76,6 +76,14 @@ Route::get('/admin/manage-plan/insert', function () {
     return view('admin.insertPlan');
 });
 
+Route::get('/admin/manage-appointment/insert', function () {
+    return view('admin.insertAppointment');
+});
+
+Route::get('/admin/manage-appointment', function () {
+    return view('admin.manageAppointment');
+});
+
 Route::get('/admin/manage-service', function () {
     return view('admin.manageService');
 });

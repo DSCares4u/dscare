@@ -40,17 +40,13 @@ class PlanApiController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StorePlanRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|min:3',
-            'feature' => 'required|string|min:2',
+            // 'feature' => 'required',
+            'image' => 'required',
             'price' => 'required|numeric|min:0', // Corrected validation rules
             'discount_price' => 'required|numeric|min:0', // Corrected validation rules
             'recommendation' => 'required|string|min:2',
@@ -62,14 +58,21 @@ class PlanApiController extends Controller
                 'error' => $validator->messages()
             ], 422);
         } else {
+
+    // image work
+
+            $filename = time() . "." . $request->image->extension();        //upload on public/doctor/image/filename
+            $request->image->move(public_path("image/plan"), $filename);
+
             $plan = Plan::create([
                 'name' => $request->name,
-                'feature' => $request->feature,
+                // 'feature' => $request->feature,
+                // 'feature' => $request->json_encode($feature),
                 'price' => $request->price,
                 'discount_price' => $request->discount_price,
                 'recommendation' => $request->recommendation,
-            ]);
-    
+                'image' => $filename,
+            ]);    
             if ($plan) {
                 return response()->json([
                     'status' => 200,
@@ -198,7 +201,6 @@ class PlanApiController extends Controller
                 'status' => 500,
                 'message' => "No Plan Found"
             ], 500);
-        }
-        
+        }       
     }
 }
