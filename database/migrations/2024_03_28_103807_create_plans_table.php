@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->string('feature');
+            $table->json('features')->nullable();
             $table->integer('price');
             $table->integer('discount_price');
             $table->string('recommendation');
