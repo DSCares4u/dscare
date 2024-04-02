@@ -23,9 +23,8 @@
                     </div>
                     <div class="mb-4">
                         <label for="features" class="block text-sm font-medium text-gray-700">Features</label>
-                        <input type="text" id="feature" name="feature"
-                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                            required>
+                            <textarea name="features" id="features" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                required ></textarea>
                     </div>
                     <div class="flex gap-2">
                         <div class="mb-4 w-1/2">
@@ -62,25 +61,36 @@
             //insert new Plan
             $("#insertPlan").submit(function(e) {
                 e.preventDefault();
+                let features = $("#features").val().split('\n');
+                let formData = new FormData();
+                formData.append('name', $("#name").val());
+                formData.append('image', $("#image")[0].files[0]);
+                formData.append('price', $("#price").val());
+                formData.append('discount_price', $("#discount_price").val());
+                formData.append('recommendation', $("#recommendation").val());
+                formData.append('features', features);
                 $.ajax({
                     type: "POST",
                     url: "{{ route('plan.store') }}",
-                    data: new FormData(this),
-                    dataType: "JSON",
+                    data: formData,
                     contentType: false,
                     cache: false,
                     processData: false,
                     success: function(response) {
                         swal("Success", response.message, "success");
-                        $("#insertPlan").trigger("reset");
+                        $("#insertPlan")[0].reset();
+                        // $("#insertPlan").trigger("reset");
 
                         window.open("/admin/manage-plan", "_self")
 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        alert("Error: " + xhr.responseText);
                     }
-                })
+                });
             })
         })
 </script>
-
 
 @endsection

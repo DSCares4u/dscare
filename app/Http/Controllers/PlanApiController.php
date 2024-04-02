@@ -45,7 +45,7 @@ class PlanApiController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|min:3',
-            // 'feature' => 'required',
+            'features' => 'required',
             'image' => 'required',
             'price' => 'required|numeric|min:0', // Corrected validation rules
             'discount_price' => 'required|numeric|min:0', // Corrected validation rules
@@ -66,13 +66,14 @@ class PlanApiController extends Controller
 
             $plan = Plan::create([
                 'name' => $request->name,
-                // 'feature' => $request->feature,
+                'features' => $request->features,
                 // 'feature' => $request->json_encode($feature),
                 'price' => $request->price,
                 'discount_price' => $request->discount_price,
                 'recommendation' => $request->recommendation,
                 'image' => $filename,
             ]);    
+            dd($plan);
             if ($plan) {
                 return response()->json([
                     'status' => 200,
