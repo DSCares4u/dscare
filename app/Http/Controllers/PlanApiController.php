@@ -40,40 +40,41 @@ class PlanApiController extends Controller
         //
     }
 
- 
     public function store(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|min:3',
-            'features' => 'required',
-            'image' => 'required',
-            'price' => 'required|numeric|min:0', // Corrected validation rules
-            'discount_price' => 'required|numeric|min:0', // Corrected validation rules
-            'recommendation' => 'required|string|min:2',
-        ]);
-    
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => 422,
-                'error' => $validator->messages()
-            ], 422);
-        } else {
+{
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|string|min:3',
+        'features' => 'required', // Ensure features is an array
+        'image' => 'required|image',
+        'price' => 'required|numeric|min:0',
+        'discount_price' => 'required|numeric|min:0',
+        'recommendation' => 'required|string|min:2',
+    ]);
 
-    // image work
+    if ($validator->fails()) {
+        return response()->json([
+            'status' => 422,
+            'error' => $validator->messages()
+        ], 422);
+    } else {
+        // Handle image upload
+        $filename = time() . "." . $request->image->extension();
+        $request->image->move(public_path("image/plan"), $filename);
 
-            $filename = time() . "." . $request->image->extension();        //upload on public/doctor/image/filename
-            $request->image->move(public_path("image/plan"), $filename);
+        // Convert features to JSON
+        $featuresJson = json_encode($request->features);
 
+        // Create plan
+        try {
             $plan = Plan::create([
                 'name' => $request->name,
-                'features' => $request->features,
-                // 'feature' => $request->json_encode($feature),
+                'features' => $featuresJson,
                 'price' => $request->price,
                 'discount_price' => $request->discount_price,
                 'recommendation' => $request->recommendation,
                 'image' => $filename,
-            ]);    
-            dd($plan);
+            ]);
+
             if ($plan) {
                 return response()->json([
                     'status' => 200,
@@ -85,8 +86,15 @@ class PlanApiController extends Controller
                     'message' => "Unable to add Plan"
                 ], 500);
             }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 500,
+                'message' => "Error: " . $e->getMessage()
+            ], 500);
         }
     }
+}
+
     
 
     /**

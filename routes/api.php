@@ -29,28 +29,28 @@ Route::post('/verify-otp',[AuthController::class,'verifyOtp'])->name('api.verify
 
 Route::post('admin/plan',[PlanApiController::class,'store'])->name('plan.store');
 Route::get('admin/plan',[PlanApiController::class,'index'])->name('plan.index');
-Route::get('admin/plan/{id}',[PlanApiController::class,'show']);
-Route::get('admin/plan/{id}/edit',[PlanApiController::class,'edit']);
-Route::put('admin/plan/{id}/edit',[PlanApiController::class,'update']);
-Route::delete('admin/plan/{id}/delete',[PlanApiController::class,'destroy']);
+Route::get('admin/manage-plan/{id}',[PlanApiController::class,'show']);
+Route::get('admin/manage-plan/edit/{id}',[PlanApiController::class,'edit']);
+Route::put('admin/manage-plan/edit/{id}',[PlanApiController::class,'update']);
+Route::delete('admin/manage-plan/delete/{id}',[PlanApiController::class,'destroy']);
 
 Route::post('admin/doctor',[DoctorApiController::class,'store'])->name('doctor.store');
 Route::get('admin/doctor',[DoctorApiController::class,'index'])->name('doctor.index');
-Route::get('admin/doctor/{id}',[DoctorApiController::class,'show']);
-Route::get('admin/doctor/{id}/edit',[DoctorApiController::class,'edit']);
-Route::put('admin/doctor/{id}/edit',[DoctorApiController::class,'update']);
-Route::delete('admin/doctor/{id}/delete',[DoctorApiController::class,'destroy']);
+Route::get('admin/manage-doctor/{id}',[DoctorApiController::class,'show']);
+Route::get('admin/manage-doctor/edit/{id}',[DoctorApiController::class,'edit']);
+Route::put('admin/manage-doctor/edit/{id}',[DoctorApiController::class,'update']);
+Route::delete('admin/manage-doctor/delete/{id}',[DoctorApiController::class,'destroy']);
 
 Route::post('/admin/service',[ServiceApiController::class,'store'])->name('service.store');
 Route::get('/admin/service',[ServiceApiController::class,'index'])->name('service.index');
-Route::get('/admin/service/{id}',[ServiceApiController::class,'show']);
-Route::get('/admin/service/{id}/edit',[ServiceApiController::class,'edit']);
-Route::put('/admin/service/{id}/edit',[ServiceApiController::class,'update']);
-Route::delete('/admin/service/{id}/delete',[ServiceApiController::class,'destroy']);
+Route::get('/admin/manage-service/{id}',[ServiceApiController::class,'show']);
+Route::get('/admin/manage-service/edit/{id}',[ServiceApiController::class,'edit']);
+Route::put('/admin/manage-service/edit/{id}',[ServiceApiController::class,'update']);
+Route::delete('/admin/manage-service/delete/{id}',[ServiceApiController::class,'destroy']);
 
 Route::post('/admin/appointment',[AppointmentApiController::class,'store'])->name('appointment.store');
 Route::get('/admin/appointment',[AppointmentApiController::class,'index'])->name('appointment.index');
-Route::get('/admin/appointment/{id}',[AppointmentApiController::class,'show']);
-Route::get('/admin/appointment/{id}/edit',[AppointmentApiController::class,'edit']);
-Route::put('/admin/appointment/{id}/edit',[AppointmentApiController::class,'update']);
-Route::delete('/admin/appointment/{id}/delete',[AppointmentApiController::class,'destroy']);
+Route::get('/admin/manage-appointment/{id}',[AppointmentApiController::class,'show']);
+Route::get('/admin/manage-appointment/edit/{id}',[AppointmentApiController::class,'edit']);
+Route::put('/admin/manage-appointment/edit/{id}',[AppointmentApiController::class,'update']);
+Route::delete('/admin/manage-appointment/delete/{id}',[AppointmentApiController::class,'destroy']);

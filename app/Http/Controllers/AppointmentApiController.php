@@ -129,8 +129,21 @@ class AppointmentApiController extends Controller
      * @param  \App\Models\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Appointment $appointment)
+    public function destroy($id)
     {
-        //
+        $appointment  = Appointment::find($id);
+        if($appointment){
+            $appointment->delete();
+            return response()->json([
+                'status' => 200,
+                'message' => "Appointment Deleted Successfully"
+            ], 200);
+        }
+        else{
+            return response()->json([
+                'status' => 500,
+                'message' => "No Appointment Found"
+            ], 500);
+        }       
     }
 }

@@ -56,7 +56,7 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
         $(document).ready(function() {
             //insert new Plan
             $("#insertPlan").submit(function(e) {
@@ -77,6 +77,7 @@
                     cache: false,
                     processData: false,
                     success: function(response) {
+                        console.log(response)
                         swal("Success", response.message, "success");
                         $("#insertPlan")[0].reset();
                         // $("#insertPlan").trigger("reset");
@@ -91,6 +92,72 @@
                 });
             })
         })
+</script> -->
+
+<script>
+    $(document).ready(function() {
+    //insert new Plan
+    $("#insertPlan").submit(function(e) {
+        e.preventDefault();
+        let features = $("#features").val().split();
+        // Remove empty values from the features array
+        features = features.filter(feature => feature.trim() !== '');
+        let formData = new FormData();
+        formData.append('name', $("#name").val());
+        formData.append('image', $("#image")[0].files[0]);
+        formData.append('price', $("#price").val());
+        formData.append('discount_price', $("#discount_price").val());
+        formData.append('recommendation', $("#recommendation").val());
+        // Convert features array to JSON string
+        formData.append('features', JSON.stringify(features));
+        $.ajax({
+            type: "POST",
+            url: "{{ route('plan.store') }}",
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(response) {
+                console.log(response)
+                swal("Success", response.message, "success");
+                $("#insertPlan")[0].reset();
+                // $("#insertPlan").trigger("reset");
+
+                window.open("/admin/manage-plan", "_self")
+
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+                alert("Error: " + xhr.responseText);
+            }
+        });
+    })
+});
+
 </script>
+
+<!-- <script>
+    $(document).ready(function() {
+        //insert new Plan
+        $("#insertPlan").submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "{{ route('plan.store') }}",
+                data: new FormData(this),
+                dataType: "JSON",
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(response) {
+                    swal("Success", response.message, "success");
+                    $("#insertPlan").trigger("reset");
+                    window.open("/admin/manage-plan", "_self")
+
+                }
+            })
+        })
+    })
+</script> -->
 
 @endsection

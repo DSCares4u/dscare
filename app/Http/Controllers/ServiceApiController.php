@@ -129,8 +129,21 @@ class ServiceApiController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy($id)
     {
-        //
+        $service  = Service::find($id);
+        if($service){
+            $service->delete();
+            return response()->json([
+                'status' => 200,
+                'message' => "Service Deleted"
+            ], 200);
+        }
+        else{
+            return response()->json([
+                'status' => 500,
+                'message' => "No Service Found"
+            ], 500);
+        }       
     }
 }

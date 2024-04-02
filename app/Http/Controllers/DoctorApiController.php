@@ -149,8 +149,21 @@ class DoctorApiController extends Controller
      * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Doctor $doctor)
+    public function destroy($id)
     {
-        //
+        $doctor  = Doctor::find($id);
+        if($doctor){
+            $doctor->delete();
+            return response()->json([
+                'status' => 200,
+                'message' => "Doctor Deleted Successfully"
+            ], 200);
+        }
+        else{
+            return response()->json([
+                'status' => 500,
+                'message' => "No Doctor Found"
+            ], 500);
+        }       
     }
 }
