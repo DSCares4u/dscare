@@ -146,22 +146,6 @@
         </div>
     </aside>
 
-    <!-- <script>
-      $(document).ready(function() {
-
-        $.ajax({
-            url:"#",
-            type:"GET",
-            success: function(response) {
-                  $(".countAppointment").html(response.appointment);
-              },
-              error: function(xhr, status, error) {
-                  console.error("Error fetching project count:", error);
-              }
-        })
-      });
-  </script> -->
-
     <div class="p-4 sm:ml-64">
 
         @section('content')

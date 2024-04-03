@@ -74,7 +74,7 @@
         </div>
     </div>
 
-    <script>
+<script>
     $(document).ready(function() {
         // Function to fetch and display doctor
         let callingAppointment = () => {

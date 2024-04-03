@@ -31,27 +31,44 @@
                     </a>
                 </div>
                 <div class="flow-root">
-                    <ul role="list" id="" class="divide-y divide-gray-200 dark:divide-gray-700">
-                        <li class="flex justify-around">
+                    <ul role="list" id="upcomingAppointment" class="divide-y divide-gray-200 dark:divide-gray-700">
+                        <li class="flex justify-around items-center mt-2 pt-2">
                             <p>Rohit Kumar</p>
                             <p>913654488</p>
                             <p>Dr. Rajiv Dixit</p>
                         </li>
-                        <li>
+                        <li class="flex justify-around items-center mt-2 pt-2">
                             <p>Rohit Kumar</p>
+                            <p>913654488</p>
+                            <p>Dr. Rajiv Dixit</p>
                         </li>
-                        <li>
+                        <li class="flex justify-around items-center mt-2 pt-2">
                             <p>Rohit Kumar</p>
+                            <p>913654488</p>
+                            <p>Dr. Rajiv Dixit</p>
                         </li>
-                        <li>
+                        <li class="flex justify-around items-center mt-2 pt-2">
                             <p>Rohit Kumar</p>
+                            <p>913654488</p>
+                            <p>Dr. Rajiv Dixit</p>
                         </li>
-                        <li>
+                        <li class="flex justify-around items-center mt-2 pt-2">
                             <p>Rohit Kumar</p>
+                            <p>913654488</p>
+                            <p>Dr. Rajiv Dixit</p>
                         </li>
-                        <li>
+                        <li class="flex justify-around items-center mt-2 pt-2">
                             <p>Rohit Kumar</p>
+                            <p>913654488</p>
+                            <p>Dr. Rajiv Dixit</p>
                         </li>
+                        <li class="flex justify-around items-center mt-2 pt-2">
+                            <p>Rohit Kumar</p>
+                            <p>913654488</p>
+                            <p>Dr. Rajiv Dixit</p>
+                        </li>
+                     
+                        
                     </ul>
                 </div>
             </div>
@@ -115,4 +132,44 @@
         </div>
     </div>
     
+
+
+
+<script>
+    $(document).ready(function() {
+        // Function to fetch and display doctor
+        let callingAppointment = () => {
+            $.ajax({
+                type: "GET",
+                url: "{{ route('appointment.index') }}",
+                success: function(response) {
+                    let table = $("#upcomingAppointment");
+                    table.empty();
+                    let data = response.data.slice(-8);
+
+                    // Update doctor count
+                    let len = data.length;
+                    $("#counting").html(len);
+
+                    data.forEach((data) => {
+                        table.append(`
+                            <li class="flex justify-around items-center mt-2 pt-2">
+                                <p>${data.name}</p>
+                                <p>${data.mobile}</p>
+                                <p>Dr. ${data.doctor}</p>
+                            </li>
+                        `);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+        callingAppointment();
+    });
+</script>
+
+
+
 @endsection
