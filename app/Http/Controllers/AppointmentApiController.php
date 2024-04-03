@@ -15,7 +15,7 @@ class AppointmentApiController extends Controller
      */
     public function index()
     {
-        $appointment = Appointment::all();
+        $appointment = Appointment::orderBy('created_at', 'desc')->get();;
         if($appointment->count() > 0){
 
             return response()->json([

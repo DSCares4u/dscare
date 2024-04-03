@@ -60,12 +60,18 @@ Route::get('/admin/manage-user/insert', function () {
     return view('admin.insertUser');
 });
 
-Route::get('/admin/manage-category', function () {
-    return view('admin.manageCategory');
+Route::get('/admin/manage-book-service', function () {
+    return view('admin.managebookService');
+});
+Route::get('/admin/manage-book-service/insert', function () {
+    return view('admin.bookService');
+});
+Route::get('/admin/manage-call', function () {
+    return view('admin.manageCall');
 });
 
-Route::get('/admin/manage-category/insert', function () {
-    return view('admin.insertCategory');
+Route::get('/admin/manage-call/insert', function () {
+    return view('admin.insertCall');
 });
 
 Route::get('/admin/manage-plan', function () {

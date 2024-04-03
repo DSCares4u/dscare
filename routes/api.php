@@ -6,7 +6,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PlanApiController;
 use App\Http\Controllers\DoctorApiController;
 use App\Http\Controllers\ServiceApiController;
+use App\Http\Controllers\BookServiceApiController;
 use App\Http\Controllers\AppointmentApiController;
+use App\Http\Controllers\CallApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +56,17 @@ Route::get('/admin/manage-appointment/{id}',[AppointmentApiController::class,'sh
 Route::get('/admin/manage-appointment/edit/{id}',[AppointmentApiController::class,'edit']);
 Route::put('/admin/manage-appointment/edit/{id}',[AppointmentApiController::class,'update']);
 Route::delete('/admin/manage-appointment/delete/{id}',[AppointmentApiController::class,'destroy']);
+
+Route::post('/admin/call',[CallApiController::class,'store'])->name('call.store');
+Route::get('/admin/call',[CallApiController::class,'index'])->name('call.index');
+Route::get('/admin/manage-call/{id}',[CallApiController::class,'show']);
+Route::get('/admin/manage-call/edit/{id}',[CallApiController::class,'edit']);
+Route::put('/admin/manage-call/edit/{id}',[CallApiController::class,'update']);
+Route::delete('/admin/manage-call/delete/{id}',[CallApiController::class,'destroy']);
+
+Route::post('/admin/book-service',[BookServiceApiController::class,'store'])->name('book.service.store');
+Route::get('/admin/book-service',[BookServiceApiController::class,'index'])->name('book.service.index');
+Route::get('/admin/manage-book-service/{id}',[BookServiceApiController::class,'show']);
+Route::get('/admin/manage-book-service/edit/{id}',[BookServiceApiController::class,'edit']);
+Route::put('/admin/manage-book-service/edit/{id}',[BookServiceApiController::class,'update']);
+Route::delete('/admin/manage-book-service/delete/{id}',[BookServiceApiController::class,'destroy']);

@@ -87,11 +87,11 @@
 </div>
 
 <div class="flex justify-center mt-3">
-    <button class="bg-[#0a3d62] p-3 rounded-lg font-serif text-white hover:bg-[#356d96]" id="openFormButton">Book Your Service</button>
+    <button class="bg-[#0a3d62] p-3 rounded-lg font-serif text-white hover:bg-[#356d96]" id="openBookServiceBtn">Book Your Service</button>
 </div>
 
-<!-- Book Appointment Work -->
-<div id="applicationForm" class="hidden fixed inset-0 items-center justify-center z-50 ">
+<!-- Book Service Work -->
+<div id="bookServiceForm" class="hidden fixed inset-0 items-center justify-center z-50 ">
     <div class="modal-content  bg-white w-11/12 md:max-w-lg mx-auto mt-2  rounded shadow-lg z-50 overflow-y-auto h-[80%]">
        
         <div class="flex py-2 px-1">
@@ -99,14 +99,14 @@
             <div class=" w-7/12 mt-12">
 
                 <h2 class="text-xl font-bold mb-2 text-center">Booking A Service</h2>
-                <form class="p-4">
+                <form class="p-4" id="bookService">
                     <div class="mb-2">
                         <input type="text" id="name" name="name" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Name">
                     </div>
                     <div class="flex gap-3 mb-2">
                         <div class="w-1/2">
-                            <input type="tel" id="mobile_no" name="mobile_no" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            <input type="tel" id="mobile" name="mobile" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Phone">
                         </div>
                         <div class=" w-1/2">
@@ -119,33 +119,27 @@
                             placeholder="Address">
                     </div>
                     <div class="mb-2">
-                        <select name="service" id="service_id" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-500">
+                        <!-- <select name="service" id="service_id" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-500">
                             <option value="">Select Service</option>
                             <option value="">Book Ambulance</option>
                             <option value="">Buy Medicine</option>
                             <option value="">Lab Tests</option>
-                        </select>
+                        </select> -->
+                        <input type="service" id="service" name="service" placeholder="Service Name" required
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     </div>
                     <div class="mb-2">
                         <textarea id="description" name="description" rows="2" class="form-textarea form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Message"></textarea>
                     </div>
-                    <button id="closeFormButton"
-                        class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Close</button>
                     <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right">Submit</button>
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Submit</button>
                 </form>
             </div>
         </div>
 
     </div>
 </div>
-
-
-    
-
-
-
 
 <div class="w-full flex justify-evenly px-16 mt-10 ">
     <div class="about w-4/12">
@@ -734,22 +728,43 @@
         </div>
     </div>
 
-
     <script>
-        // JavaScript to handle opening and closing of the book appointment
+        // JavaScript to handle opening and closing of booking Service Form
         document.addEventListener('DOMContentLoaded', function() {
-            let openFormButton = document.getElementById('openFormButton');
+            let openFormButton = document.getElementById('openBookServiceBtn');
             let closeFormButton = document.getElementById('closeFormButton');
-            let applicationForm = document.getElementById('applicationForm');
+            let bookServiceForm = document.getElementById('bookServiceForm');
 
             openFormButton.addEventListener('click', function() {
-                applicationForm.classList.remove('hidden');
+                bookServiceForm.classList.remove('hidden');
             });
 
             closeFormButton.addEventListener('click', function() {
-                applicationForm.classList.add('hidden');
+                bookServiceForm.classList.add('hidden');
             });
         });
+
+        $(document).ready(function() {
+    //book new service
+
+    $("#bookService").submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "{{ route('call.store') }}",
+            data: new FormData(this),
+            dataType: "JSON",
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(response) {
+                swal("Success", response.message, "success");
+                $("#bookService").trigger("reset");
+                window.open("/", "_self")
+            }
+        })
+    })
+})
     </script>
 
 
