@@ -69,6 +69,7 @@ class AppointmentApiController extends Controller
             $appointment = Appointment::create([
                 'name' => $request->name,
                 'age' => $request->age,
+                'gender' => $request->gender,
                 'address' => $request->address,
                 'mobile' => $request->mobile,
                 'doctor_id' => $request->doctor_id,

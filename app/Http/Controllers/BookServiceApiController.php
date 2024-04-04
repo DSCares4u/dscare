@@ -15,7 +15,7 @@ class BookServiceApiController extends Controller
      */
     public function index()
     {
-        $bookService = BookService::orderBy('created_at', 'desc')->get();
+        $bookService = BookService::with("service")->orderBy('created_at', 'desc')->get();
         if ($bookService->count() > 0) {
             return response()->json([
                 'status' => 200,
@@ -51,7 +51,7 @@ class BookServiceApiController extends Controller
             'name' => 'required|string|min:3',
             'mobile' => 'required',
             'email' => 'required|email',
-            'service' => 'required',
+            'service_id' => 'required',
             'message' => 'required',
             'address' => 'required|string', 
         ]);
@@ -67,7 +67,7 @@ class BookServiceApiController extends Controller
                 'name' => $request->name,
                 'mobile' => $request->mobile,
                 'email' => $request->email,
-                'service' => $request->service,
+                'service_id' => $request->service_id,
                 'message' => $request->message,
                 'address' => $request->address,              
             ]);

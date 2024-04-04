@@ -10,8 +10,8 @@
             <div class="p-3">
                 <form id="addService">
                     <div class="mb-4">
-                        <label for="s_name" class="block text-sm font-medium text-gray-700">Service Name</label>
-                        <input type="text" id="s_name" name="s_name"
+                        <label for="name" class="block text-sm font-medium text-gray-700">Service Name</label>
+                        <input type="text" id="name" name="name"
                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             required>
                     </div>
@@ -19,7 +19,7 @@
                         <label for="s_image" class="block text-sm font-medium text-gray-700">Service Image</label>
                         <input type="file" id="s_image" name="s_image"
                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 "
-                            required>
+                            >
                     </div>
                     <div class="mb-4">
                         <label for="s_description" class="block text-sm font-medium text-gray-700">Service Description</label>
@@ -36,7 +36,7 @@
                         <label for="f_logo" class="block text-sm font-medium text-gray-700">Feature Logo</label>
                         <input type="file" id="f_logo" name="f_logo"
                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 "
-                            required>
+                            >
                     </div>
                     <div class="mb-4">
                         <label for="f_description" class="block text-sm font-medium text-gray-700">Feature Description</label>
@@ -77,6 +77,5 @@
             })
         })
 </script>
-
 
 @endsection

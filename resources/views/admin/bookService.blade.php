@@ -25,15 +25,11 @@
             
             <div class="mb-3">
                 <label for="service" class="block text-gray-700 text-sm font-bold mb-2">Service</label>
-                <!-- <select name="" id="service" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="ab">Select Service</option>
-                    <option value="c">Ambulance</option>
-                    <option value="d">Medicine Delivery</option>
-                </select> -->
-                <input type="service" id="service" name="service" placeholder="e.g. 1234567890" required
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <select name="service_id" id="callingServices" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">Select Service</option>
+                </select>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 ">
                 <label for="address"
                     class="block text-gray-700 text-sm font-bold mb-2">Address</label>
                     <textarea name="address" id="" cols="30" rows="2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
@@ -54,6 +50,20 @@
 
 <script>
     $(document).ready(function() {
+         // calling Services
+    $.ajax({
+            type: "GET",
+            url: "{{ route('service.index') }}",
+            success: function(response) {
+                let select = $("#callingServices");
+                select.empty();
+                response.data.forEach((service) => {
+                    select.append(`
+                    <option value="${service.id}">${service.name}</option>
+                    `);
+                });
+            }
+        });
     //Book New service
 
     $("#bookService").submit(function(e) {

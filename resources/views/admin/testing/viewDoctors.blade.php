@@ -473,8 +473,6 @@ $("#approvalForm").submit(function(event) {
                         }
                     });
                 });
-
-                
             });
         });
     </script>

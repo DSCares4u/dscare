@@ -96,9 +96,9 @@
         <div class="flex justify-end pt-1 pr-4">
             <button id="closeFormButton" class="text-3xl leading-none hover:text-gray-300">&times;</button>
         </div>
-        <div class="flex py-2 px-1">
+        <div class="flex py-1 px-1">
             <img src="/images/book.png" class="w-5/12" alt="">
-            <div class=" w-7/12 mt-10">
+            <div class=" w-7/12 ">
 
                 <h2 class="text-xl font-bold mb-2 text-center">Booking A Service</h2>
                 <form class="p-4" id="bookService">
@@ -121,18 +121,17 @@
                             placeholder="Address">
                     </div>
                     <div class="mb-2">
-                        <!-- <select name="service" id="service_id" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-500">
+                        <select name="service_id" id="callingServices" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-500">
                             <option value="">Select Service</option>
-                            <option value="">Book Ambulance</option>
-                            <option value="">Buy Medicine</option>
-                            <option value="">Lab Tests</option>
-                        </select> -->
-                        <input type="service" id="service" name="service" placeholder="Service Name" required
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </select>
                     </div>
-                    <div class="mb-2">
-                        <textarea id="description" name="description" rows="2" class="form-textarea form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    <div class="mb-1">
+                        <textarea id="message" name="message" rows="2" class="form-textarea form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Message"></textarea>
+                    </div>
+                    <div class="mb-1">
+                        <textarea id="address" name="address" rows="2" class="form-textarea form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            placeholder="Address"></textarea>
                     </div>
                     <button type="submit"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Submit</button>
@@ -747,13 +746,28 @@
         });
 
         $(document).ready(function() {
+
+        // calling Services
+        $.ajax({
+                type: "GET",
+                url: "{{ route('service.index') }}",
+                success: function(response) {
+                    let select = $("#callingServices");
+                    select.empty();
+                    response.data.forEach((service) => {
+                        select.append(`
+                        <option value="${service.id}">${service.name}</option>
+                        `);
+                    });
+                }
+            });
     //book new service
 
     $("#bookService").submit(function(e) {
         e.preventDefault();
         $.ajax({
             type: "POST",
-            url: "{{ route('call.store') }}",
+            url: "{{ route('book.service.store') }}",
             data: new FormData(this),
             dataType: "JSON",
             contentType: false,
@@ -768,12 +782,5 @@
     })
 })
     </script>
-
-
-
-
-
-
-
-
+    
 @endsection

@@ -25,18 +25,18 @@
             <div class="w-full bg-white border border-gray-200 rounded-lg shadow p-3 dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex items-center justify-between mb-4">
                     <h5 class="text-sm font-normal leading-none text-gray-900 dark:text-white">Upcoming Appointments</h5>
-                    <a href="#"
+                    <a href="/admin/manage-appointment"
                         class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                         View all
                     </a>
                 </div>
                 <div class="flow-root">
                     <ul role="list" id="upcomingAppointment" class="divide-y divide-gray-200 dark:divide-gray-700">
-                        {{-- <li class="flex justify-around items-center mt-2 pt-2">
+                        <!-- {{-- <li class="flex justify-around items-center mt-2 pt-2">
                             <p>Rohit Kumar</p>
                             <p>913654488</p>
                             <p>Dr. Rajiv Dixit</p>
-                        </li> --}}
+                        </li> --}} -->
                        
                      
                         
@@ -45,16 +45,15 @@
             </div>
             <div class="w-full p-3 bg-white border border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex items-center justify-between mb-4">
-                            <h5 class="text-sm font-normal leading-none text-gray-900 dark:text-white">Today's Services</h5>
+                            <h5 class="text-sm font-normal leading-none text-gray-900 dark:text-white">Booked Services</h5>
 
-                    <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                    <a href="/admin/manage-book-service" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                         View all
                     </a>
                 </div>
               
                 <div class="flow-root">
-                    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700" id="callingMessage">
-                        {{-- help  ajax  --}}
+                    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700" id="callingServices">
                     </ul>
                 </div>
                 <div id="pagination" class="">
@@ -118,10 +117,6 @@
                     table.empty();
                     let data = response.data.slice(-8);
 
-                    // Update doctor count
-                    let len = data.length;
-                    $("#counting").html(len);
-
                     data.forEach((data) => {
                         table.append(`
                             <li class="flex justify-around items-center mt-2 pt-2">
@@ -139,6 +134,33 @@
         }
         callingAppointment();
     });
+
+        // Function to fetch and display Plans
+        let callingServices = () => {
+            $.ajax({
+                type: "GET",
+                url: "{{ route('book.service.index') }}",
+                success: function(response) {
+                    let table = $("#callingServices");
+                    table.empty();
+                    let data = response.data.slice(-8);
+
+                    data.forEach((data) => {
+                        table.append(`
+                        <li class="flex justify-around items-center mt-2 pt-2 ">
+                                <p>${data.name}</p>
+                                <p>${data.mobile}</p>
+                                <p>${data.service.name}</p>
+                            </li>
+                        `);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+        callingServices();
 </script>
 
 

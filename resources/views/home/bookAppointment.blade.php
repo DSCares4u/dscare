@@ -63,8 +63,9 @@
     </div>
 </div>
 
-<div class="mt-10 flex flex-wrap mx-10 justify-center gap-8">
-    <div class="doctor w-3/12  border border-gray-200 rounded-lg shadow ">
+<div class="mt-10 doctor flex flex-wrap mx-10 justify-center gap-8" id="callingDoctor">
+
+    <div class="w-3/12  border border-gray-200 rounded-lg shadow ">
         <div class="flex mx-5 gap-5">
             <div class="w-1/4 items-center flex">
                 <img src="/images/doctor-dp.webp" alt="">
@@ -89,106 +90,7 @@
             <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
         </div>
     </div>   
-    <div class="doctor w-3/12  border border-gray-200 rounded-lg shadow ">
-        <div class="flex mx-5 gap-5">
-            <div class="w-1/4 items-center flex">
-                <img src="/images/doctor-dp.webp" alt="">
-            </div>
-            <div class="w-3/4 ml-5 leading-tight mt-2">
-                <h4>Dr. Korrai Bala Raju</h4>
-                <p class="text-sm font-semibold text-blue-500">Dentist</p>
-                <p class="text-base  text-blue-500">10YRS EXP.</p>
-                <p class="text-sm text-gray-600 text">BDS,MDS</p>
-                <p class="text-blue-500 font-semibold my-2">Fees- 400</p>
-            </div>
-        </div>
-        <div class="address mx-5 flex text-sm text-gray-500">
-            <img src="/images/icons/locator.png" class="h-4 mt-0.5" alt="">
-            <p>Line Bazar, Purnea, Bihar</p>
-        </div>
-        <div class="available text-xs font-semibold text-gray-600 text-center">
-            <p>Available Now</p>
-        </div>
-        <div class="button flex justify-center gap-2  text-center text-sm rounded-sm mt-1">
-            <button class=" p-1.5 text-white bg-yellow-500">Book Video Consult</button>
-            <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
-        </div>
-    </div>   
-    <div class="doctor w-3/12  border border-gray-200 rounded-lg shadow ">
-        <div class="flex mx-5 gap-5">
-            <div class="w-1/4 items-center flex">
-                <img src="/images/doctor-dp.webp" alt="">
-            </div>
-            <div class="w-3/4 ml-5 leading-tight mt-2">
-                <h4>Dr. Korrai Bala Raju</h4>
-                <p class="text-sm font-semibold text-blue-500">Dentist</p>
-                <p class="text-base  text-blue-500">10YRS EXP.</p>
-                <p class="text-sm text-gray-600 text">BDS,MDS</p>
-                <p class="text-blue-500 font-semibold my-2">Fees- 400</p>
-            </div>
-        </div>
-        <div class="address mx-5 flex text-sm text-gray-500">
-            <img src="/images/icons/locator.png" class="h-4 mt-0.5" alt="">
-            <p>Line Bazar, Purnea, Bihar</p>
-        </div>
-        <div class="available text-xs font-semibold text-gray-600 text-center">
-            <p>Available Now</p>
-        </div>
-        <div class="button flex justify-center gap-2 text-center text-sm rounded-sm mt-1">
-            <button class=" p-1.5 text-white bg-yellow-500">Book Video Consult</button>
-            <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
-        </div>
-    </div>   
-    <div class="doctor w-3/12  border border-gray-200 rounded-lg shadow ">
-        <div class="flex mx-5 gap-5">
-            <div class="w-1/4 items-center flex">
-                <img src="/images/doctor-dp.webp" alt="">
-            </div>
-            <div class="w-3/4 ml-5 leading-tight mt-2">
-                <h4>Dr. Korrai Bala Raju</h4>
-                <p class="text-sm font-semibold text-blue-500">Dentist</p>
-                <p class="text-base  text-blue-500">10YRS EXP.</p>
-                <p class="text-sm text-gray-600 text">BDS,MDS</p>
-                <p class="text-blue-500 font-semibold my-2">Fees- 400</p>
-            </div>
-        </div>
-        <div class="address mx-5 flex text-sm text-gray-500">
-            <img src="/images/icons/locator.png" class="h-4 mt-0.5" alt="">
-            <p>Line Bazar, Purnea, Bihar</p>
-        </div>
-        <div class="available text-xs font-semibold text-gray-600 text-center">
-            <p>Available Now</p>
-        </div>
-        <div class="button flex justify-center gap-2 text-center text-sm rounded-sm mt-1">
-            <button class=" p-1.5 text-white bg-yellow-500">Book Video Consult</button>
-            <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
-        </div>
-    </div>   
-    <div class="doctor w-3/12  border border-gray-200 rounded-lg shadow ">
-        <div class="flex mx-5 gap-5">
-            <div class="w-1/4 items-center flex">
-                <img src="/images/doctor-dp.webp" alt="">
-            </div>
-            <div class="w-3/4 ml-5 leading-tight mt-2">
-                <h4>Dr. Korrai Bala Raju</h4>
-                <p class="text-sm font-semibold text-blue-500">Dentist</p>
-                <p class="text-base  text-blue-500">10YRS EXP.</p>
-                <p class="text-sm text-gray-600 text">BDS,MDS</p>
-                <p class="text-blue-500 font-semibold my-2">Fees- 400</p>
-            </div>
-        </div>
-        <div class="address mx-5 flex text-sm text-gray-500">
-            <img src="/images/icons/locator.png" class="h-4 mt-0.5" alt="">
-            <p>Line Bazar, Purnea, Bihar</p>
-        </div>
-        <div class="available text-xs font-semibold text-gray-600 text-center">
-            <p>Available Now</p>
-        </div>
-        <div class="button flex justify-center gap-2 text-center text-sm rounded-sm mt-1">
-            <button class=" p-1.5 text-white bg-yellow-500">Book Video Consult</button>
-        </div>
-    </div>   
-    <div class="doctor w-3/12  border border-gray-200 rounded-lg shadow ">
+    <div class="w-3/12  border border-gray-200 rounded-lg shadow ">
         <div class="flex mx-5 gap-5">
             <div class="w-1/4 items-center flex">
                 <img src="/images/doctor-dp.webp" alt="">
@@ -214,6 +116,59 @@
     </div>   
       
 </div>
+
+<script>
+    $(document).ready(function() {
+        // Function to fetch and display doctor
+        let callingDoctor = () => {
+            $.ajax({
+                type: "GET",
+                url: "{{ route('doctor.index') }}",
+                success: function(response) {
+                    let card = $("#callingDoctor");
+                    card.empty();
+                    let data = response.data;
+
+                    data.forEach((data) => {
+                        card.append(`
+                        <div class=" w-3/12  border border-gray-200 rounded-lg shadow capitalize">
+                            <div class="flex mx-5 gap-5">
+                                <div class="w-1/4 items-center flex">
+                                    <img src="/image/doctor/${data.image}" class="rounded-full w-[100%]" alt="">
+                                </div>
+                                <div class="w-3/4 ml-5 leading-tight mt-2">
+                                    <h4>Dr. ${data.name}</h4>
+                                    <p class="text-sm font-semibold text-blue-500">${data.specialization}</p>
+                                    <p class="text-base  text-blue-500">${data.experience}YRS EXP.</p>
+                                    <p class="text-sm text-gray-600 text">${data.qualification}</p>
+                                    <p class="text-blue-500 font-semibold my-2">Fees- ${data.visiting_charge}</p>
+                                </div>
+                            </div>
+                            <div class="address mx-5 flex text-sm text-gray-500">
+                                <img src="/images/icons/locator.png" class="h-4 mt-0.5" alt="">
+                                <p>${data.landmark},${data.city},${data.state}</p>
+                            </div>
+                            <div class="available text-xs font-semibold text-gray-600 text-center">
+                                <p>Available Now</p>
+                            </div>
+                            <div class="button flex justify-center gap-2  text-center text-sm rounded-sm my-1">
+                            
+                                <button class=" p-1.5 text-white bg-yellow-500">Book Video Consult</button>
+                                <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
+                            </div>
+                        </div>  
+                        `);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+       
+    callingDoctor();
+    });
+</script>
 
 
 

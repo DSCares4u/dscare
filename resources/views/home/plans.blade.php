@@ -11,8 +11,8 @@
 
 <div class="care-packages  mt-10">
     <h3 class="text-center text-3xl font-bold">General Care Packages</h3>
-    <div class="cards mt-10 flex justify-center flex-wrap gap-5">
-        <div class="max-w-xs  bg-white border border-[#006266] p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+    <div class="cards mt-10 flex justify-center flex-wrap gap-5" id="callingPlan">
+        <!-- <div class="max-w-xs  bg-white border border-[#006266] p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
             <a href="#">
                 <img class="rounded-t-lg" src="/images/premium-plan.png" alt="" />
             </a>
@@ -38,7 +38,6 @@
                 <p class="text-base font-semibold mt-12 ">₹1500 <del class="text-gray-500 mr-2 text-sm"> Rs. 1,795
                     </del>
                 </p>
-                <!-- <p class=" font-normal text-sm text-gray-500">Actual Price </p> -->
                 <div class="mt-5">
                     <p class="text-base ml-3 font-bold text-[#ff3f34]
                      ">79% Off</p>
@@ -47,115 +46,7 @@
                         Now</button>
                 </div>
             </div>
-        </div>
-        <div class="max-w-xs  bg-white border border-[#006266] p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
-            <a href="#">
-                <img class="rounded-t-lg" src="/images/premium-plan.png" alt="" />
-            </a>
-            <a href="#">
-                <h5
-                    class="mb-2 mt-2 text-2xl text-center font-bold tracking-tight text-white bg-blue-500 dark:text-white uppercase">
-                    Base Plan</h5>
-
-            </a>
-            <ul class="mt-2">
-                <li class="flex font-medium  text-[13px]  "><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt=""> 09 General Physician Consultations</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">Regular Monitoring</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">Electronic Health Records</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">24* 7 Ambulance Service</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">Concierge</li>
-            </ul>
-            <div class="flex justify-between w-full">
-                <p class="text-base font-semibold mt-12 ">₹1500 <del class="text-gray-500 mr-2 text-sm"> Rs. 1,795
-                    </del>
-                </p>
-                <!-- <p class=" font-normal text-sm text-gray-500">Actual Price </p> -->
-                <div class="mt-5">
-                    <p class="text-base ml-3 font-bold text-[#ff3f34]
-                     ">79% Off</p>
-
-                    <button class=" p-2 py-1 font-medium  rounded-md bg-[#006266]  text-white">Buy
-                        Now</button>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-xs  bg-white border border-[#006266] p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
-            <a href="#">
-                <img class="rounded-t-lg" src="/images/premium-plan.png" alt="" />
-            </a>
-            <a href="#">
-                <h5
-                    class="mb-2 mt-2 text-2xl text-center font-bold tracking-tight text-white bg-blue-500 dark:text-white uppercase">
-                    Base Plan</h5>
-
-            </a>
-            <ul class="mt-2">
-                <li class="flex font-medium  text-[13px]  "><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt=""> 09 General Physician Consultations</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">Regular Monitoring</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">Electronic Health Records</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">24* 7 Ambulance Service</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">Concierge</li>
-            </ul>
-            <div class="flex justify-between w-full">
-                <p class="text-base font-semibold mt-12 ">₹1500 <del class="text-gray-500 mr-2 text-sm"> Rs. 1,795
-                    </del>
-                </p>
-                <!-- <p class=" font-normal text-sm text-gray-500">Actual Price </p> -->
-                <div class="mt-5">
-                    <p class="text-base ml-3 font-bold text-[#ff3f34]
-                     ">79% Off</p>
-
-                    <button class=" p-2 py-1 font-medium  rounded-md bg-[#006266]  text-white">Buy
-                        Now</button>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-xs  bg-white border border-[#006266] p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
-            <a href="#">
-                <img class="rounded-t-lg" src="/images/premium-plan.png" alt="" />
-            </a>
-            <a href="#">
-                <h5
-                    class="mb-2 mt-2 text-2xl text-center font-bold tracking-tight text-white bg-blue-500 dark:text-white uppercase">
-                    Base Plan</h5>
-
-            </a>
-            <ul class="mt-2">
-                <li class="flex font-medium  text-[13px]  "><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt=""> 09 General Physician Consultations</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">Regular Monitoring</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">Electronic Health Records</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">24* 7 Ambulance Service</li>
-                <li class="flex font-medium text-[13px]"><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
-                        alt="">Concierge</li>
-            </ul>
-            <div class="flex justify-between w-full">
-                <p class="text-base font-semibold mt-12 ">₹1500 <del class="text-gray-500 mr-2 text-sm"> Rs. 1,795
-                    </del>
-                </p>
-                <!-- <p class=" font-normal text-sm text-gray-500">Actual Price </p> -->
-                <div class="mt-5">
-                    <p class="text-base ml-3 font-bold text-[#ff3f34]
-                     ">79% Off</p>
-
-                    <button class=" p-2 py-1 font-medium  rounded-md bg-[#006266]  text-white">Buy
-                        Now</button>
-                </div>
-            </div>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -176,5 +67,56 @@
     </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        // Function to fetch and display Plans
+        let callingPlan = () => {
+            $.ajax({
+                type: "GET",
+                url: "{{ route('plan.index') }}",
+                success: function(response) {
+                    let card = $("#callingPlan");
+                    card.empty();
+                    let data = response.data;
 
+                    data.forEach((item) => {
+                        card.append(`
+                        <div class="max-w-xs  bg-white border border-[#006266] p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="/image/plan/${item.image}" alt=""/>
+                            </a>
+                            <a href="#">
+                                <h5
+                                    class="mb-2 mt-2 text-2xl text-center font-bold tracking-tight text-white bg-blue-500 dark:text-white uppercase">${item.name}</h5>
+
+                            </a>
+                            <ul class="mt-2">
+                                <li class="flex font-medium  text-[13px]  "><img src="/images/icons/correct.png" class="h-4 mr-2 mt-1"
+                                        alt="">${item.features}</li>
+                            </ul>
+                            <div class="flex justify-between w-full">
+                                <p class="text-base font-semibold mt-12 ">₹${item.discount_price} <del class="text-gray-500 mr-2 text-sm"> Rs. ${item.price}
+                                    </del>
+                                </p>
+                                <div class="mt-5">
+                                    <p class="text-base ml-3 font-bold text-[#ff3f34]
+                                    ">79% Off</p>
+
+                                    <button class=" p-2 py-1 font-medium  rounded-md bg-[#006266]  text-white">Buy
+                                        Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        `);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+
+        callingPlan();
+    });
+</script>
 @endsection

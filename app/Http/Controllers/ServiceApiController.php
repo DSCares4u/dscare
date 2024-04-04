@@ -50,7 +50,7 @@ class ServiceApiController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            's_name' => 'required|string',
+            'name' => 'required|string',
             // 's_image' => 'required|string',
             's_description' => 'required|string',
             's_feature' => 'required|string',
@@ -66,7 +66,7 @@ class ServiceApiController extends Controller
             ], 422);
         } else {
             $service = Service::create([
-                's_name' => $request->s_name,
+                'name' => $request->name,
                 // 's_image' => $request->s_image,
                 's_description' => $request->s_description,
                 's_feature' => $request->s_feature,

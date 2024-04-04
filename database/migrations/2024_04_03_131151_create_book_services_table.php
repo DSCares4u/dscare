@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('mobile');
             $table->string('email');
-            $table->string('service');
+            $table->foreignId('service_id')->constrained()->onDelete("cascade");
             $table->string('message');
             $table->string('address');
             $table->timestamps();
