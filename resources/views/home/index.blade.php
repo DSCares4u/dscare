@@ -92,11 +92,13 @@
 
 <!-- Book Service Work -->
 <div id="bookServiceForm" class="hidden fixed inset-0 items-center justify-center z-50 ">
-    <div class="modal-content  bg-white w-11/12 md:max-w-lg mx-auto mt-2  rounded shadow-lg z-50 overflow-y-auto h-[80%]">
-       
+    <div class="modal-content  bg-white w-11/12 md:max-w-lg mx-auto mt-2  rounded shadow-lg z-50 overflow-y-auto h-[70%]">
+        <div class="flex justify-end pt-1 pr-4">
+            <button id="closeFormButton" class="text-3xl leading-none hover:text-gray-300">&times;</button>
+        </div>
         <div class="flex py-2 px-1">
             <img src="/images/book.png" class="w-5/12" alt="">
-            <div class=" w-7/12 mt-12">
+            <div class=" w-7/12 mt-10">
 
                 <h2 class="text-xl font-bold mb-2 text-center">Booking A Service</h2>
                 <form class="p-4" id="bookService">

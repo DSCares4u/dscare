@@ -32,41 +32,12 @@
                 </div>
                 <div class="flow-root">
                     <ul role="list" id="upcomingAppointment" class="divide-y divide-gray-200 dark:divide-gray-700">
-                        <li class="flex justify-around items-center mt-2 pt-2">
+                        {{-- <li class="flex justify-around items-center mt-2 pt-2">
                             <p>Rohit Kumar</p>
                             <p>913654488</p>
                             <p>Dr. Rajiv Dixit</p>
-                        </li>
-                        <li class="flex justify-around items-center mt-2 pt-2">
-                            <p>Rohit Kumar</p>
-                            <p>913654488</p>
-                            <p>Dr. Rajiv Dixit</p>
-                        </li>
-                        <li class="flex justify-around items-center mt-2 pt-2">
-                            <p>Rohit Kumar</p>
-                            <p>913654488</p>
-                            <p>Dr. Rajiv Dixit</p>
-                        </li>
-                        <li class="flex justify-around items-center mt-2 pt-2">
-                            <p>Rohit Kumar</p>
-                            <p>913654488</p>
-                            <p>Dr. Rajiv Dixit</p>
-                        </li>
-                        <li class="flex justify-around items-center mt-2 pt-2">
-                            <p>Rohit Kumar</p>
-                            <p>913654488</p>
-                            <p>Dr. Rajiv Dixit</p>
-                        </li>
-                        <li class="flex justify-around items-center mt-2 pt-2">
-                            <p>Rohit Kumar</p>
-                            <p>913654488</p>
-                            <p>Dr. Rajiv Dixit</p>
-                        </li>
-                        <li class="flex justify-around items-center mt-2 pt-2">
-                            <p>Rohit Kumar</p>
-                            <p>913654488</p>
-                            <p>Dr. Rajiv Dixit</p>
-                        </li>
+                        </li> --}}
+                       
                      
                         
                     </ul>
@@ -156,7 +127,7 @@
                             <li class="flex justify-around items-center mt-2 pt-2">
                                 <p>${data.name}</p>
                                 <p>${data.mobile}</p>
-                                <p>Dr. ${data.doctor}</p>
+                                <p>Dr. ${data.doctor.name}</p>
                             </li>
                         `);
                     });

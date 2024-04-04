@@ -15,7 +15,8 @@ class AppointmentApiController extends Controller
      */
     public function index()
     {
-        $appointment = Appointment::orderBy('created_at', 'desc')->get();;
+        $appointment = Appointment::with("doctor")->orderBy('created_at', 'desc')->get();
+
         if($appointment->count() > 0){
 
             return response()->json([
@@ -53,7 +54,7 @@ class AppointmentApiController extends Controller
             'age' => 'required|numeric',
             'address' => 'required|string|min:3',
             'mobile' => 'required|string|min:3',
-            'doctor' => 'required|string|min:3',
+            'doctor_id' => 'required',
             'appointment_date' => 'required|string|min:3',
             'gender' => 'required|in:male,female,others',
         ]);
@@ -70,7 +71,7 @@ class AppointmentApiController extends Controller
                 'age' => $request->age,
                 'address' => $request->address,
                 'mobile' => $request->mobile,
-                'doctor' => $request->doctor,
+                'doctor_id' => $request->doctor_id,
                 'appointment_date' => $request->appointment_date,
           
             ]);

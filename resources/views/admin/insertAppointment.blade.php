@@ -27,12 +27,10 @@
 
                         <div class=" w-1/2">
                             <label for="doctor" class="block text-sm font-medium text-gray-700">Doctor</label>
-                            <select name="doctor" id="doctor"
+                            <select name="doctor_id" id="callingDoctors"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 required>
-                                <option value="">Select Doctor / Appointment</option>
-                                <option value="doctor">Doctor</option>
-                                <option value="hospital">Hospital</option>
+                                <option value="">Select Doctor / Hospital</option>
                             </select>
                         </div>
                         <div class=" w-1/2">
@@ -83,6 +81,23 @@
 
 <script>
 $(document).ready(function() {
+
+    // calling Doctor
+    $.ajax({
+            type: "GET",
+            url: "{{ route('doctor.index') }}",
+            success: function(response) {
+                let select = $("#callingDoctors");
+                select.empty();
+                response.data.forEach((doctor) => {
+                    select.append(`
+                    <option value="${doctor.id}">${doctor.name}</option>
+                    `);
+                });
+            }
+        });
+
+
     //insert new Appointment
     $("#bookAppointment").submit(function(e) {
         e.preventDefault();
