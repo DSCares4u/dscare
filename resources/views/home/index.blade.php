@@ -8,7 +8,7 @@
             <!-- Item 1 -->
             <div class="hidden duration-700  ease-in-out" data-carousel-item>
                 <img src="/images/1.jpg"
-                    class="absolute block w-full  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"  alt="...">
+                    class="absolute block w-full  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -42,18 +42,17 @@
             <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
                 data-carousel-slide-to="4"></button>
         </div>
-       
+
     </div>
 </div>
-
 <div class="services flex gap-3 mx-8 mt-16">
     <a href="">
-        <div class="mx-auto flex justify-center items-center my-auto max-w-sm bg-white hover:border border-gray-600  shadow dark:bg-gray-800 dark:border-gray-700">
+        <div
+            class="mx-auto flex justify-center items-center my-auto max-w-sm bg-white hover:border border-gray-600  shadow dark:bg-gray-800 dark:border-gray-700">
             <img src="/images/services/Medicine.jpg" class="h-20" alt="">
             <!-- <a href="" class="mx-6">Medicine</a> -->
         </div>
     </a>
-   
     <div
         class="mx-auto pt-4 h-24 w-28 my-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <img src="/images/icons/jar.png" class="mx-auto" alt="">
@@ -85,52 +84,59 @@
         <a href="" class="mx-6">Medicine</a>
     </div>
 </div>
-
 <div class="flex justify-center mt-3">
-    <button class="bg-[#0a3d62] p-3 rounded-lg font-serif text-white hover:bg-[#356d96]" id="openBookServiceBtn">Book Your Service</button>
+    <button class="bg-[#0a3d62] p-3 rounded-lg font-serif text-white hover:bg-[#356d96]" id="openBookServiceBtn">Book
+        Your Service</button>
 </div>
 
 <!-- Book Service Work -->
 <div id="bookServiceForm" class="hidden fixed inset-0 items-center justify-center z-50 ">
-    <div class="modal-content  bg-white w-11/12 md:max-w-lg mx-auto mt-2  rounded shadow-lg z-50 overflow-y-auto h-[70%]">
+    <div
+        class="modal-content  bg-white w-11/12 md:max-w-lg mx-auto mt-2  rounded shadow-lg z-50 overflow-y-auto h-[70%]">
         <div class="flex justify-end pt-1 pr-4">
             <button id="closeFormButton" class="text-3xl leading-none hover:text-gray-300">&times;</button>
         </div>
         <div class="flex py-1 px-1">
             <img src="/images/book.png" class="w-5/12" alt="">
             <div class=" w-7/12 ">
-
                 <h2 class="text-xl font-bold mb-2 text-center">Booking A Service</h2>
                 <form class="p-4" id="bookService">
                     <div class="mb-2">
-                        <input type="text" id="name" name="name" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        <input type="text" id="name" name="name"
+                            class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Name">
                     </div>
                     <div class="flex gap-3 mb-2">
                         <div class="w-1/2">
-                            <input type="tel" id="mobile" name="mobile" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            <input type="tel" id="mobile" name="mobile"
+                                class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Phone">
                         </div>
                         <div class=" w-1/2">
-                            <input type="email" id="email" name="email" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            <input type="email" id="email" name="email"
+                                class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Email">
                         </div>
-                    </div>                    
+                    </div>
                     <div class="mb-2">
-                        <input type="text" id="address" name="address" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        <input type="text" id="address" name="address"
+                            class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Address">
                     </div>
                     <div class="mb-2">
-                        <select name="service_id" id="callingServices" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-500">
+                        <select name="service_id" id="callingServices"
+                            class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-gray-500">
                             <option value="">Select Service</option>
                         </select>
                     </div>
                     <div class="mb-1">
-                        <textarea id="message" name="message" rows="2" class="form-textarea form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        <textarea id="message" name="message" rows="2"
+                            class="form-textarea form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Message"></textarea>
                     </div>
                     <div class="mb-1">
-                        <textarea id="address" name="address" rows="2" class="form-textarea form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        <textarea id="address" name="address" rows="2"
+                            class="form-textarea form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             placeholder="Address"></textarea>
                     </div>
                     <button type="submit"
@@ -141,7 +147,6 @@
 
     </div>
 </div>
-
 <div class="w-full flex justify-evenly px-16 mt-10 ">
     <div class="about w-4/12">
         <h2 class=" font-bold leading-snug text-xl text-[#273c75]">Why Us ?</h2>
@@ -171,8 +176,6 @@
         </ul>
     </div>
 </div>
-
-
 <!-- <div class="services flex justify-center  gap-8 mt-16">
     <div class="services-name ">
         <div class="service-img bg-[#48dbfb] rounded-full h-40 w-40 border shadow-2xl ">
@@ -226,7 +229,6 @@
         <h3 class="text-center text-lg tracking-tight font-semibold text-gray-500">Medicine Delivery</h3>
     </div>
 </div> -->
-
 <div class="packages flex justify-around gap-2 mt-10 w-full mx-8 p-2 ">
     <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
         <div class="flex justify-center gap-5 bg-[#006266] p-2 text-white mb-2">
@@ -249,10 +251,10 @@
                 <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
                 <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
             </li>
-          
-            
         </ul>
-        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del> <p class="text-red-500 mr-4 font-bold">Rs. 5000</p></div>
+        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del>
+            <p class="text-red-500 mr-4 font-bold">Rs. 5000</p>
+        </div>
         <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
             See Details
             <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -261,7 +263,46 @@
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
             </svg>
         </a>
-        <button class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book Now</button>
+        <button
+            class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book
+            Now</button>
+    </div>
+    <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
+        <div class="flex justify-center gap-5 bg-[#006266] p-2 text-white mb-2">
+            <h5 class=" text-lg font-bold text-center   dark:text-white">Base Plan</h5>
+        </div>
+        <div class="validity ml-2">
+            <h4 class="font-semibold text-[#006266]">Validity : 1 Year</h4>
+            <hr>
+        </div>
+        <ul class="mb-2 pl-4 mt-1">
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+            <li class="flex w-10/12 mb-2">
+                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
+                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
+            </li>
+        </ul>
+        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del>
+            <p class="text-red-500 mr-4 font-bold">Rs. 5000</p>
+        </div>
+        <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
+            See Details
+            <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
+            </svg>
+        </a>
+        <button
+            class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book
+            Now</button>
 
     </div>
     <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
@@ -285,10 +326,10 @@
                 <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
                 <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
             </li>
-          
-            
         </ul>
-        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del> <p class="text-red-500 mr-4 font-bold">Rs. 5000</p></div>
+        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del>
+            <p class="text-red-500 mr-4 font-bold">Rs. 5000</p>
+        </div>
         <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
             See Details
             <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -297,7 +338,9 @@
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
             </svg>
         </a>
-        <button class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book Now</button>
+        <button
+            class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book
+            Now</button>
 
     </div>
     <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
@@ -321,10 +364,12 @@
                 <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
                 <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
             </li>
-          
-            
+
+
         </ul>
-        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del> <p class="text-red-500 mr-4 font-bold">Rs. 5000</p></div>
+        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del>
+            <p class="text-red-500 mr-4 font-bold">Rs. 5000</p>
+        </div>
         <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
             See Details
             <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -333,7 +378,9 @@
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
             </svg>
         </a>
-        <button class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book Now</button>
+        <button
+            class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book
+            Now</button>
 
     </div>
     <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
@@ -357,10 +404,12 @@
                 <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
                 <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
             </li>
-          
-            
+
+
         </ul>
-        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del> <p class="text-red-500 mr-4 font-bold">Rs. 5000</p></div>
+        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del>
+            <p class="text-red-500 mr-4 font-bold">Rs. 5000</p>
+        </div>
         <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
             See Details
             <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -369,49 +418,15 @@
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
             </svg>
         </a>
-        <button class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book Now</button>
+        <button
+            class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book
+            Now</button>
 
     </div>
-    <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
-        <div class="flex justify-center gap-5 bg-[#006266] p-2 text-white mb-2">
-            <h5 class=" text-lg font-bold text-center   dark:text-white">Base Plan</h5>
-        </div>
-        <div class="validity ml-2">
-            <h4 class="font-semibold text-[#006266]">Validity : 1 Year</h4>
-            <hr>
-        </div>
-        <ul class="mb-2 pl-4 mt-1">
-            <li class="flex w-10/12 mb-2">
-                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
-                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
-            </li>
-            <li class="flex w-10/12 mb-2">
-                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
-                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
-            </li>
-            <li class="flex w-10/12 mb-2">
-                <img src="images/icons/tick-p.png" alt="" class="h-6  mt-1 mr-1">
-                <p class="text-sm  text-gray-500">Iron And Total Iron Binding Capacity</p>
-            </li>
-          
-            
-        </ul>
-        <div class="price flex ml-3 justify-between mb-2"><del class="text-gray-400">Rs. 8000</del> <p class="text-red-500 mr-4 font-bold">Rs. 5000</p></div>
-        <a href="#" class="inline-flex ml-3 font-medium text-sm items-center text-blue-600 hover:underline">
-            See Details
-            <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                fill="none" viewBox="0 0 18 18">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
-            </svg>
-        </a>
-        <button class="float-end font-light p-2 rounded-sm mb-2 font-mono text-sm items-center bg-[#006266] text-white hover:underline mr-3">Book Now</button>
 
-    </div>
-   
 </div>
 
-<div class="advertisment flex gap-5 mx-5" >
+<div class="advertisment flex gap-5 mx-5">
     <div id="default-carousel" class="relative mx-auto z-10 h-96 w-6/12 " data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-36 overflow-hidden rounded-lg md:h-96">
@@ -686,81 +701,81 @@
 
 
 <div class="pre-footer w-full flex h-40 mt-5">
-        <div class="w-4/12 text-white bg-[#3e7199] flex">
-            <a href="#" class='justify-center items-center flex w-3/12'>
-                <img class="rounded-t-lg h-20 " src="/images/icons/doc.png" alt="" />
+    <div class="w-4/12 text-white bg-[#3e7199] flex">
+        <a href="#" class='justify-center items-center flex w-3/12'>
+            <img class="rounded-t-lg h-20 " src="/images/icons/doc.png" alt="" />
+        </a>
+        <div class=" w-9/12">
+            <a href="#" class='justify-start flex mt-6'>
+                <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Book Doctor Consultations</h5>
             </a>
-            <div class=" w-9/12">
-                <a href="#" class='justify-start flex mt-6'>
-                    <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Book Doctor Consultations</h5>
-                </a>
-                <p class="mb-2  font-normal text-sm  dark:text-gray-400">Get doctor consultations at your doorstep on
-                    Sundays and evenings by experienced doctors for the convenience of your elderly loved ones.</p>
-                <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
-            </div>
-        </div>
-        <div class="w-4/12 text-white bg-[#3b89c5] flex">
-            <a href="#" class='justify-center items-center flex w-3/12'>
-                <img class="rounded-t-lg h-20 " src="/images/icons/lab.png" alt="" />
-            </a>
-            <div class=" w-9/12">
-                <a href="#" class='justify-start flex mt-6'>
-                    <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Book Lab Tests- CBC</h5>
-                </a>
-                <p class="mb-2  font-normal text-sm  dark:text-gray-400">Takes a complete blood count, to detect
-                    anemia,
-                    infections and can detect diseases like bone marrow disorders, dehydration, etc.</p>
-                <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
-            </div>
-        </div>
-        <div class="w-4/12 text-white bg-[#3e7199] flex">
-            <a href="#" class='justify-center items-center flex w-3/12'>
-                <img class="rounded-t-lg h-20 " src="/images/icons/rent.png" alt="" />
-            </a>
-            <div class=" w-9/12">
-                <a href="#" class='justify-start flex mt-6'>
-                    <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Buy or Rent Equipment</h5>
-                </a>
-                <p class="mb-2  font-normal text-sm  dark:text-gray-400">Avail Ventilator/ BIPAP for rental or purchase
-                    at
-                    cost-effective prices for your elderly. Choose from a wide range of products and brands.</p>
-                <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
-            </div>
+            <p class="mb-2  font-normal text-sm  dark:text-gray-400">Get doctor consultations at your doorstep on
+                Sundays and evenings by experienced doctors for the convenience of your elderly loved ones.</p>
+            <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
         </div>
     </div>
+    <div class="w-4/12 text-white bg-[#3b89c5] flex">
+        <a href="#" class='justify-center items-center flex w-3/12'>
+            <img class="rounded-t-lg h-20 " src="/images/icons/lab.png" alt="" />
+        </a>
+        <div class=" w-9/12">
+            <a href="#" class='justify-start flex mt-6'>
+                <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Book Lab Tests- CBC</h5>
+            </a>
+            <p class="mb-2  font-normal text-sm  dark:text-gray-400">Takes a complete blood count, to detect
+                anemia,
+                infections and can detect diseases like bone marrow disorders, dehydration, etc.</p>
+            <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
+        </div>
+    </div>
+    <div class="w-4/12 text-white bg-[#3e7199] flex">
+        <a href="#" class='justify-center items-center flex w-3/12'>
+            <img class="rounded-t-lg h-20 " src="/images/icons/rent.png" alt="" />
+        </a>
+        <div class=" w-9/12">
+            <a href="#" class='justify-start flex mt-6'>
+                <h5 class=" text-xl font-semibold  tracking-tight  dark:text-white">Buy or Rent Equipment</h5>
+            </a>
+            <p class="mb-2  font-normal text-sm  dark:text-gray-400">Avail Ventilator/ BIPAP for rental or purchase
+                at
+                cost-effective prices for your elderly. Choose from a wide range of products and brands.</p>
+            <button class="bg-pink-500 text-white text-sm rounded-lg p-1">Read More</button>
+        </div>
+    </div>
+</div>
 
-    <script>
-        // JavaScript to handle opening and closing of booking Service Form
-        document.addEventListener('DOMContentLoaded', function() {
-            let openFormButton = document.getElementById('openBookServiceBtn');
-            let closeFormButton = document.getElementById('closeFormButton');
-            let bookServiceForm = document.getElementById('bookServiceForm');
+<script>
+// JavaScript to handle opening and closing of booking Service Form
+document.addEventListener('DOMContentLoaded', function() {
+    let openFormButton = document.getElementById('openBookServiceBtn');
+    let closeFormButton = document.getElementById('closeFormButton');
+    let bookServiceForm = document.getElementById('bookServiceForm');
 
-            openFormButton.addEventListener('click', function() {
-                bookServiceForm.classList.remove('hidden');
-            });
+    openFormButton.addEventListener('click', function() {
+        bookServiceForm.classList.remove('hidden');
+    });
 
-            closeFormButton.addEventListener('click', function() {
-                bookServiceForm.classList.add('hidden');
-            });
-        });
+    closeFormButton.addEventListener('click', function() {
+        bookServiceForm.classList.add('hidden');
+    });
+});
 
-        $(document).ready(function() {
+$(document).ready(function() {
 
-        // calling Services
-        $.ajax({
-                type: "GET",
-                url: "{{ route('service.index') }}",
-                success: function(response) {
-                    let select = $("#callingServices");
-                    select.empty();
-                    response.data.forEach((service) => {
-                        select.append(`
+    // calling Services
+    $.ajax({
+        type: "GET",
+        url: "{{ route('service.index') }}",
+        success: function(response) {
+            let select = $("#callingServices");
+            select.empty();
+            response.data.forEach((service) => {
+                select.append(`
                         <option value="${service.id}">${service.name}</option>
                         `);
-                    });
-                }
             });
+        }
+    });
     //book new service
 
     $("#bookService").submit(function(e) {
@@ -781,6 +796,6 @@
         })
     })
 })
-    </script>
-    
+</script>
+
 @endsection

@@ -40,7 +40,6 @@
                                 required placeholder="e.g. 1000">
                         </div>
                     </div>
-                    
                     <div class="mb-4">
                         <label for="recommendation" class="block text-sm font-medium text-gray-700">Recommendation</label>
                         <textarea name="recommendation" id="recommendation" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -55,7 +54,6 @@
         </div>
     </div>
 </div>
-
 <!-- <script>
         $(document).ready(function() {
             //insert new Plan
@@ -93,7 +91,6 @@
             })
         })
 </script> -->
-
 <script>
     $(document).ready(function() {
     //insert new Plan
@@ -122,9 +119,7 @@
                 swal("Success", response.message, "success");
                 $("#insertPlan")[0].reset();
                 // $("#insertPlan").trigger("reset");
-
                 window.open("/admin/manage-plan", "_self")
-
             },
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);

@@ -89,7 +89,7 @@
             <button class=" p-1.5 text-white bg-yellow-500">Book Video Consult</button>
             <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
         </div>
-    </div>   
+    </div>
     <div class="w-3/12  border border-gray-200 rounded-lg shadow ">
         <div class="flex mx-5 gap-5">
             <div class="w-1/4 items-center flex">
@@ -113,11 +113,52 @@
         <div class="button flex justify-center gap-2 text-center text-sm rounded-sm mt-1">
             <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
         </div>
-    </div>   
-      
+    </div>
 </div>
 
+   <!-- Book Appointment Form -->
+
+<div id="bookAppointmentForm" class="hidden fixed inset-0 items-center justify-center z-50 ">
+    <div class="modal-content bg-white md:max-w-lg mx-auto mt-2 w-[30%] rounded shadow-lg z-50 overflow-y-auto">
+        <div class="flex py-2 px-1">
+            <div class=" w-full">
+                <div class="flex justify-end pt-1 pr-4">
+                    <button id="closeFormButton" class="text-3xl leading-none hover:text-gray-300">&times;</button>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-center">Book Appointment Now</h2>
+                <form class="p-4" id="bookAppointment">
+                    <div class="mb-2">
+                        <input type="text" id="name" name="name" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Name">
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" id="mobile" name="mobile" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            placeholder="Mobile">
+                    </div>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full rounded">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
+// JavaScript to handle opening and closing of calling request Form
+
+        document.addEventListener('DOMContentLoaded', function() {
+        let openFormButton = document.getElementById('bookAppointmentBtn');
+        let closeFormButton = document.getElementById('closeFormButton');
+        let callingForm = document.getElementById('bookAppointmentForm');
+
+        openFormButton.addEventListener('click', function() {
+            callingForm.classList.remove('hidden');
+        });
+
+        closeFormButton.addEventListener('click', function() {
+            callingForm.classList.add('hidden');
+        });
+    });
+
     $(document).ready(function() {
         // Function to fetch and display doctor
         let callingDoctor = () => {
@@ -152,11 +193,12 @@
                                 <p>Available Now</p>
                             </div>
                             <div class="button flex justify-center gap-2  text-center text-sm rounded-sm my-1">
-                            
+                            <a href="" id='bookAppointmentBtn'>
                                 <button class=" p-1.5 text-white bg-yellow-500">Book Video Consult</button>
+                            </a>
                                 <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
                             </div>
-                        </div>  
+                        </div>
                         `);
                     });
                 },
@@ -165,12 +207,7 @@
                 }
             });
         }
-       
     callingDoctor();
     });
 </script>
-
-
-
-
 @endsection

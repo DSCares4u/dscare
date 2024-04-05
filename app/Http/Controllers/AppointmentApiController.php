@@ -52,10 +52,10 @@ class AppointmentApiController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|min:3',
             'age' => 'required|numeric',
-            'address' => 'required|string|min:3',
             'mobile' => 'required|string|min:3',
             'doctor_id' => 'required',
             'appointment_date' => 'required|string|min:3',
+            'appointment_type' => 'required',
             'gender' => 'required|in:male,female,others',
         ]);
 
@@ -73,6 +73,7 @@ class AppointmentApiController extends Controller
                 'address' => $request->address,
                 'mobile' => $request->mobile,
                 'doctor_id' => $request->doctor_id,
+                'appointment_type' => $request->appointment_type,
                 'appointment_date' => $request->appointment_date,
           
             ]);

@@ -17,10 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('age');
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->string('mobile');
             $table->string('appointment_date');
             $table->enum('gender',['male','female','others']);
+            $table->enum('appointment_type',['video','clinic']);
+            $table->enum('payment_status', ['pending', 'paid'])->default('pending');
             $table->foreignId('doctor_id')->constrained()->onDelete("cascade");
             $table->timestamps();
         });
