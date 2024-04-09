@@ -60,8 +60,7 @@ class DoctorApiController extends Controller
             'qualification' => 'required|string',
             'visiting_charge' => 'required|numeric',
             'online_charge' => 'required|numeric',
-            'day' => 'required',
-            // 'time' => 'required',
+            'preferred_day' => 'required',
             'landmark' => 'required|string',
             'city' => 'required|string',
             'state' => 'required|string',
@@ -80,6 +79,9 @@ class DoctorApiController extends Controller
             $filename = time() . "." . $request->image->extension();        //upload on public/doctor/image/filename
             $request->image->move(public_path("image/doctor"), $filename);
 
+                // Convert day and time to JSON
+            $daysJson = json_encode($request->preferred_day);
+
             $doctor = Doctor::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -91,8 +93,7 @@ class DoctorApiController extends Controller
                 'qualification' => $request->qualification,
                 'visiting_charge' => $request->visiting_charge,
                 'online_charge' => $request->online_charge,
-                'day' => $request->day,
-                // 'time' => $request->time,
+                'preferred_day' => $daysJson,
                 'landmark' => $request->landmark,
                 'city' => $request->city,
                 'state' => $request->state,

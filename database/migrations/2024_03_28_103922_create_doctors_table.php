@@ -26,8 +26,7 @@ return new class extends Migration
             $table->string('qualification');
             $table->integer('visiting_charge');
             $table->integer('online_charge');
-            $table->string('day');
-            $table->time('time');
+            $table->json('preferred_day')->nullable();
             $table->string('landmark');
             $table->string('city');
             $table->string('state');

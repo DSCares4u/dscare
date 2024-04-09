@@ -116,10 +116,96 @@
                         </div>
                     </div>
 
-                    <div class="max-w-lg mx-auto">
+                    <!-- Day Time Work  -->
+
+                    <!-- HTML for preferred day and time selection -->
+                    <div class="mb-4">
+                    <label for="day" class="text-xl flex-1 font-medium text-gray-700">Preferred Day and Time</label>
+                        <div class="flex flex-1 gap-3 flex-col md:flex-row">
+                          
+                            <div
+                                class="grid lg:flex-[3] lg:grid-cols-10 sm:grid-cols-5 grid-cols-4 justify-start gap-1">
+                                @php
+                                $days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                                $times = ['12 AM - 02 AM','02 AM - 04 AM','04 AM - 06 AM','06 AM - 08 AM','08 AM - 10 AM','10 AM - 12 PM','12 PM - 02 PM', '02 PM - 04 PM', '04 PM - 06 PM', '06 PM - 08 PM', '08 PM - 10 PM','10 PM - 12 AM'];
+                                @endphp
+                                @foreach ($days as $dayIndex => $day)
+                                <div class="flex flex-col items-start">
+                                    <label class="font-medium text-gray-700">{{ $day }}</label>
+                                    @foreach ($times as $timeIndex => $time)
+                                    <div class="flex items-center">
+                                        <input id="day{{ $dayIndex }}_time{{ $timeIndex }}" type="checkbox"
+                                            class="hidden peer" name="preferred_day[{{ $day }}][]"
+                                            value="{{ $time }}">
+                                        <label for="day{{ $dayIndex }}_time{{ $timeIndex }}"
+                                            class="inline-flex items-center rounded-2xl justify-between py-1 px-2 font-medium tracking-tight border border-slate-200 cursor-pointer bg-brand-light text-brand-black border border-slate-200-green-700 peer-checked:border border-slate-200-green-400 peer-checked:bg-green-700 peer-checked:text-white">
+                                            <div class="flex items-center justify-center md:w-full">
+                                                <div class="text-xs text-brand-black text-nowrap">{{ $time }}</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    @endforeach
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HTML for preferred time selection -->
+                    <!-- <div class="mb-4">
+                        <div class="flex flex-1 gap-3 flex-col md:flex-row">
+                            <label for="time" class="text-sm flex-1 font-medium text-gray-700">Preferred Time</label>
+                            <div
+                                class="grid lg:flex-[3] lg:grid-cols-10 sm:grid-cols-5 grid-cols-4 justify-start gap-1">
+                                @php
+                                $time = ['06 AM - 07 AM','07 AM - 08 AM','08 AM - 09 AM','09 AM - 11 AM', '11 AM - 01 PM', '01 PM - 03 PM', '03 PM - 05 PM', '05 PM - 07
+                                PM'];
+                                @endphp
+                                @foreach ($time as $index => $item)
+                                <div class="flex md:flex-col md:items-start">
+                                    <input id="time{{ $index }}" type="checkbox" class="hidden peer"
+                                        name="preferred_time[]" value="{{ $item }}">
+                                    <label for="time{{ $index }}"
+                                        class="inline-flex items-center rounded-2xl justify-between py-1 px-2 font-medium tracking-tight border border-slate-200 cursor-pointer bg-brand-light text-brand-black border border-slate-200-green-700 peer-checked:border border-slate-200-green-400 peer-checked:bg-green-700 peer-checked:text-white">
+                                        <div class="flex items-center justify-center md:w-full">
+                                            <div class="text-xs text-brand-black text-nowrap">{{ $item }}</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="flex flex-1 gap-3 flex-col md:flex-row">
+                            <label for="day" class="text-sm flex-1 font-medium text-gray-700">Preferred Day</label>
+                            <div
+                                class="grid lg:flex-[3] lg:grid-cols-10 sm:grid-cols-5 grid-cols-4 justify-start gap-1">
+                                @php
+                                $day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                                @endphp
+                                @foreach ($day as $index => $item)
+                                <div class="flex md:flex-col md:items-start">
+                                    <input id="day{{ $index }}" type="checkbox" class="hidden peer"
+                                        name="preferred_day[]" value="{{ $item }}">
+                                    <label for="day{{ $index }}"
+                                        class="inline-flex items-center rounded-2xl justify-between py-1 px-2 font-medium tracking-tight border border-slate-200 cursor-pointer bg-brand-light text-brand-black border border-slate-200-green-700 peer-checked:border border-slate-200-green-400 peer-checked:bg-green-700 peer-checked:text-white">
+                                        <div class="flex items-center justify-center md:w-full">
+                                            <div class="text-xs text-brand-black text-nowrap">{{ $item }}</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- JavaScript for AJAX form submission -->
+
+                    <!-- <div class="max-w-lg mx-auto">
                         <h1 class="text-2xl font-bold mb-4">Select Day</h1>
                         <div class="space-y-4" name="day">
-                            <!-- Example day checkboxes -->
                             <div class="flex items-center border-b pb-2">
                                 <input type="checkbox" id="day-monday"  class="mr-2 rounded">
                                 <label for="day-monday" class="text-lg font-semibold">Monday</label>
@@ -170,8 +256,8 @@
                                 <input type="time" name="time" class="w-20 border rounded border-gray-300 py-1 px-2">
                             </div>
                         </div>
-                    </div>
- 
+                    </div> -->
+
                     <!-- <div class="mb-3 w-1/3">
                         <label for="day" class="block text-sm font-medium text-gray-700">Day</label>
                         <select name="day" id="day"
@@ -569,7 +655,9 @@
                     </div> -->
 
                     <div class="mb-2">
-                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add New Doctor</button>
+                        <button type="submit"
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add
+                            New Doctor</button>
                     </div>
                 </form>
             </div>
@@ -577,16 +665,33 @@
     </div>
 </div>
 
-
+<!-- 
 <script>
 $(document).ready(function() {
     //insert new Plan
     $("#addDoctor").submit(function(e) {
         e.preventDefault();
+
+        // Get preferred day and time values
+        var preferredDay = [];
+        var preferredTime = [];
+        $("input[name='preferred_day']:checked").each(function() {
+            preferredDay.push($(this).val());
+        });
+        $("input[name='preferred_time']:checked").each(function() {
+            preferredTime.push($(this).val());
+        });
+
+        // Prepare data to send
+        var formData = new FormData(this);
+        formData.append('preferred_day', JSON.stringify(preferredDay));
+        formData.append('preferred_time', JSON.stringify(preferredTime));
+
+        // Send AJAX request
         $.ajax({
             type: "POST",
             url: "{{ route('doctor.store') }}",
-            data: new FormData(this),
+            data: formData,
             dataType: "JSON",
             contentType: false,
             cache: false,
@@ -594,13 +699,35 @@ $(document).ready(function() {
             success: function(response) {
                 swal("Success", response.message, "success");
                 $("#addDoctor").trigger("reset");
-
                 window.open("/admin/manage-doctor", "_self");
-
             }
-        })
-    })
-})
+        });
+    });
+});
+</script> -->
+
+<script>
+$(document).ready(function() {
+    $("#addDoctor").submit(function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type: "POST",
+            url: "{{ route('doctor.store') }}",
+            data: formData,
+            dataType: "JSON",
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(response) {
+                swal("Success", response.message, "success");
+                $("#addDoctor").trigger("reset");
+                window.open("/admin/manage-doctor", "_self");
+            }
+        });
+    });
+});
 </script>
+
 
 @endsection

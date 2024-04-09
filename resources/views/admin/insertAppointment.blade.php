@@ -35,7 +35,7 @@
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 required>
                                 <option value="">Select Gender</option>
-                                <option value="male">Male</option>
+                                <option selected value="male">Male</option>
                                 <option value="female">Female</option>
                                 <option value="others">Others</option>
                             </select>
@@ -65,6 +65,14 @@
                             <div id="onlineCharge"></div>
                         </div>
                     </div>
+                    <div class="flex mb-4 gap-3">
+                        <div class="flex items-center gap-4 me-4">
+                            <div id="preferred_date"></div>
+                        </div>
+                    </div>
+                <!-- calling preferred day and time daTA  -->
+
+
                     <div class="mb-4">
                         <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
                         <textarea name="address" id="address" rows="3"
@@ -73,7 +81,8 @@
                     </div>
                     <div class="mb-2">
                         <button type="submit"
-                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Book Appointment Now</button>
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Book
+                            Appointment Now</button>
                     </div>
                 </form>
             </div>
@@ -100,6 +109,7 @@ $(document).ready(function() {
         }
 
         // calling Doctor
+
         $.ajax({
             type: "GET",
             url: "{{ route('doctor.index') }}",
@@ -110,6 +120,25 @@ $(document).ready(function() {
                 response.data.forEach((doctor) => {
                     select.append(`
                     <option value="${doctor.id}" data-visiting-fee="${doctor.visiting_charge}" data-online-fee="${doctor.online_charge}">${doctor.name} </option>
+                    `);
+                });
+            }
+        });
+
+        // calling Date And Time UNDER PROCCESS
+
+        $.ajax({
+            type: "GET",
+            url: "{{ route('doctor.index') }}",
+            success: function(response) {
+                let select = $("#preferred_date");
+                select.empty();
+                select.append(`
+                <option value="">Select Date & Time</option>
+                `)
+                response.data.forEach((doctor) => {
+                    select.append(`
+                    <option value="${doctor.id}">${doctor.preferred_date} </option>
                     `);
                 });
             }
@@ -140,11 +169,12 @@ $(document).ready(function() {
         $("#bookAppointment").submit(function(e) {
             e.preventDefault();
             var formData = new FormData(this);
-            var appointmentType = $('input[name="inline-radio-group"]:checked').val(); // Get selected appointment type
+            var appointmentType = $('input[name="inline-radio-group"]:checked')
+        .val(); // Get selected appointment type
             console.log("Selected Appointment Type:",
-            appointmentType); // Log the selected appointment type
+                appointmentType); // Log the selected appointment type
             formData.append('appointment_type',
-            appointmentType); // Append appointment type to form data
+                appointmentType); // Append appointment type to form data
             $.ajax({
                 type: "POST",
                 url: "{{ route('appointment.store') }}",
