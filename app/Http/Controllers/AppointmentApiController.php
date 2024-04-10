@@ -54,7 +54,7 @@ class AppointmentApiController extends Controller
             'age' => 'required|numeric',
             'mobile' => 'required|string|min:3',
             'doctor_id' => 'required',
-            'appointment_date' => 'required|string|min:3',
+            'appointment_day_time' => 'required',
             'appointment_type' => 'required',
             'gender' => 'required|in:male,female,others',
         ]);
@@ -74,7 +74,7 @@ class AppointmentApiController extends Controller
                 'mobile' => $request->mobile,
                 'doctor_id' => $request->doctor_id,
                 'appointment_type' => $request->appointment_type,
-                'appointment_date' => $request->appointment_date,
+                'appointment_day_time' => $request->appointment_day_time,
           
             ]);
     

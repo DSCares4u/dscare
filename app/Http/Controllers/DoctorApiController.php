@@ -80,6 +80,7 @@ class DoctorApiController extends Controller
             $request->image->move(public_path("image/doctor"), $filename);
 
                 // Convert day and time to JSON
+                
             $daysJson = json_encode($request->preferred_day);
 
             $doctor = Doctor::create([

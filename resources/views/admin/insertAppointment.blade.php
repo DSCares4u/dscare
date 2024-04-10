@@ -51,13 +51,13 @@
                                 <!-- calling doctor dynamically -->
                             </select>
                         </div>
-                        <div class=" w-1/2">
+                        <!-- <div class=" w-1/2">
                             <label for="appointment_date" class="block text-sm font-medium text-gray-700">Date Of
                                 Appointment</label>
                             <input type="date" id="appointment_date" name="appointment_date"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 required>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex mb-4 gap-3">
                         <div class="flex items-center gap-4 me-4">
@@ -67,10 +67,11 @@
                     </div>
                     <div class="flex mb-4 gap-3">
                         <div class="flex items-center gap-4 me-4">
-                            <div id="preferred_date"></div>
+                            <div id="preferred_day" name="appointment_day_time">
+                                <!-- calling preferred day and time daTA  -->
+                            </div>
                         </div>
                     </div>
-                <!-- calling preferred day and time daTA  -->
 
 
                     <div class="mb-4">
@@ -90,109 +91,83 @@
     </div>
 </div>
 
-
 <script>
-$(document).ready(function() {
     $(document).ready(function() {
 
-        // Function to update fees based on appointment type
-        function updateFees(appointmentType) {
-            if (appointmentType === 'video') {
-                $('#visitingCharge').empty();
-                $('#onlineCharge').html(
-                    '<p>Online Consultation Fee: $XX</p>'); // Replace $XX with actual fee
-            } else if (appointmentType === 'clinic') {
-                $('#onlineCharge').empty();
-                $('#visitingCharge').html(
-                    '<p>Visiting Clinic Fee: $XX</p>'); // Replace $XX with actual fee
-            }
+    // Function to update fees based on appointment type
+    function updateFees(appointmentType) {
+        if (appointmentType === 'video') {
+            $('#visitingCharge').empty();
+            $('#onlineCharge').html('<p>Online Consultation Fee: $XX</p>'); // Replace $XX with actual fee
+        } else if (appointmentType === 'clinic') {
+            $('#onlineCharge').empty();
+            $('#visitingCharge').html('<p>Visiting Clinic Fee: $XX</p>'); // Replace $XX with actual fee
         }
+    }
 
-        // calling Doctor
-
-        $.ajax({
-            type: "GET",
-            url: "{{ route('doctor.index') }}",
-            success: function(response) {
-                let select = $("#callingDoctors");
-                select.empty();
-                select.append(`<option value="">Select Doctor / Hospital</option>`)
-                response.data.forEach((doctor) => {
-                    select.append(`
-                    <option value="${doctor.id}" data-visiting-fee="${doctor.visiting_charge}" data-online-fee="${doctor.online_charge}">${doctor.name} </option>
-                    `);
-                });
-            }
-        });
-
-        // calling Date And Time UNDER PROCCESS
-
-        $.ajax({
-            type: "GET",
-            url: "{{ route('doctor.index') }}",
-            success: function(response) {
-                let select = $("#preferred_date");
-                select.empty();
+    // AJAX call to fetch doctors
+    $.ajax({
+        type: "GET",
+        url: "{{ route('doctor.index') }}",
+        success: function(response) {
+            let select = $("#callingDoctors");
+            select.empty();
+            select.append(`<option value="">Select Doctor / Hospital</option>`)
+            response.data.forEach((doctor) => {
                 select.append(`
-                <option value="">Select Date & Time</option>
-                `)
-                response.data.forEach((doctor) => {
-                    select.append(`
-                    <option value="${doctor.id}">${doctor.preferred_date} </option>
-                    `);
-                });
+                    <option value="${doctor.id}" data-visiting-fee="${doctor.visiting_charge}" data-day-time-doctor="${doctor.preferred_day}" data-online-fee="${doctor.online_charge}">${doctor.name},${doctor.preferred_day} </option>
+                `);
+            });
+        }
+    });
+     // Event listener for doctor selection
+     $('#callingDoctors').change(function() {
+        let selectedDoctor = $(this).children("option:selected");
+        let visitingFee = selectedDoctor.data('visiting-fee');
+        let onlineFee = selectedDoctor.data('online-fee');
+        let preferredDay = selectedDoctor.data('day-time-doctor');
+        alert(preferredDay);
+
+        // Update the fee display
+        $('#visitingCharge').html(`<input id="inline-radio" type="radio" value="clinic" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="inline-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Visiting Charge Rs. ${visitingFee}</label>`);
+        $('#onlineCharge').html(`<input id="inline-radio" type="radio" value="video" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="inline-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Video Consult Rs. ${onlineFee}</label>`);
+        
+        // Display the preferred day and time
+        $('#preferred_day').text(`Preferred Day and Time: ${preferredDay}`);
+    });
+
+    // Event listener for appointment type selection
+    $('input[name="inline-radio-group"]').change(function() {
+        let appointmentType = $(this).val();
+        updateFees(appointmentType);
+    });
+
+    // Insert new Appointment
+    $("#bookAppointment").submit(function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        var appointmentType = $('input[name="inline-radio-group"]:checked').val();
+        console.log("Selected Appointment Type:", appointmentType);
+        formData.append('appointment_type', appointmentType);
+        $.ajax({
+            type: "POST",
+            url: "{{ route('appointment.store') }}",
+            data: formData,
+            dataType: "JSON",
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(response) {
+                swal("Success", response.message, "success");
+                $("#bookAppointment").trigger("reset");
+                window.open("/admin/manage-appointment", "_self");
             }
         });
-
-        // Event listener for doctor selection
-        $('#callingDoctors').change(function() {
-            let selectedDoctor = $(this).children("option:selected");
-            let visitingFee = selectedDoctor.data('visiting-fee');
-            let onlineFee = selectedDoctor.data('online-fee');
-            $('#visitingCharge').html(` 
-                        <input id="inline-radio" type="radio" value="clinic" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                        <label for="inline-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Visiting Charge Rs. ${visitingFee}</label>
-                `);
-            $('#onlineCharge').html(`
-                        <input id="inline-radio" type="radio" value="video" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                        <label for="inline-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Video Consult Rs. ${onlineFee}</label>
-                `);
-        });
-
-        // Event listener for appointment type selection
-        $('input[name="inline-radio-group"]').change(function() {
-            let appointmentType = $(this).val();
-            updateFees(appointmentType);
-        });
-
-        //insert new Appointment
-        $("#bookAppointment").submit(function(e) {
-            e.preventDefault();
-            var formData = new FormData(this);
-            var appointmentType = $('input[name="inline-radio-group"]:checked')
-        .val(); // Get selected appointment type
-            console.log("Selected Appointment Type:",
-                appointmentType); // Log the selected appointment type
-            formData.append('appointment_type',
-                appointmentType); // Append appointment type to form data
-            $.ajax({
-                type: "POST",
-                url: "{{ route('appointment.store') }}",
-                data: formData,
-                dataType: "JSON",
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function(response) {
-                    swal("Success", response.message, "success");
-                    $("#bookAppointment").trigger("reset");
-                    window.open("/admin/manage-appointment", "_self");
-                }
-            });
-        });
-
     });
-})
+});
+
 </script>
 
 @endsection
