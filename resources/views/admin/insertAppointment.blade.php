@@ -51,13 +51,25 @@
                                 <!-- calling doctor dynamically -->
                             </select>
                         </div>
-                        <!-- <div class=" w-1/2">
+                        {{-- <div class="w-1/2">
+                            
+                        </div> --}}
+                         <div class=" w-1/2">
                             <label for="appointment_date" class="block text-sm font-medium text-gray-700">Date Of
                                 Appointment</label>
-                            <input type="date" id="appointment_date" name="appointment_date"
+                                <select name="preferred_date" id="date" class="  border border-gray-300  shadow-sm  w-full rounded-md mt-1">
+                                    <option value="{{ \Carbon\Carbon::now()->toDateString() }}" selected>Today
+                                    </option>
+                                    @for ($i = 1; $i <= 3; $i++)
+                                        <option value="{{ \Carbon\Carbon::now()->addDays($i)->toDateString() }}">
+                                            {{ \Carbon\Carbon::now()->addDays($i)->format('D d M') }}
+                                        </option>
+                                    @endfor
+                                </select>
+                            {{-- <input type="date" id="appointment_date" name="appointment_date"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                required>
-                        </div> -->
+                                required> --}}
+                        </div>
                     </div>
                     <div class="flex mb-4 gap-3">
                         <div class="flex items-center gap-4 me-4">
