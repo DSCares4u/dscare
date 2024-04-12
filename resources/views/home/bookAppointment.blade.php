@@ -143,7 +143,7 @@
 
 
 <script>
-// JavaScript to handle opening and closing of calling request Form
+    // JavaScript to handle opening and closing of calling request Form
 
         document.addEventListener('DOMContentLoaded', function() {
         let openFormButton = document.getElementById('bookAppointmentBtn');
