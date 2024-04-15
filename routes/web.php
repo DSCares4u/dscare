@@ -66,6 +66,12 @@ Route::get('/admin/manage-book-service', function () {
 Route::get('/admin/manage-book-service/insert', function () {
     return view('admin.bookService');
 });
+Route::get('/admin/manage-book-plan', function () {
+    return view('admin.manageBookedPlan');
+});
+Route::get('/admin/manage-book-plan/insert', function () {
+    return view('admin.bookPlan');
+});
 Route::get('/admin/manage-call', function () {
     return view('admin.manageCall');
 });

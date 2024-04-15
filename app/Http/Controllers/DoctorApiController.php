@@ -92,7 +92,7 @@ class DoctorApiController extends Controller
                 // Convert the filtered data to JSON
                 $jsonData = json_encode($selectedDays);
                 // dd($selectedDays);
-                dd($jsonData);
+                // dd($jsonData);
 
             
 

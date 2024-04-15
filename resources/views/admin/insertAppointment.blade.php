@@ -12,18 +12,22 @@
                             <div class="w-1/2">
                                 <label for="name" class="block text-sm font-medium text-gray-700">Patient's Name</label>
                                 <input type="text" id="name" name="name"
-                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required placeholder="e.g. abc kumar">
+                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                    required placeholder="e.g. abc kumar">
                             </div>
                             <div class=" w-1/2">
                                 <label for="mobile" class="block text-sm font-medium text-gray-700">Contact No.</label>
                                 <input type="tel" id="mobile" name="mobile"
-                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required placeholder="e.g. 1234567890">
+                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                    required placeholder="e.g. 1234567890">
                             </div>
                         </div>
                         <div class="flex gap-2 mb-4">
                             <div class=" w-1/2">
                                 <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
-                                <input type="number" id="age" name="age" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required placeholder="e.g. 45">
+                                <input type="number" id="age" name="age"
+                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                    required placeholder="e.g. 45">
                             </div>
                             <div class=" w-1/2">
                                 <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
@@ -50,8 +54,10 @@
                             <div class=" w-1/2">
                                 <label for="appointment_date" class="block text-sm font-medium text-gray-700">Date Of
                                     Appointment</label>
-                                <select name="preferred_date" id="date" class="border border-gray-300  shadow-sm  w-full rounded-md mt-1">
-                                    <option value="{{ \Carbon\Carbon::now()->toDateString() }}" selected>Today <p id="isAvailable"></p>
+                                <select name="preferred_date" id="date"
+                                    class="border border-gray-300  shadow-sm  w-full rounded-md mt-1">
+                                    <option value="{{ \Carbon\Carbon::now()->toDateString() }}" selected>Today <p
+                                            id="isAvailable"></p>
                                     </option>
                                     @for ($i = 1; $i <= 3; $i++)
                                         <option value="{{ \Carbon\Carbon::now()->addDays($i)->toDateString() }}">
@@ -82,7 +88,9 @@
                         </textarea>
                         </div>
                         <div class="mb-2">
-                            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Book Appointment Now</button>
+                            <button type="submit"
+                                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Book
+                                Appointment Now</button>
                         </div>
                     </form>
                 </div>
@@ -114,9 +122,12 @@
                     select.append(`<option value="">Select Doctor / Hospital</option>`)
                     response.data.forEach((doctor) => {
                         select.append(`
-
-                        <option value="${doctor.id}" data-visiting-fee="${doctor.visiting_charge}" data-day-time-doctor="${JSON.parse(doctor.preferred_day)}" data-online-fee="${doctor.online_charge}">${doctor.name}</option>
-                        `);
+                            <option value="${doctor.id}"
+                                data-visiting-fee="${doctor.visiting_charge}"
+                                data-day-time-doctor="${JSON.stringify(doctor.preferred_day)}"
+                                data-online-fee="${doctor.online_charge}"> ${doctor.name},${JSON.stringify(doctor.preferred_day)}
+                            </option>
+                         `);
                     });
                 }
             });
@@ -127,24 +138,23 @@
                 let visitingFee = selectedDoctor.data('visiting-fee');
                 let onlineFee = selectedDoctor.data('online-fee');
                 let preferredDay = selectedDoctor.data('day-time-doctor');
-                // console.log(preferredDay);
-                console.log('Day: ' + preferredDay[day]);
 
-            // Update the fee display
+                // Update the fee display
                 $('#visitingCharge').html(
                     `<input id="inline-radio" type="radio" value="clinic" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                     <label for="inline-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Visiting Charge Rs. ${visitingFee}</label>`
-                );
+                    );
+
                 $('#onlineCharge').html(
                     `<input id="inline-radio" type="radio" value="video" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                     <label for="inline-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Video Consult Rs. ${onlineFee}</label>`
-                );
+                    );
 
-            // Display the preferred day and time
-                // $('#preferred_day').text(`Preferred Day and Time: ${preferredDay}`);
-                // $('#preferred_day').text(`Preferred Day: ${preferredDayObj.day}, Time: ${preferredDayObj.start_time}`);
-
+                // Convert the preferred day and time JSON string to an object
+                // preferredDay = JSON.parse(preferredDay);
+                alert(preferredDay);
             });
+
 
             // Event listener for appointment type selection
             $('input[name="inline-radio-group"]').change(function() {
@@ -176,42 +186,42 @@
             });
 
             // Function to check if the selected doctor is available on the selected day
-            function checkDoctorAvailability(selectedDoctorId, selectedDate) {
-                $.ajax({
-                    type: "GET",
-                    url: "{{ route('doctor.index') }}", // Replace with your route to check doctor availability
-                    data: {
-                        id: selectedDoctorId,
-                        preferred_day: selectedDate
-                    },
-                    success: function(response) {
-                        if (response.available) {
-                            alert('isAvailable')
-                            $('#isAvailable').html('<p>Doctor is available on this day</p>');
-                        } else {
-                            $('#isAvailable').html('<p>Doctor is not available on this day</p>');
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(error);
-                        $('#isAvailable').html('<p>Error checking doctor availability</p>');
-                    }
-                });
-            }
+            // function checkDoctorAvailability(selectedDoctorId, selectedDate) {
+            //     $.ajax({
+            //         type: "GET",
+            //         url: "{{ route('doctor.index') }}", // Replace with your route to check doctor availability
+            //         data: {
+            //             id: selectedDoctorId,
+            //             preferred_day: selectedDate
+            //         },
+            //         success: function(response) {
+            //             if (response.available) {
+            //                 alert('isAvailable')
+            //                 $('#isAvailable').html('<p>Doctor is available on this day</p>');
+            //             } else {
+            //                 $('#isAvailable').html('<p>Doctor is not available on this day</p>');
+            //             }
+            //         },
+            //         error: function(xhr, status, error) {
+            //             console.error(error);
+            //             $('#isAvailable').html('<p>Error checking doctor availability</p>');
+            //         }
+            //     });
+            // }
 
-            // Event listener for doctor selection
-            $('#callingDoctors').change(function() {
-                let selectedDoctorId = $(this).val();
-                let selectedDate = $('#date').val();
-                checkDoctorAvailability(selectedDoctorId, selectedDate);
-            });
+            // // Event listener for doctor selection
+            // $('#callingDoctors').change(function() {
+            //     let selectedDoctorId = $(this).val();
+            //     let selectedDate = $('#date').val();
+            //     checkDoctorAvailability(selectedDoctorId, selectedDate);
+            // });
 
-            // Event listener for appointment date selection
-            $('#date').change(function() {
-                let selectedDoctorId = $('#callingDoctors').val();
-                let selectedDate = $(this).val();
-                checkDoctorAvailability(selectedDoctorId, selectedDate);
-            });
+            // // Event listener for appointment date selection
+            // $('#date').change(function() {
+            //     let selectedDoctorId = $('#callingDoctors').val();
+            //     let selectedDate = $(this).val();
+            //     checkDoctorAvailability(selectedDoctorId, selectedDate);
+            // });
         });
     </script>
 @endsection
