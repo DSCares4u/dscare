@@ -81,7 +81,20 @@ class DoctorApiController extends Controller
 
                 // Convert day and time to JSON
                 
-            $daysJson = json_encode($request->preferred_day);
+                $input = $request->input('preferred_day');
+
+                // Filter out the selected days
+                $selectedDays = collect($input)->filter(function ($day) {
+                    // return isset($day['day']) && $day['day'] == true; // Assuming 'on' is the value when the checkbox is checked
+                    return isset($day['day']); // Assuming 'on' is the value when the checkbox is checked
+                })->toArray();
+            
+                // Convert the filtered data to JSON
+                $jsonData = json_encode($selectedDays);
+                // dd($selectedDays);
+                dd($jsonData);
+
+            
 
             $doctor = Doctor::create([
                 'name' => $request->name,
@@ -94,7 +107,7 @@ class DoctorApiController extends Controller
                 'qualification' => $request->qualification,
                 'visiting_charge' => $request->visiting_charge,
                 'online_charge' => $request->online_charge,
-                'preferred_day' => $daysJson,
+                'preferred_day' => $jsonData,
                 'landmark' => $request->landmark,
                 'city' => $request->city,
                 'state' => $request->state,

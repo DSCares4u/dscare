@@ -120,43 +120,43 @@
                         <!-- HTML for preferred day and time selection -->
 
                         <div class="mb-4">
-                            <label for="day" class="text-xl flex-1 font-medium text-gray-700">Preferred Day and
-                                Time</label>
+                            <label for="day" class="text-xl flex-1 font-medium text-gray-700">Preferred Day and Time</label>
                             <div class="mb-3">
                                 @php
                                     $days = [
-                                        'Monday' => 'monday',
-                                        'Tuesday' => 'tuesday',
-                                        'Wednesday' => 'wednesday',
-                                        'Thursday' => 'thursday',
-                                        'Friday' => 'friday',
-                                        'Saturday' => 'saturday',
-                                        'Sunday' => 'sunday',
+                                        'Monday',
+                                        'Tuesday',
+                                        'Wednesday',
+                                        'Thursday',
+                                        'Friday',
+                                        'Saturday',
+                                        'Sunday'
                                     ];
                                 @endphp
-                                @foreach ($days as $day => $dayKey)
+                                @foreach ($days as $day)
                                     <div class="flex items-center gap-12">
                                         <div class="flex items-center min-w-[4rem]">
-                                            <input id="{{ $dayKey }}" name="preferred_day[{{ $day }}][day]"
-                                                type="checkbox" value="{{ $dayKey }}"
+                                            <input id="{{ $day }}" name="preferred_day[{{ $day }}][day]"
+                                                type="checkbox" value="{{ $day }}"
                                                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <label for="{{ $dayKey }}"
+                                            <label for="{{ $day }}"
                                                 class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $day }}</label>
                                         </div>
                                         <div class="flex">From :
-                                            <label for="start-time-{{ $dayKey }}" class="sr-only">Start
+                                            <label for="start-time-{{ $day }}" class="sr-only">Start
                                                 time:</label>
-                                            <input type="time" id="start-time-{{ $dayKey }}"
+                                            <input type="time" id="start-time-{{ $day }}"
                                                 name="preferred_day[{{ $day }}][start_time]"
                                                 class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="10:00" required>
                                                 To: 
-                                            <label for="end-time-{{ $dayKey }}" class="sr-only">End time:</label>
-                                            <input type="time" id="end-time-{{ $dayKey }}" name="preferred_day[{{ $day }}][end_time]" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="18:00" required>
+                                            <label for="end-time-{{ $day }}" class="sr-only">End time:</label>
+                                            <input type="time" id="end-time-{{ $day }}" name="preferred_day[{{ $day }}][end_time]" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="18:00" required>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
                         </div>
+                        
 
                         <div class="mb-2">
                             <button type="submit"

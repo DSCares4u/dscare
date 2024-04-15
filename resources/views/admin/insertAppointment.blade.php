@@ -114,7 +114,8 @@
                     select.append(`<option value="">Select Doctor / Hospital</option>`)
                     response.data.forEach((doctor) => {
                         select.append(`
-                        <option value="${doctor.id}" data-visiting-fee="${doctor.visiting_charge}" data-day-time-doctor="${doctor.preferred_day}" data-online-fee="${doctor.online_charge}">${doctor.name}</option>
+
+                        <option value="${doctor.id}" data-visiting-fee="${doctor.visiting_charge}" data-day-time-doctor="${JSON.parse(doctor.preferred_day)}" data-online-fee="${doctor.online_charge}">${doctor.name}</option>
                         `);
                     });
                 }
@@ -126,8 +127,8 @@
                 let visitingFee = selectedDoctor.data('visiting-fee');
                 let onlineFee = selectedDoctor.data('online-fee');
                 let preferredDay = selectedDoctor.data('day-time-doctor');
-                // let preferredDayObj = JSON.parse(preferredDay); // Parse preferredDay as JSON object
-                // alert(preferredDayObj);
+                // console.log(preferredDay);
+                console.log('Day: ' + preferredDay[day]);
 
             // Update the fee display
                 $('#visitingCharge').html(
@@ -140,7 +141,9 @@
                 );
 
             // Display the preferred day and time
-                $('#preferred_day').text(`Preferred Day and Time: ${preferredDay}`);
+                // $('#preferred_day').text(`Preferred Day and Time: ${preferredDay}`);
+                // $('#preferred_day').text(`Preferred Day: ${preferredDayObj.day}, Time: ${preferredDayObj.start_time}`);
+
             });
 
             // Event listener for appointment type selection
