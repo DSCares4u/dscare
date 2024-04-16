@@ -95,9 +95,21 @@ class ServiceApiController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show($id)
     {
-        //
+        $service = Service::find($id);
+        if($service){
+            return response()->json([
+                'status' => 200,
+                'message' => $service
+            ], 200);
+        }
+        else{
+            return response()->json([
+                'status' => 404,
+                'message' => "No Service Found"
+            ], 404);
+        }
     }
 
     /**

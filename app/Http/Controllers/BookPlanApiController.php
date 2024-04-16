@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BookService;
+use App\Models\BookPlan;
 use Illuminate\Http\Request;
 use Validator;
 
-class BookServiceApiController extends Controller
+class BookPlanApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,11 @@ class BookServiceApiController extends Controller
      */
     public function index()
     {
-        $bookService = BookService::with("service")->orderBy('created_at', 'desc')->get();
-        if ($bookService->count() > 0) {
+        $bookPlan = BookPlan::with("plan")->orderBy('created_at', 'desc')->get();
+        if ($bookPlan->count() > 0) {
             return response()->json([
                 'status' => 200,
-                'data' => $bookService
+                'data' => $bookPlan
             ], 200);
         } else {
             return response()->json([
@@ -30,29 +30,19 @@ class BookServiceApiController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBookServiceRequest  $request
+     * @param  \App\Http\Requests\StoreBookPlanRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|min:3',
+            'guardian_name' => 'required|string|min:3',
+            'patient_name' => 'required|string|min:3',
             'mobile' => 'required',
             'email' => 'required|email',
-            'service_id' => 'required',
-            'message' => 'required',
+            'plan_id' => 'required',
             'address' => 'required|string', 
         ]);
 
@@ -63,16 +53,16 @@ class BookServiceApiController extends Controller
             ], 422);
         } else {
 
-            $bookService = BookService::create([
-                'name' => $request->name,
+            $bookPlan = BookPlan::create([
+                'patient_name' => $request->patient_name,
+                'guardian_name' => $request->guardian_name,
                 'mobile' => $request->mobile,
                 'email' => $request->email,
-                'service_id' => $request->service_id,
-                'message' => $request->message,
+                'plan_id' => $request->plan_id,
                 'address' => $request->address,              
             ]);
     
-            if ($bookService) {
+            if ($bookPlan) {
                 return response()->json([
                     'status' => 200,
                     'message' => "We Will Connect You Soon"
@@ -80,7 +70,7 @@ class BookServiceApiController extends Controller
             } else {
                 return response()->json([
                     'status' => 500,
-                    'message' => "Unable to Book Service"
+                    'message' => "Unable to Book Your Plan"
                 ], 500);
             }
         }
@@ -89,22 +79,22 @@ class BookServiceApiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BookService  $bookService
+     * @param  \App\Models\BookPlan  $bookPlan
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $bookService = BookService::find($id);
-        if($bookService){
+        $bookPlan = BookPlan::find($id);
+        if($bookPlan){
             return response()->json([
                 'status' => 200,
-                'message' => $bookService
+                'message' => $bookPlan
             ], 200);
         }
         else{
             return response()->json([
                 'status' => 404,
-                'message' => "No Service Found"
+                'message' => "No Plan Found"
             ], 404);
         }
     }
@@ -112,10 +102,10 @@ class BookServiceApiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BookService  $bookService
+     * @param  \App\Models\BookPlan  $bookPlan
      * @return \Illuminate\Http\Response
      */
-    public function edit(BookService $bookService)
+    public function edit(BookPlan $bookPlan)
     {
         //
     }
@@ -123,11 +113,11 @@ class BookServiceApiController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBookServiceRequest  $request
-     * @param  \App\Models\BookService  $bookService
+     * @param  \App\Http\Requests\UpdateBookPlanRequest  $request
+     * @param  \App\Models\BookPlan  $bookPlan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBookServiceRequest $request, BookService $bookService)
+    public function update(UpdateBookPlanRequest $request, BookPlan $bookPlan)
     {
         //
     }
@@ -135,23 +125,23 @@ class BookServiceApiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BookService  $bookService
+     * @param  \App\Models\BookPlan  $bookPlan
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $bookService = BookService::find($id);
-        if($bookService){
-            $bookService->delete();
+        $bookPlan = BookPlan::find($id);
+        if($bookPlan){
+            $bookPlan->delete();
             return response()->json([
                 'status' => 200,
-                'message' => "Book Service Deleted Successfully"
+                'message' => "Plan Deleted Successfully"
             ], 200);
         }
         else{
             return response()->json([
                 'status' => 500,
-                'message' => "No Book Service Found"
+                'message' => "No Plan Found"
             ], 500);
         }       
     }

@@ -98,9 +98,21 @@ class AppointmentApiController extends Controller
      * @param  \App\Models\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function show(Appointment $appointment)
+    public function show($id)
     {
-        //
+        $appointment = Appointment::find($id);
+        if($appointment){
+            return response()->json([
+                'status' => 200,
+                'message' => $appointment
+            ], 200);
+        }
+        else{
+            return response()->json([
+                'status' => 404,
+                'message' => "No Appointment Found"
+            ], 404);
+        }
     }
 
     /**

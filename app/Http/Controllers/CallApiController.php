@@ -87,9 +87,21 @@ class CallApiController extends Controller
      * @param  \App\Models\Call  $call
      * @return \Illuminate\Http\Response
      */
-    public function show(Call $call)
+    public function show($id)
     {
-        //
+        $call = Call::find($id);
+        if($call){
+            return response()->json([
+                'status' => 200,
+                'message' => $call
+            ], 200);
+        }
+        else{
+            return response()->json([
+                'status' => 404,
+                'message' => "No call Found"
+            ], 404);
+        }
     }
 
     /**

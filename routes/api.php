@@ -7,6 +7,7 @@ use App\Http\Controllers\PlanApiController;
 use App\Http\Controllers\DoctorApiController;
 use App\Http\Controllers\ServiceApiController;
 use App\Http\Controllers\BookServiceApiController;
+use App\Http\Controllers\BookPlanApiController;
 use App\Http\Controllers\AppointmentApiController;
 use App\Http\Controllers\CallApiController;
 
@@ -70,3 +71,10 @@ Route::get('/admin/manage-book-service/{id}',[BookServiceApiController::class,'s
 Route::get('/admin/manage-book-service/edit/{id}',[BookServiceApiController::class,'edit']);
 Route::put('/admin/manage-book-service/edit/{id}',[BookServiceApiController::class,'update']);
 Route::delete('/admin/manage-book-service/delete/{id}',[BookServiceApiController::class,'destroy']);
+
+Route::post('/admin/book-plan',[BookPlanApiController::class,'store'])->name('book.plan.store');
+Route::get('/admin/book-plan',[BookPlanApiController::class,'index'])->name('book.plan.index');
+Route::get('/admin/manage-book-plan/{id}',[BookPlanApiController::class,'show']);
+Route::get('/admin/manage-book-plan/edit/{id}',[BookPlanApiController::class,'edit']);
+Route::put('/admin/manage-book-plan/edit/{id}',[BookPlanApiController::class,'update']);
+Route::delete('/admin/manage-book-plan/delete/{id}',[BookPlanApiController::class,'destroy']);

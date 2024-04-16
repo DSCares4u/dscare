@@ -116,6 +116,25 @@
                 }
             });
         }
+        $(document).on('click', '.delete-btn', function() {
+            let appointmentId = $(this).data('id');
+            let csrfToken = $('meta[name="csrf-token"]').attr('content'); // Retrieve CSRF token
+            $.ajax({
+                type: 'DELETE',
+                url: `/api/admin/manage-appointment/delete/${appointmentId}`,
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken // Include CSRF token in headers
+                },
+                success: function(response) {
+                    // console.log("Delete Data Successfully");
+                    swal("message", response.message, "message");
+                    callingAppointment(); // Fetch students again after successful deletion
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error Deleting Data:", error);
+                }
+            });
+        });
         callingAppointment();
     });
 </script>

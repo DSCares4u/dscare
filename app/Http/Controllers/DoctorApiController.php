@@ -134,9 +134,21 @@ class DoctorApiController extends Controller
      * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function show(Doctor $doctor)
+    public function show($id)
     {
-        //
+        $doctor = Doctor::find($id);
+        if($doctor){
+            return response()->json([
+                'status' => 200,
+                'message' => $doctor
+            ], 200);
+        }
+        else{
+            return response()->json([
+                'status' => 404,
+                'message' => "No doctor Found"
+            ], 404);
+        }
     }
 
     /**
