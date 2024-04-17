@@ -88,7 +88,7 @@ class BookPlanApiController extends Controller
         if($bookPlan){
             return response()->json([
                 'status' => 200,
-                'message' => $bookPlan
+                'data' => $bookPlan
             ], 200);
         }
         else{

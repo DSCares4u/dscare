@@ -48,6 +48,10 @@ Route::get('/admin/manage-doctor', function () {
     return view('admin.manageDoctor');
 });
 
+Route::get('/admin/manage-doctor/view/{id}', function () {
+    return view('admin.viewDoctor');
+});
+
 Route::get('/admin/manage-doctor/insert', function () {
     return view('admin.insertDoctor');
 });
@@ -63,11 +67,18 @@ Route::get('/admin/manage-user/insert', function () {
 Route::get('/admin/manage-book-service', function () {
     return view('admin.managebookService');
 });
+Route::get('/admin/manage-book-service/view/{id}', function () {
+    return view('admin.viewBookService');
+});
 Route::get('/admin/manage-book-service/insert', function () {
     return view('admin.bookService');
 });
+
 Route::get('/admin/manage-book-plan', function () {
     return view('admin.manageBookedPlan');
+});
+Route::get('/admin/manage-book-plan/view/{id}', function () {
+    return view('admin.viewBookPlan');
 });
 Route::get('/admin/manage-book-plan/insert', function () {
     return view('admin.bookPlan');

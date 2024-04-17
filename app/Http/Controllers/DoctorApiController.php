@@ -140,7 +140,7 @@ class DoctorApiController extends Controller
         if($doctor){
             return response()->json([
                 'status' => 200,
-                'message' => $doctor
+                'data' => $doctor
             ], 200);
         }
         else{

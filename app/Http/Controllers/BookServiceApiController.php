@@ -98,7 +98,7 @@ class BookServiceApiController extends Controller
         if($bookService){
             return response()->json([
                 'status' => 200,
-                'message' => $bookService
+                'data' => $bookService
             ], 200);
         }
         else{
