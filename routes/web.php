@@ -25,7 +25,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/appointment', function () {
-    return view('home.bookAppointment');
+    return view('home.appointment');
 });
 
 Route::get('/plans', function () {
@@ -107,6 +107,10 @@ Route::get('/admin/manage-appointment', function () {
     return view('admin.manageAppointment');
 });
 
+Route::get('/admin/manage-appointment/view/{id}', function () {
+    return view('admin.viewAppointment');
+});
+
 Route::get('/admin/manage-service', function () {
     return view('admin.manageService');
 });
@@ -129,4 +133,12 @@ Route::get('/doctor/patient', function () {
 
 Route::get('/doctor/profile', function () {
     return view('doctor.myProfile');
+});
+
+Route::get('/plans/book-now/{id}', function () {
+    return view('home.bookPlan');
+});
+
+Route::get('/appointment/book-now/{id}', function () {
+    return view('home.bookAppointment');
 });

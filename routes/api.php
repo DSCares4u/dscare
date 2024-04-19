@@ -78,3 +78,6 @@ Route::get('/admin/manage-book-plan/view/{id}',[BookPlanApiController::class,'sh
 Route::get('/admin/manage-book-plan/edit/{id}',[BookPlanApiController::class,'edit']);
 Route::put('/admin/manage-book-plan/edit/{id}',[BookPlanApiController::class,'update']);
 Route::delete('/admin/manage-book-plan/delete/{id}',[BookPlanApiController::class,'destroy']);
+
+Route::post('/plans/book-now/{id}',[BookPlanApiController::class,'bookPlan']);
+Route::post('/appointment/book-now/{id}',[AppointmentApiController::class,'bookAppointment']);

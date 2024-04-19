@@ -76,6 +76,46 @@ class BookPlanApiController extends Controller
         }
     }
 
+    public function bookPlan(Request $request, $plan_id)
+{
+    $validator = Validator::make($request->all(), [
+        'guardian_name' => 'required|string|min:3',
+        'patient_name' => 'required|string|min:3',
+        'mobile' => 'required',
+        'email' => 'required|email',
+        'address' => 'required|string', 
+    ]);
+
+    if ($validator->fails()) {
+        return response()->json([
+            'status' => 422,
+            'error' => $validator->messages()
+        ], 422);
+    } else {
+        $bookPlan = BookPlan::create([
+            'patient_name' => $request->patient_name,
+            'guardian_name' => $request->guardian_name,
+            'mobile' => $request->mobile,
+            'email' => $request->email,
+            'plan_id' => $plan_id,
+            'address' => $request->address,              
+        ]);
+
+        if ($bookPlan) {
+            return response()->json([
+                'status' => 200,
+                'message' => "We Will Connect You Soon"
+            ], 200);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => "Unable to Book Your Plan"
+            ], 500);
+        }
+    }
+}
+
+
     /**
      * Display the specified resource.
      *

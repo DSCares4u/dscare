@@ -95,9 +95,10 @@
                                 <div class="mt-5">
                                     <p class="text-base ml-3 font-bold text-[#ff3f34]
                                     ">${discount}% Off</p>
-
+                                    <a href='/plans/book-now/${item.id}'>
                                     <button class=" p-2 py-1 font-medium  rounded-md bg-[#006266]  text-white">Buy
                                         Now</button>
+                                        </a>
                                 </div>
                             </div>
                         </div>

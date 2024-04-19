@@ -54,7 +54,7 @@
                             <div class=" w-1/2">
                                 <label for="appointment_date" class="block text-sm font-medium text-gray-700">Date Of
                                     Appointment</label>
-                                <select name="preferred_date" id="date"
+                                <select name="appointment_date" id="appointment_date"
                                     class="border border-gray-300  shadow-sm  w-full rounded-md mt-1">
                                     <option value="{{ \Carbon\Carbon::now()->toDateString() }}" selected>Today <p
                                             id="isAvailable"></p>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="flex mb-4 gap-3">
                             <div class="flex items-center gap-4 me-4">
-                                <div id="preferred_day" name="appointment_day_time">
+                                <div id="preferred_day">
                                     <!-- calling preferred day and time data  -->
                                 </div>
                             </div>
@@ -185,43 +185,7 @@
                 });
             });
 
-            // Function to check if the selected doctor is available on the selected day
-            // function checkDoctorAvailability(selectedDoctorId, selectedDate) {
-            //     $.ajax({
-            //         type: "GET",
-            //         url: "{{ route('doctor.index') }}", // Replace with your route to check doctor availability
-            //         data: {
-            //             id: selectedDoctorId,
-            //             preferred_day: selectedDate
-            //         },
-            //         success: function(response) {
-            //             if (response.available) {
-            //                 alert('isAvailable')
-            //                 $('#isAvailable').html('<p>Doctor is available on this day</p>');
-            //             } else {
-            //                 $('#isAvailable').html('<p>Doctor is not available on this day</p>');
-            //             }
-            //         },
-            //         error: function(xhr, status, error) {
-            //             console.error(error);
-            //             $('#isAvailable').html('<p>Error checking doctor availability</p>');
-            //         }
-            //     });
-            // }
-
-            // // Event listener for doctor selection
-            // $('#callingDoctors').change(function() {
-            //     let selectedDoctorId = $(this).val();
-            //     let selectedDate = $('#date').val();
-            //     checkDoctorAvailability(selectedDoctorId, selectedDate);
-            // });
-
-            // // Event listener for appointment date selection
-            // $('#date').change(function() {
-            //     let selectedDoctorId = $('#callingDoctors').val();
-            //     let selectedDate = $(this).val();
-            //     checkDoctorAvailability(selectedDoctorId, selectedDate);
-            // });
+           
         });
     </script>
 @endsection

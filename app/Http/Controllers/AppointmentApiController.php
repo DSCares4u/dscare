@@ -54,7 +54,7 @@ class AppointmentApiController extends Controller
             'age' => 'required|numeric',
             'mobile' => 'required|string|min:3',
             'doctor_id' => 'required',
-            // 'appointment_day_time' => 'required',
+            'appointment_date' => 'required',
             'appointment_type' => 'required',
             'gender' => 'required|in:male,female,others',
         ]);
@@ -74,7 +74,7 @@ class AppointmentApiController extends Controller
                 'mobile' => $request->mobile,
                 'doctor_id' => $request->doctor_id,
                 'appointment_type' => $request->appointment_type,
-                // 'appointment_day_time' => $request->appointment_day_time,
+                'appointment_date' => $request->appointment_date,
           
             ]);
     
@@ -92,6 +92,48 @@ class AppointmentApiController extends Controller
         }
     }
 
+    public function bookAppointment(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|min:3',
+            'age' => 'required|numeric',
+            'mobile' => 'required|string|min:3',
+            'appointment_date' => 'required',
+            'appointment_type' => 'required',
+            'gender' => 'required|in:male,female,others',
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 422,
+                'error' => $validator->messages()
+            ], 422);
+        } else {
+            $appointment = Appointment::create([
+                'name' => $request->name,
+                'age' => $request->age,
+                'gender' => $request->gender,
+                'address' => $request->address,
+                'mobile' => $request->mobile,
+                'doctor_id' => $id,
+                'appointment_type' => $request->appointment_type,
+                'appointment_date' => $request->appointment_date,          
+            ]);
+    
+            if ($appointment) {
+                return response()->json([
+                    'status' => 200,
+                    'message' => "We Will Connect You Soon"
+                ], 200);
+            } else {
+                return response()->json([
+                    'status' => 500,
+                    'message' => "Unable to Book Your Appointment"
+                ], 500);
+            }
+        }
+    }
+
     /**
      * Display the specified resource.
      *
@@ -104,7 +146,7 @@ class AppointmentApiController extends Controller
         if($appointment){
             return response()->json([
                 'status' => 200,
-                'message' => $appointment
+                'data' => $appointment
             ], 200);
         }
         else{

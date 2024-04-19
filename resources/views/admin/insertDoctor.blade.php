@@ -190,6 +190,13 @@
                 }
             });
         });
+        
+        $('#mobile').on('keydown', function(e) {
+                var maxLength = 10;
+                if ($(this).val().length >= maxLength) {
+                    $(this).next('input').focus();
+                }
+        });
     });
 </script>
 @endsection

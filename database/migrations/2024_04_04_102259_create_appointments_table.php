@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('age');
             $table->string('address')->nullable();
             $table->string('mobile');
-            $table->string('appointment_day_time');
+            $table->string('appointment_date');
             $table->enum('gender',['male','female','others']);
             $table->enum('appointment_type',['video','clinic']);
             $table->enum('payment_status', ['pending', 'paid'])->default('pending');

@@ -1,213 +1,160 @@
 @extends('home.base')
 @section('content')
 
-<div class="specialist flex w-full  mx-8 mr-4 mt-10">
-    <div class="w-2/12 mx-3">
-        <img src="/images/icons/dermo.svg" class="mx-auto h-16" alt="">
-        <h3 class="text-center font-serif text-sm">Dermatologist - Acne, Pimples...</h3>
-    </div>
-    <div class="w-2/12 mx-3">
-        <img src="/images/icons/dermo.svg" class="mx-auto h-16" alt="">
-        <h3 class="text-center font-serif text-sm">Dermatologist - Acne, Pimples...</h3>
-    </div>
-    <div class="w-2/12 mx-3">
-        <img src="/images/icons/dermo.svg" class="mx-auto h-16" alt="">
-        <h3 class="text-center font-serif text-sm">Dermatologist - Acne, Pimples...</h3>
-    </div>
-    <div class="w-2/12 mx-3">
-        <img src="/images/icons/dermo.svg" class="mx-auto h-16" alt="">
-        <h3 class="text-center font-serif text-sm">Dermatologist - Acne, Pimples...</h3>
-    </div>
-    <div class="w-2/12 mx-3">
-        <img src="/images/icons/dermo.svg" class="mx-auto h-16" alt="">
-        <h3 class="text-center font-serif text-sm">Dermatologist - Acne, Pimples...</h3>
-    </div>
-    <div class="w-2/12 mx-3">
-        <img src="/images/icons/dermo.svg" class="mx-auto h-16" alt="">
-        <h3 class="text-center font-serif text-sm">Dermatologist - Acne, Pimples...</h3>
-    </div>
-
-</div>
-
-<div class="search mt-10 mx-24">
-    <h4 class="text-blue-500 text-xl font-bold">Find Doctors</h4>
-    <div class="box flex mt-5 gap-7">
-    <div class="location flex">
-        <label for=""><img src="/images/icons/locator.png" class="h-6 mt-2" alt=""></label>
-        <select name="" id="" class="border-0  font-semibold">
-            <option value="" >All Cities</option>
-            <option value="">Purnea</option>
-            <option value="">Patna</option>
-            <option value="">Katihar</option>
-            <option value="">Bhagalpur</option>
-            <option value="">Arariya</option>
-        </select>
-    </div>
-    <div class="search flex">
-        <label for=""><img src="/images/icons/search.png" class="h-6 mt-2" alt=""></label>
-        <input type="text" placeholder="Search Doctors / Hospital/ Symptoms" class="border-0 w-96">
-    </div>
-    </div>
-</div>
-
-<div class="most-search mx-24 mt-5">
-    <p class="text-[#006266] text-sm font-semibold">Most Searched Cities</p>
-    <div class="city flex mt-3  gap-5">
-        <button class="border border-gray-300 p-1 rounded-sm text-xs font-medium ">New Delhi</button>
-        <button class="border border-gray-300 p-1 rounded-sm text-xs font-medium ">Mumbai</button>
-        <button class="border border-gray-300 p-1 rounded-sm text-xs font-medium ">Kolkata</button>
-        <button class="border border-gray-300 p-1 rounded-sm text-xs font-medium ">Chennai</button>
-        <button class="border border-gray-300 p-1 rounded-sm text-xs font-medium ">Bangalore</button>
-        <button class="border border-gray-300 p-1 rounded-sm text-xs font-medium ">Hyderabad</button>
-        <button class="border border-gray-300 p-1 rounded-sm text-xs font-medium ">All Cities</button>
-    </div>
-</div>
-
-<div class="mt-10 doctor flex flex-wrap mx-10 justify-center gap-8" id="callingDoctor">
-
-    <div class="w-3/12  border border-gray-200 rounded-lg shadow ">
-        <div class="flex mx-5 gap-5">
-            <div class="w-1/4 items-center flex">
-                <img src="/images/doctor-dp.webp" alt="">
+<div class="container mx-auto mt-8">
+    <div class="w-full lg:w-2/3 md:w-8/12 sm:w-11/12 mx-auto">
+        <div class="bg-white shadow-lg rounded-lg">
+            <div class="bg-gray-200 px-4 py-2 rounded-t-lg">
+                <h3 class="text-xl font-semibold">Book New Appointment</h3>
             </div>
-            <div class="w-3/4 ml-5 leading-tight mt-2">
-                <h4>Dr. Korrai Bala Raju</h4>
-                <p class="text-sm font-semibold text-blue-500">Dentist</p>
-                <p class="text-base  text-blue-500">10YRS EXP.</p>
-                <p class="text-sm text-gray-600 text">BDS,MDS</p>
-                <p class="text-blue-500 font-semibold my-2">Fees- 400</p>
-            </div>
-        </div>
-        <div class="address mx-5 flex text-sm text-gray-500">
-            <img src="/images/icons/locator.png" class="h-4 mt-0.5" alt="">
-            <p>Line Bazar, Purnea, Bihar</p>
-        </div>
-        <div class="available text-xs font-semibold text-gray-600 text-center">
-            <p>Available Now</p>
-        </div>
-        <div class="button flex justify-center gap-2  text-center text-sm rounded-sm mt-1">
-            <button class=" p-1.5 text-white bg-yellow-500">Book Video Consult</button>
-            <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
-        </div>
-    </div>
-    <div class="w-3/12  border border-gray-200 rounded-lg shadow ">
-        <div class="flex mx-5 gap-5">
-            <div class="w-1/4 items-center flex">
-                <img src="/images/doctor-dp.webp" alt="">
-            </div>
-            <div class="w-3/4 ml-5 leading-tight mt-2">
-                <h4>Dr. Korrai Bala Raju</h4>
-                <p class="text-sm font-semibold text-blue-500">Dentist</p>
-                <p class="text-base  text-blue-500">10YRS EXP.</p>
-                <p class="text-sm text-gray-600 text">BDS,MDS</p>
-                <p class="text-blue-500 font-semibold my-2">Fees- 400</p>
-            </div>
-        </div>
-        <div class="address mx-5 flex text-sm text-gray-500">
-            <img src="/images/icons/locator.png" class="h-4 mt-0.5" alt="">
-            <p>Line Bazar, Purnea, Bihar</p>
-        </div>
-        <div class="available text-xs font-semibold text-gray-600 text-center">
-            <p>Available Now</p>
-        </div>
-        <div class="button flex justify-center gap-2 text-center text-sm rounded-sm mt-1">
-            <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
-        </div>
-    </div>
-</div>
-
-   <!-- Book Appointment Form -->
-
-<div id="bookAppointmentForm" class="hidden fixed inset-0 items-center justify-center z-50 ">
-    <div class="modal-content bg-white md:max-w-lg mx-auto mt-2 w-[30%] rounded shadow-lg z-50 overflow-y-auto">
-        <div class="flex py-2 px-1">
-            <div class=" w-full">
-                <div class="flex justify-end pt-1 pr-4">
-                    <button id="closeFormButton" class="text-3xl leading-none hover:text-gray-300">&times;</button>
-                </div>
-                <h2 class="text-xl font-bold mb-2 text-center">Book Appointment Now</h2>
-                <form class="p-4" id="bookAppointment">
-                    <div class="mb-2">
-                        <input type="text" id="name" name="name" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Name">
+            <div class="p-4">
+                <form id="bookAppointment">
+                    <div class="flex gap-2 mb-4">
+                        <div class="w-1/2">
+                            <label for="name" class="block text-sm font-medium text-gray-700">Patient's Name</label>
+                            <input type="text" id="name" name="name"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                required placeholder="e.g. abc kumar">
+                        </div>
+                        <div class=" w-1/2">
+                            <label for="mobile" class="block text-sm font-medium text-gray-700">Contact No.</label>
+                            <input type="tel" id="mobile" name="mobile"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                required placeholder="e.g. 1234567890">
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <div class=" w-1/2">
+                            <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+                            <input type="number" id="age" name="age"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                required placeholder="e.g. 45">
+                        </div>
+                        <div class=" w-1/2">
+                            <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                            <select name="gender" id="gender"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                required>
+                                <option value="">Select Gender</option>
+                                <option selected value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <div class=" w-1/2">
+                            <label for="appointment_date" class="block text-sm font-medium text-gray-700">Date Of
+                                Appointment</label>
+                            <select name="appointment_date" id="appointment_date"
+                                class="border border-gray-300  shadow-sm  w-full rounded-md mt-1">
+                                <option value="{{ \Carbon\Carbon::now()->toDateString() }}" selected>Today <p
+                                        id="isAvailable"></p>
+                                </option>
+                                @for ($i = 1; $i <= 3; $i++)
+                                    <option value="{{ \Carbon\Carbon::now()->addDays($i)->toDateString() }}">
+                                        {{ \Carbon\Carbon::now()->addDays($i)->format('D d M') }}
+                                    </option>
+                                @endfor
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex mb-4 gap-3">
+                        <div class="flex items-center gap-4 me-4">
+                            <div id="visitingCharge"></div>
+                            <div id="onlineCharge"></div>
+                        </div>
+                    </div>
+                    <div class="flex mb-4 gap-3">
+                        <div class="flex items-center gap-4 me-4">
+                            <div id="preferred_day">
+                                <!-- calling preferred day and time data  -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+                        <textarea name="address" id="address" rows="3"
+                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            required>
+                    </textarea>
                     </div>
                     <div class="mb-2">
-                        <input type="text" id="mobile" name="mobile" class="form-input w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                            placeholder="Mobile">
+                        <button type="submit"
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Book
+                            Appointment Now</button>
                     </div>
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full rounded">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-
 <script>
-    // JavaScript to handle opening and closing of calling request Form
-
-        document.addEventListener('DOMContentLoaded', function() {
-        let openFormButton = document.getElementById('bookAppointmentBtn');
-        let closeFormButton = document.getElementById('closeFormButton');
-        let callingForm = document.getElementById('bookAppointmentForm');
-
-        openFormButton.addEventListener('click', function() {
-            callingForm.classList.remove('hidden');
-        });
-
-        closeFormButton.addEventListener('click', function() {
-            callingForm.classList.add('hidden');
-        });
-    });
-
     $(document).ready(function() {
-        // Function to fetch and display doctor
-        let callingDoctor = () => {
-            $.ajax({
-                type: "GET",
-                url: "{{ route('doctor.index') }}",
-                success: function(response) {
-                    let card = $("#callingDoctor");
-                    card.empty();
-                    let data = response.data;
 
-                    data.forEach((data) => {
-                        card.append(`
-                        <div class=" w-3/12  border border-gray-200 rounded-lg shadow capitalize">
-                            <div class="flex mx-5 gap-5">
-                                <div class="w-1/4 items-center flex">
-                                    <img src="/image/doctor/${data.image}" class="rounded-full w-[100%]" alt="">
-                                </div>
-                                <div class="w-3/4 ml-5 leading-tight mt-2">
-                                    <h4>Dr. ${data.name}</h4>
-                                    <p class="text-sm font-semibold text-blue-500">${data.specialization}</p>
-                                    <p class="text-base  text-blue-500">${data.experience}YRS EXP.</p>
-                                    <p class="text-sm text-gray-600 text">${data.qualification}</p>
-                                    <p class="text-blue-500 font-semibold my-2">Fees- ${data.visiting_charge}</p>
-                                </div>
-                            </div>
-                            <div class="address mx-5 flex text-sm text-gray-500">
-                                <img src="/images/icons/locator.png" class="h-4 mt-0.5" alt="">
-                                <p>${data.landmark},${data.city},${data.state}</p>
-                            </div>
-                            <div class="available text-xs font-semibold text-gray-600 text-center">
-                                <p>Available Now</p>
-                            </div>
-                            <div class="button flex justify-center gap-2  text-center text-sm rounded-sm my-1">
-                            <a href="" id='bookAppointmentBtn'>
-                                <button class=" p-1.5 text-white bg-yellow-500">Book Video Consult</button>
-                            </a>
-                                <button class=" bg-[#006266] p-1.5 text-white ">Book Hospital Visit</button>
-                            </div>
-                        </div>
-                        `);
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error:', error);
+         // Function to update fees based on appointment type
+         function updateFees(appointmentType) {
+                if (appointmentType === 'video') {
+                    $('#visitingCharge').empty();
+                    $('#onlineCharge').html('<p>Online Consultation Fee: $XX</p>'); // Replace $XX with actual fee
+                } else if (appointmentType === 'clinic') {
+                    $('#onlineCharge').empty();
+                    $('#visitingCharge').html('<p>Visiting Clinic Fee: $XX</p>'); // Replace $XX with actual fee
                 }
+            }
+
+    //Book New service
+
+    $("#bookAppointment").submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: `/api/appointment/book-now/{{ request()->segment(3) }}`,
+            data: new FormData(this),
+            dataType: "JSON",
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(response) {
+                swal("Success", response.message, "success");
+                $("#bookAppointment").trigger("reset");
+                window.open("/appointment", "_self");
+            }
+        })
+    })
+
+      // Event listener for doctor selection
+      $('#callingDoctors').change(function() {
+                let selectedDoctor = $(this).children("option:selected");
+                let visitingFee = selectedDoctor.data('visiting-fee');
+                let onlineFee = selectedDoctor.data('online-fee');
+                let preferredDay = selectedDoctor.data('day-time-doctor');
+
+                // Update the fee display
+                $('#visitingCharge').html(
+                    `<input id="inline-radio" type="radio" value="clinic" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="inline-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Visiting Charge Rs. ${visitingFee}</label>`
+                    );
+
+                $('#onlineCharge').html(
+                    `<input id="inline-radio" type="radio" value="video" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="inline-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Video Consult Rs. ${onlineFee}</label>`
+                    );
+
+                // Convert the preferred day and time JSON string to an object
+                // preferredDay = JSON.parse(preferredDay);
+                alert(preferredDay);
             });
-        }
-    callingDoctor();
-    });
+
+
+            // Event listener for appointment type selection
+            $('input[name="inline-radio-group"]').change(function() {
+                let appointmentType = $(this).val();
+                updateFees(appointmentType);
+            });
+})
 </script>
+
+
 @endsection
