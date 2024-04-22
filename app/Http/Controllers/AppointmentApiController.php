@@ -157,29 +157,40 @@ class AppointmentApiController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Appointment  $appointment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Appointment $appointment)
+    public function edit($id)
     {
-        //
+        $appointment = Appointment::findOrFail($id);
+        return response()->json([
+            'data' => $appointment,
+            'success' => true,
+            'message' => 'Appointment Detail fetched successfully'
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateAppointmentRequest  $request
-     * @param  \App\Models\Appointment  $appointment
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateAppointmentRequest $request, Appointment $appointment)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $appointment = Appointment::findOrFail($id);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|min:3',
+            'age' => 'required|numeric',
+            'mobile' => 'required|string|min:3',
+            'appointment_date' => 'required',
+            'appointment_type' => 'required',
+            'gender' => 'required|in:male,female,others',
+        ]);
 
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $appointment->update($validator->validated());
+
+        return response()->json([
+            'data' => $appointment,
+            'success' => true,
+            'message' => 'Appointment updated successfully'
+        ]);
+}
     /**
      * Remove the specified resource from storage.
      *
