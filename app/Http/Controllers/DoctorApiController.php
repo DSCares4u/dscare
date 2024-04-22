@@ -157,10 +157,6 @@ class DoctorApiController extends Controller
      * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Doctor $doctor)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -169,10 +165,72 @@ class DoctorApiController extends Controller
      * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDoctorRequest $request, Doctor $doctor)
+    public function update(Request $request, $id)
     {
-        //
+        // Find the hall frame by ID
+        $hallFrame = HallFrame::findOrFail($id);
+
+        // Update hall frame attributes
+        $hallFrame->name = $request->input('name');
+        $hallFrame->position = $request->input('position');
+        $hallFrame->industry = $request->input('industry');
+        $hallFrame->description = $request->input('description');
+
+        // Handle featured image upload if provided
+        if ($request->hasFile('featured_image')) {
+            $filename = time() . '.' . $request->featured_image->extension();
+            $request->featured_image->move(public_path('image'), $filename);
+            $hallFrame->featured_image = $filename;
+        }
+
+        // Save the updated hall frame
+        $hallFrame->save();
+
+        // Return a success response
+        return response()->json(['message' => 'Hall Frame updated successfully', 'hallFrame' => $hallFrame]);
     }
+
+
+    
+    public function edit($id)
+    {
+        $student = User::findOrFail($id);
+        return response()->json([
+            'user' => $student,
+            'success' => true,
+            'msg' => 'Student fetched successfully'
+        ]);
+    }
+
+
+    // for manage student
+
+    public function upgrade(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|between:2,100',
+            'f_name' => 'required|string|between:2,100',
+            'address' => 'required|string|between:2,100',
+            'gender' => 'required|in:Male,Female,Other',
+            'mobile_no' => 'required|string|max:12|',
+            'email' => 'required|string|email|max:100|unique:users,email,'.$id,
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $user->update($validator->validated());
+
+        return response()->json([
+            'user' => $user,
+            'success' => true,
+            'msg' => 'Student updated successfully'
+        ]);
+}
+
 
     /**
      * Remove the specified resource from storage.

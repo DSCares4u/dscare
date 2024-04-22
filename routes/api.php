@@ -81,3 +81,8 @@ Route::delete('/admin/manage-book-plan/delete/{id}',[BookPlanApiController::clas
 
 Route::post('/plans/book-now/{id}',[BookPlanApiController::class,'bookPlan']);
 Route::post('/appointment/book-now/{id}',[AppointmentApiController::class,'bookAppointment']);
+
+// Route::get('/admin/manage-student/view/{id}', [StudentApiController::class, 'edit'])->name('editStudent');
+// Route::put('/admin/manage-student/edit/{id}', [StudentApiController::class, 'upgrade'])->name('updateStudent');
+
+
