@@ -176,7 +176,11 @@ class AppointmentApiController extends Controller
             'mobile' => 'required|string|min:3',
             'appointment_date' => 'required',
             'appointment_type' => 'required',
+            'doctor_id' => 'required',
+            'payment_status' => 'required',
+            'address' => 'required',
             'gender' => 'required|in:male,female,others',
+
         ]);
 
         if ($validator->fails()) {

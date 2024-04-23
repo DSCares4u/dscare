@@ -139,29 +139,40 @@ class BookPlanApiController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\BookPlan  $bookPlan
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(BookPlan $bookPlan)
+    public function edit($id)
     {
-        //
+        $bookPlan = BookPlan::findOrFail($id);
+        return response()->json([
+            'data' => $bookPlan,
+            'success' => true,
+            'message' => 'Plan Details Has Been fetched successfully'
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateBookPlanRequest  $request
-     * @param  \App\Models\BookPlan  $bookPlan
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateBookPlanRequest $request, BookPlan $bookPlan)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $bookPlan = BookPlan::findOrFail($id);
+        $validator = Validator::make($request->all(), [
+            'guardian_name' => 'required|string|min:3',
+            'patient_name' => 'required|string|min:3',
+            'mobile' => 'required',
+            'email' => 'required|email',
+            'plan_id' => 'required',
+            'address' => 'required|string',            
+        ]);
 
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $bookPlan->update($validator->validated());
+
+        return response()->json([
+            'data' => $bookPlan,
+            'success' => true,
+            'message' => 'Your Plan Has Been updated successfully'
+        ]);
+}
     /**
      * Remove the specified resource from storage.
      *

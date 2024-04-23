@@ -65,7 +65,7 @@
 
 <script>
     $(document).ready(function() {
-         // calling Services
+         // calling Plans
     $.ajax({
             type: "GET",
             url: "{{ route('plan.index') }}",

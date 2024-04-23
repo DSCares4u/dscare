@@ -112,35 +112,40 @@ class ServiceApiController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Service $service)
+    public function edit($id)
     {
-        //
+        $service = Service::findOrFail($id);
+        return response()->json([
+            'data' => $service,
+            'success' => true,
+            'message' => 'Service Has Been fetched successfully'
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateServiceRequest  $request
-     * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateServiceRequest $request, Service $service)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $service = Service::findOrFail($id);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            's_image' => 'required|string',
+            's_description' => 'required|string',
+            's_feature' => 'required|string',
+            'f_logo' => 'required|string',
+            'f_description' => 'required|string',           
+        ]);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
-     */
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $service->update($validator->validated());
+
+        return response()->json([
+            'data' => $service,
+            'success' => true,
+            'message' => 'Service Has Been updated successfully'
+        ]);
+}
     public function destroy($id)
     {
         $service  = Service::find($id);
