@@ -4,7 +4,7 @@
         <div class="bg-white p-4 shadow-md rounded-md mb-4">
             <h2 class="text-lg font-semibold">Booked Plan Information</h2>
             <table class="min-w-full" id="doctorDetails">
-                <tbody >
+                <tbody>
                     <tr>
                         <th class="border-b border-gray-200 px-4 py-2">Patient's Name</th>
                         <td class="border-b border-gray-200 px-4 py-2" id="patientName"></td>
@@ -24,7 +24,7 @@
                     <tr>
                         <th class="border-b border-gray-200 px-4 py-2">Gender</th>
                         <td class="border-b border-gray-200 px-4 py-2" id="gender"></td>
-                    </tr>                   
+                    </tr>
                     <tr>
                         <th class="border-b border-gray-200 px-4 py-2">Plan Name</th>
                         <td class="border-b border-gray-200 px-4 py-2" id="planName"></td>
@@ -50,8 +50,6 @@
                     type: "GET",
                     url: `/api/admin/manage-book-plan/view/{{ request()->segment(4) }}`,
                     success: function(response) {
-                        let name = response.data.plan_id.name;
-                        // alert(name);
                         $("#planId").text(response.data.id);
                         $("#patientName").text(response.data.patient_name);
                         $("#guardianName").text(response.data.guardian_name);
@@ -59,11 +57,25 @@
                         $("#email").text(response.data.email);
                         $("#gender").text(response.data.gender);
                         $("#address").text(response.data.address);
-                        $("#planName").text(response.data.plan.name);
+                        $("#planName").val(response.data.plan_id);
                         // $("#planCost").text(response.data.plan_id.);
-                    },                    
+                    },
                 });
             }
+            // calling Plans
+            $.ajax({
+                type: "GET",
+                url: "{{ route('plan.index') }}",
+                success: function(response) {
+                    let select = $("#planName");
+                    select.empty();
+                    response.data.forEach((plan) => {
+                        select.append(`
+                    <option value="${plan.id}"  data-plan-charge="${plan.discount_price}">${plan.name}</option>
+                    `);
+                    });
+                }
+            });
             callingDoctor();
         });
     </script>

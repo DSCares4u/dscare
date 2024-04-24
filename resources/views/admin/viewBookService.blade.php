@@ -48,10 +48,24 @@
                         $("#address").text(response.data.address);
                         $("#message").text(response.data.message);
                         $("#email").text(response.data.email);
-                        $("#serviceName").text(response.data.service_id);
+                        $("#serviceName").val(response.data.service_id);
                     },                    
                 });
             }
+                 // calling Services
+        $.ajax({
+            type: "GET",
+            url: "{{ route('service.index') }}",
+            success: function(response) {
+                let select = $("#serviceName");
+                select.empty();
+                response.data.forEach((service) => {
+                    select.append(`
+                    <option value="${service.id}">${service.name}</option>
+                    `);
+                });
+            }
+        });
             callingDoctor();
         });
     </script>

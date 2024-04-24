@@ -109,35 +109,40 @@ class BookServiceApiController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\BookService  $bookService
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(BookService $bookService)
+    public function edit($id)
     {
-        //
+        $bookService = BookService::findOrFail($id);
+        return response()->json([
+            'data' => $bookService,
+            'success' => true,
+            'message' => 'Service Details Has Been fetched successfully'
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateBookServiceRequest  $request
-     * @param  \App\Models\BookService  $bookService
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateBookServiceRequest $request, BookService $bookService)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $bookService = BookService::findOrFail($id);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|min:3',
+            'mobile' => 'required',
+            'email' => 'required|email',
+            'service_id' => 'required',
+            'message' => 'required',
+            'address' => 'required|string',            
+        ]);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\BookService  $bookService
-     * @return \Illuminate\Http\Response
-     */
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $bookService->update($validator->validated());
+
+        return response()->json([
+            'data' => $bookService,
+            'success' => true,
+            'message' => 'Your Service Has Been updated successfully'
+        ]);
+}
     public function destroy($id)
     {
         $bookService = BookService::find($id);
