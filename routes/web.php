@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DoctorApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -142,3 +143,5 @@ Route::get('/plans/book-now/{id}', function () {
 Route::get('/appointment/book-now/{id}', function () {
     return view('home.bookAppointment');
 });
+
+Route::get('/admin/manage-doctor/trash',[DoctorApiController::class,'trash']);

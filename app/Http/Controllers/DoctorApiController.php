@@ -255,4 +255,11 @@ class DoctorApiController extends Controller
             ], 500);
         }       
     }
+
+    public function trash()
+    {
+        $doctor = Doctor::onlyTrashed()->get();
+        $data = compact('doctors');
+        return view('admin/manageDoctorTrash')->with($data);
+    }
 }
