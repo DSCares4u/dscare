@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DoctorApiController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +47,10 @@ Route::get('/admin/manage-doctor', function () {
     return view('admin.manageDoctor');
 });
 
+Route::get('/admin/manage-doctor/trash', function () {
+    return view('admin.manageDoctorTrash');
+});
+
 Route::get('/admin/manage-doctor/view/{id}', function () {
     return view('admin.viewDoctor');
 });
@@ -74,9 +76,14 @@ Route::get('/admin/manage-book-service/view/{id}', function () {
 Route::get('/admin/manage-book-service/insert', function () {
     return view('admin.bookService');
 });
-
+Route::get('/admin/manage-book-service/trash', function () {
+    return view('admin.manageBookServiceTrash');
+});
 Route::get('/admin/manage-book-plan', function () {
     return view('admin.manageBookedPlan');
+});
+Route::get('/admin/manage-book-plan/trash', function () {
+    return view('admin.manageBookPlanTrash');
 });
 Route::get('/admin/manage-book-plan/view/{id}', function () {
     return view('admin.viewBookPlan');
@@ -144,4 +151,3 @@ Route::get('/appointment/book-now/{id}', function () {
     return view('home.bookAppointment');
 });
 
-Route::get('/admin/manage-doctor/trash',[DoctorApiController::class,'trash']);

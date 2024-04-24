@@ -196,4 +196,27 @@ class BookPlanApiController extends Controller
             ], 500);
         }       
     }
+
+    public function indexDeleted()
+    {
+        $deletedBookPlans = BookPlan::with('plan')->onlyTrashed()->orderBy('deleted_at', 'desc')->get();
+        return response()->json([
+            'status'=>200,
+            'data'=>$deletedBookPlans
+        ],200);
+    }
+
+    public function restore($id)
+    {
+        $bookPlan = BookPlan::withTrashed()->findOrFail($id);
+        $bookPlan->restore();
+        return response()->json(['message' => 'Booked Plan restored successfully'], 200);
+    }
+
+    public function destroyPermanently($id)
+    {
+        $bookPlan = BookPlan::withTrashed()->findOrFail($id);
+        $bookPlan->forceDelete();
+        return response()->json(['message' => 'Booked Plan permanently deleted'], 200);
+    }
 }

@@ -117,7 +117,6 @@
 </div>
 
 <script>
-
     $(document).ready(function() {
         // Function to fetch and display doctor
         let callingDoctor = () => {
@@ -169,4 +168,5 @@
     callingDoctor();
     });
 </script>
+
 @endsection

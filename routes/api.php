@@ -43,6 +43,9 @@ Route::get('admin/manage-doctor/view/{id}',[DoctorApiController::class,'show']);
 Route::get('admin/manage-doctor/edit/{id}',[DoctorApiController::class,'edit']);
 Route::put('admin/manage-doctor/edit/{id}',[DoctorApiController::class,'update']);
 Route::delete('admin/manage-doctor/delete/{id}',[DoctorApiController::class,'destroy']);
+Route::get('admin/manage-doctor/trash',[DoctorApiController::class,'indexDeleted'])->name('doctor.index.deleted');
+Route::delete('admin/manage-doctor/trash/delete-permanent/{id}',[DoctorApiController::class,'destroyPermanently']);
+Route::put('admin/manage-doctor/trash/restore/{id}',[DoctorApiController::class,'restore']);
 
 Route::post('/admin/service',[ServiceApiController::class,'store'])->name('service.store');
 Route::get('/admin/service',[ServiceApiController::class,'index'])->name('service.index');
@@ -71,6 +74,9 @@ Route::get('/admin/manage-book-service/view/{id}',[BookServiceApiController::cla
 Route::get('/admin/manage-book-service/edit/{id}',[BookServiceApiController::class,'edit']);
 Route::put('/admin/manage-book-service/edit/{id}',[BookServiceApiController::class,'update']);
 Route::delete('/admin/manage-book-service/delete/{id}',[BookServiceApiController::class,'destroy']);
+Route::get('admin/manage-book-service/trash',[BookServiceApiController::class,'indexDeleted'])->name('book.service.index.deleted');
+Route::delete('admin/manage-book-service/trash/delete-permanent/{id}',[BookServiceApiController::class,'destroyPermanently']);
+Route::put('admin/manage-book-service/trash/restore/{id}',[BookServiceApiController::class,'restore']);
 
 Route::post('/admin/book-plan',[BookPlanApiController::class,'store'])->name('book.plan.store');
 Route::get('/admin/book-plan',[BookPlanApiController::class,'index'])->name('book.plan.index');
@@ -78,6 +84,9 @@ Route::get('/admin/manage-book-plan/view/{id}',[BookPlanApiController::class,'sh
 Route::get('/admin/manage-book-plan/edit/{id}',[BookPlanApiController::class,'edit']);
 Route::put('/admin/manage-book-plan/edit/{id}',[BookPlanApiController::class,'update']);
 Route::delete('/admin/manage-book-plan/delete/{id}',[BookPlanApiController::class,'destroy']);
+Route::get('admin/manage-book-plan/trash',[BookPlanApiController::class,'indexDeleted'])->name('book.plan.index.deleted');
+Route::delete('admin/manage-book-plan/trash/delete-permanent/{id}',[BookPlanApiController::class,'destroyPermanently']);
+Route::put('admin/manage-book-plan/trash/restore/{id}',[BookPlanApiController::class,'restore']);
 
 Route::post('/plans/book-now/{id}',[BookPlanApiController::class,'bookPlan']);
 Route::post('/appointment/book-now/{id}',[AppointmentApiController::class,'bookAppointment']);
