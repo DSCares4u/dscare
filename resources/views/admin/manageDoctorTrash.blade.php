@@ -82,9 +82,9 @@
                         </td>          
                         <td class="border-b border-gray-200 px-3 text-center py-2 text-sm">
 
-                            <button type='button' class='bg-red-500 p-1 rounded delete-btn 'data-id='${data.id}' onclick='confirmPermanentDelete(postId)' >Delete</button>
+                            <button type='button' class='bg-red-500 p-1 text-white font-semibold rounded delete-btn 'data-id='${data.id}' onclick='confirmPermanentDelete(postId)' >Delete</button>
 
-                            <button type='button' class='bg-green-500 p-1 rounded restore-btn 'data-id='${data.id}' >Restore</button>
+                            <button type='button' class='bg-green-500 p-1 text-white font-semibold rounded restore-btn 'data-id='${data.id}' >Restore</button>
                         </td>
                             </tr>
                         `);

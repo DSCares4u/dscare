@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-16">
         <div class="flex justify-between mb-3 mt-3 items-center">
-            <h2 class="text-2xl font-bold">Manage Booked Services (<span id="counting">0</span>)</h2>
+            <h2 class="text-2xl font-bold">Booked Services Trash (<span id="counting">0</span>)</h2>
             <a href="/admin/manage-book-service/insert"
                 class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
                 <i class="fas fa-plus mr-1"></i> Book Services Manually
@@ -49,8 +49,8 @@
                                 <td class="py-2 px-4 border text-center">${data.name}</td>
                                 <td class="py-2 px-4 border text-center">${data.mobile}</td>
                                 <td class="py-2 px-4 border text-center">${data.service.name}</td>                                <td class="border-b border-gray-200 px-3 text-center py-2 text-sm">
-                                <button type='button' class='bg-red-500 p-1 rounded delete-btn 'data-id='${data.id}' onclick='confirmPermanentDelete(postId)' >Delete</button>
-                                <button type='button' class='bg-green-500 p-1 rounded restore-btn 'data-id='${data.id}' >Restore</button>
+                                <button type='button' class='bg-red-500 p-1 text-white font-semibold rounded delete-btn 'data-id='${data.id}' onclick='confirmPermanentDelete(postId)' >Delete</button>
+                                <button type='button' class='bg-green-500 p-1 text-white font-semibold rounded restore-btn 'data-id='${data.id}' >Restore</button>
                                 </td>
                             </tr>
                         `);
