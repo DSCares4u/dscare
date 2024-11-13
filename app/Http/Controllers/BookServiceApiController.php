@@ -160,4 +160,27 @@ class BookServiceApiController extends Controller
             ], 500);
         }       
     }
+
+    public function indexDeleted()
+    {
+        $deletedBookServices = BookService::with('service')->onlyTrashed()->orderBy('deleted_at', 'desc')->get();
+        return response()->json([
+            'status'=>200,
+            'data'=>$deletedBookServices
+        ],200);
+    }
+
+    public function restore($id)
+    {
+        $bookService = BookService::withTrashed()->findOrFail($id);
+        $bookService->restore();
+        return response()->json(['message' => 'Booked Service restored successfully'], 200);
+    }
+
+    public function destroyPermanently($id)
+    {
+        $bookService = BookService::withTrashed()->findOrFail($id);
+        $bookService->forceDelete();
+        return response()->json(['message' => 'Booked Service permanently deleted'], 200);
+    } 
 }

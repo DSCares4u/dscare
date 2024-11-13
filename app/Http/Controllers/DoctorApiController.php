@@ -247,10 +247,26 @@ class DoctorApiController extends Controller
         }       
     }
 
-    public function trash()
+    public function indexDeleted()
     {
-        $doctor = Doctor::onlyTrashed()->get();
-        $data = compact('doctors');
-        return view('admin/manageDoctorTrash')->with($data);
+        $deletedDoctors = Doctor::onlyTrashed()->get();
+        return response()->json([
+            'status'=>200,
+            'data'=>$deletedDoctors
+        ],200);
+    }
+
+    public function restore($id)
+    {
+        $doctor = Doctor::withTrashed()->findOrFail($id);
+        $doctor->restore();
+        return response()->json(['message' => 'Doctor restored successfully'], 200);
+    }
+
+    public function destroyPermanently($id)
+    {
+        $doctor = Doctor::withTrashed()->findOrFail($id);
+        $doctor->forceDelete();
+        return response()->json(['message' => 'Doctor permanently deleted'], 200);
     }
 }
