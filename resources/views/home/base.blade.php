@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <footer class="flex justify-evenly mb-4 w-full h-56 px-20 gap-10  mt-12">
         <div class="w-3/12">
             <a href="">
-                <img src="/images/footer_logo.jpg" alt="">
+                <img src="/images/ds-care-footer.jpg" alt="">
             </a>
             <p class="text-start text-gray-400 text-sm mt-5">
                 No. 40, North Phase,

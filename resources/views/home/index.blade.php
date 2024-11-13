@@ -229,7 +229,7 @@
         <h3 class="text-center text-lg tracking-tight font-semibold text-gray-500">Medicine Delivery</h3>
     </div>
 </div> -->
-<div class="packages flex justify-around gap-2 mt-10 w-full mx-8 p-2 ">
+<div class="packages flex justify-around gap-2 mt-10 w-full  p-2 ">
     <div class="w-2/12 max-w-sm  mb-2   bg-white border border-[#54a0ff] hover:border-[#29476b] ">
         <div class="flex justify-center gap-5 bg-[#006266] p-2 text-white mb-2">
             <h5 class=" text-lg font-bold text-center   dark:text-white">Base Plan</h5>
